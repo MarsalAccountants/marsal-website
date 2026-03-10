@@ -1,0 +1,395 @@
+---
+import Layout from "../../layouts/BaseLayout.astro";
+import ContactUs from "../../components/ContactUs.astro";
+import "../../../styles/pages/articles/articles.css";
+import { getCollection } from "astro:content";
+
+// --------------------------------------------------------------
+// 1. Fetch all articles
+// --------------------------------------------------------------
+const allArticles = await getCollection("articles");
+const validArticles = allArticles.filter((post) => post?.slug && post.data?.title);
+
+const sorted = validArticles.sort((a, b) => {
+  const dateA = a.data?.date ? new Date(a.data.date).getTime() : 0;
+  const dateB = b.data?.date ? new Date(b.data.date).getTime() : 0;
+  return dateB - dateA;
+});
+
+// --------------------------------------------------------------
+// 2. Identify featured article
+// --------------------------------------------------------------
+const featured = sorted.find((post) => post.data?.featured === true) ?? null;
+
+// --------------------------------------------------------------
+// 3. Unique categories (for filter buttons)
+// --------------------------------------------------------------
+const rawCategories = validArticles
+  .map((a) => a.data?.category?.trim())
+  .filter(Boolean);
+const categories = ["All", ...Array.from(new Set(rawCategories))];
+
+// --------------------------------------------------------------
+// 4. Prepare data for client‑side filtering
+// --------------------------------------------------------------
+const articlesForClient = sorted.map((post) => ({
+  slug: post.slug,
+  title: post.data.title,
+  description: post.data.description,
+  heroImage: post.data.heroImage,
+  category: post.data.category,
+  date: post.data.date,
+  readTime: post.data.readTime,
+  featured: post.data.featured === true,
+}));
+
+const clientData = {
+  articles: articlesForClient,
+  featuredSlug: featured?.slug ?? null,
+  categories,
+  perPage: 10,
+};
+---
+
+<Layout title="Accounting & Tax Articles | Marsal Accountants">
+  <main class="articles-page container">
+
+    <!-- ==================== CATEGORY FILTER ==================== -->
+    <div class="category-filter" id="category-filter">
+      {categories.map((cat) => {
+        return (
+          <a
+            href={`?category=${encodeURIComponent(cat)}&page=1`}
+            class="filter-btn"
+            data-category={cat}
+          >
+            {cat}
+          </a>
+        );
+      })}
+    </div>
+
+    <!-- ==================== FEATURED ARTICLE ==================== -->
+    <section id="featured-container" class="featured-card">
+      {featured ? (
+        <>
+          {featured.data?.heroImage && (
+            <a href={`/articles/${featured.slug}/`}>
+              <img
+                src={featured.data.heroImage}
+                alt={featured.data.title}
+                class="featured-img"
+                loading="lazy"
+              />
+            </a>
+          )}
+
+          <div class="featured-content">
+            {featured.data?.category && (
+              <span class="category-tag">{featured.data.category}</span>
+            )}
+
+            <h2>
+              <a href={`/articles/${featured.slug}/`}>{featured.data.title}</a>
+            </h2>
+
+            {featured.data?.description && (
+              <p class="excerpt">{featured.data.description}</p>
+            )}
+
+            <div class="meta">
+              <div class="author">
+                <i class="fas fa-user"></i> Marsal Editorial Team
+              </div>
+              {featured.data?.date && (
+                <div class="date">
+                  <i class="fas fa-calendar"></i> {featured.data.date}
+                </div>
+              )}
+              {featured.data?.readTime && (
+                <div class="read-time">
+                  <i class="fas fa-clock"></i> {featured.data.readTime}
+                </div>
+              )}
+            </div>
+
+            <a href={`/articles/${featured.slug}/`} class="btn-more">
+              Read Article
+            </a>
+          </div>
+        </>
+      ) : (
+        <p>No featured article.</p>
+      )}
+    </section>
+
+    <!-- ==================== ARTICLES GRID ==================== -->
+    <section class="content-grid content-grid--no-sidebar">
+      <div class="latest-posts">
+        <div class="latest-header">
+          <h3>Latest Articles</h3>
+        </div>
+
+        <div id="post-grid" class="post-grid">
+          <!-- Static fallback (will be overwritten) -->
+          {sorted.slice(0, 10).map((post) => (
+            <article class="post-card" data-category={post.data?.category}>
+              {post.data?.heroImage && (
+                <a href={`/articles/${post.slug}/`}>
+                  <img
+                    src={post.data.heroImage}
+                    alt={post.data.title}
+                    class="post-img"
+                    loading="lazy"
+                  />
+                </a>
+              )}
+
+              <div class="post-content">
+                {post.data?.category && (
+                  <span class="category-tag">{post.data.category}</span>
+                )}
+
+                <h4 class="post-title">
+                  <a href={`/articles/${post.slug}/`}>{post.data.title}</a>
+                </h4>
+
+                {post.data?.description && (
+                  <p class="post-excerpt">{post.data.description}</p>
+                )}
+
+                <div class="post-meta">
+                  {post.data?.date && <span>{post.data.date}</span>}
+                  {post.data?.readTime && <span>{post.data.readTime}</span>}
+                </div>
+
+                <a href={`/articles/${post.slug}/`} class="btn-more">
+                  Read Article
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div id="pagination-container" class="pagination"></div>
+      </div>
+    </section>
+
+    <ContactUs />
+  </main>
+</Layout>
+
+<!-- ==================== HIDDEN DATA DIV ==================== -->
+<div id="articles-data" data-articles={JSON.stringify(clientData).replace(/</g, '\\u003c')} style="display:none;"></div>
+
+<!-- ==================== CLIENT-SIDE FILTERING ==================== -->
+<script>
+  (function() {
+    console.log("🔍 Articles script started");
+
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log("📦 DOM ready");
+
+      // Get data from hidden div
+      const dataDiv = document.getElementById('articles-data');
+      if (!dataDiv) {
+        console.error("❌ No data div found");
+        return;
+      }
+
+      const rawJson = dataDiv.dataset.articles;
+      console.log("📄 Raw JSON length:", rawJson.length);
+      console.log("📄 Raw JSON preview (first 500 chars):", rawJson.substring(0, 500));
+
+      let clientData;
+      try {
+        clientData = JSON.parse(rawJson);
+        console.log("✅ Data parsed successfully:", clientData);
+      } catch (e) {
+        console.error("❌ Failed to parse JSON:", e);
+        console.error("📄 Full raw JSON that caused error:", rawJson);
+        document.getElementById('post-grid').innerHTML = '<p style="color:red;">Error loading articles data. Check console.</p>';
+        return;
+      }
+
+      const { articles, featuredSlug, categories, perPage } = clientData;
+      console.log(`📊 Articles count: ${articles.length}, featured: ${featuredSlug}`);
+
+      // DOM elements
+      const filterContainer = document.getElementById('category-filter');
+      const featuredContainer = document.getElementById('featured-container');
+      const gridContainer = document.getElementById('post-grid');
+      const paginationContainer = document.getElementById('pagination-container');
+
+      if (!filterContainer || !featuredContainer || !gridContainer || !paginationContainer) {
+        console.error("❌ Missing DOM elements:", {
+          filter: filterContainer,
+          featured: featuredContainer,
+          grid: gridContainer,
+          pagination: paginationContainer
+        });
+        return;
+      }
+
+      // Current state
+      let currentCategory = 'All';
+      let currentPage = 1;
+
+      // Helper: render functions
+      function renderFeatured(a) {
+        return `
+          ${a.heroImage ? `
+            <a href="/articles/${a.slug}/">
+              <img src="${a.heroImage}" alt="${a.title}" class="featured-img" loading="lazy">
+            </a>
+          ` : ''}
+          <div class="featured-content">
+            ${a.category ? `<span class="category-tag">${a.category}</span>` : ''}
+            <h2><a href="/articles/${a.slug}/">${a.title}</a></h2>
+            ${a.description ? `<p class="excerpt">${a.description}</p>` : ''}
+            <div class="meta">
+              <div class="author"><i class="fas fa-user"></i> Marsal Editorial Team</div>
+              ${a.date ? `<div class="date"><i class="fas fa-calendar"></i> ${a.date}</div>` : ''}
+              ${a.readTime ? `<div class="read-time"><i class="fas fa-clock"></i> ${a.readTime}</div>` : ''}
+            </div>
+            <a href="/articles/${a.slug}/" class="btn-more">Read Article</a>
+          </div>
+        `;
+      }
+
+      function renderPostCard(a) {
+        return `
+          <article class="post-card" data-category="${a.category || ''}">
+            ${a.heroImage ? `
+              <a href="/articles/${a.slug}/">
+                <img src="${a.heroImage}" alt="${a.title}" class="post-img" loading="lazy">
+              </a>
+            ` : ''}
+            <div class="post-content">
+              ${a.category ? `<span class="category-tag">${a.category}</span>` : ''}
+              <h4 class="post-title"><a href="/articles/${a.slug}/">${a.title}</a></h4>
+              ${a.description ? `<p class="post-excerpt">${a.description}</p>` : ''}
+              <div class="post-meta">
+                ${a.date ? `<span>${a.date}</span>` : ''}
+                ${a.readTime ? `<span>${a.readTime}</span>` : ''}
+              </div>
+              <a href="/articles/${a.slug}/" class="btn-more">Read Article</a>
+            </div>
+          </article>
+        `;
+      }
+
+      function render() {
+        console.log(`🎨 Rendering: category=${currentCategory}, page=${currentPage}`);
+
+        const filtered = currentCategory === 'All'
+          ? articles
+          : articles.filter(a => a.category?.trim().toLowerCase() === currentCategory.toLowerCase());
+        console.log(`Filtered count: ${filtered.length}`);
+
+        let featuredArticle = null;
+        let gridArticles = filtered;
+        if (featuredSlug) {
+          const featuredIndex = gridArticles.findIndex(a => a.slug === featuredSlug);
+          if (featuredIndex !== -1) {
+            featuredArticle = gridArticles[featuredIndex];
+            gridArticles = gridArticles.filter((_, i) => i !== featuredIndex);
+          }
+        }
+
+        const totalPages = Math.max(1, Math.ceil(gridArticles.length / perPage));
+        if (currentPage < 1) currentPage = 1;
+        if (currentPage > totalPages) currentPage = totalPages;
+
+        const start = (currentPage - 1) * perPage;
+        const paginated = gridArticles.slice(start, start + perPage);
+
+        // Update URL
+        const url = new URL(window.location);
+        url.searchParams.set('category', currentCategory);
+        url.searchParams.set('page', currentPage);
+        window.history.replaceState({}, '', url);
+
+        // Update filter buttons
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+          const btnCat = btn.dataset.category;
+          btn.classList.toggle('active', btnCat === currentCategory);
+        });
+
+        // Render featured
+        if (featuredArticle) {
+          featuredContainer.innerHTML = renderFeatured(featuredArticle);
+        } else {
+          featuredContainer.innerHTML = '<p>No featured article.</p>';
+        }
+
+        // Render grid
+        if (paginated.length === 0) {
+          gridContainer.innerHTML = '<p>No articles match the selected category.</p>';
+        } else {
+          gridContainer.innerHTML = paginated.map(renderPostCard).join('');
+        }
+
+        // Render pagination
+        if (totalPages > 1) {
+          let pagHtml = '';
+          if (currentPage > 1) {
+            pagHtml += `<a href="#" class="page-btn" data-page="${currentPage - 1}">Previous</a>`;
+          }
+          for (let i = 1; i <= totalPages; i++) {
+            pagHtml += `<a href="#" class="page-number ${i === currentPage ? 'active' : ''}" data-page="${i}">${i}</a>`;
+          }
+          if (currentPage < totalPages) {
+            pagHtml += `<a href="#" class="page-btn" data-page="${currentPage + 1}">Next</a>`;
+          }
+          paginationContainer.innerHTML = pagHtml;
+        } else {
+          paginationContainer.innerHTML = '';
+        }
+      }
+
+      // Event listeners
+      filterContainer.addEventListener('click', (e) => {
+        const btn = e.target.closest('.filter-btn');
+        if (!btn) return;
+        e.preventDefault();
+        const newCat = btn.dataset.category;
+        console.log(`🔘 Filter clicked: ${newCat}`);
+        if (newCat === currentCategory) return;
+        currentCategory = newCat;
+        currentPage = 1;
+        render();
+      });
+
+      paginationContainer.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-page]');
+        if (!btn) return;
+        e.preventDefault();
+        const newPage = parseInt(btn.dataset.page, 10);
+        console.log(`📄 Page clicked: ${newPage}`);
+        if (newPage === currentPage) return;
+        currentPage = newPage;
+        render();
+      });
+
+      window.addEventListener('popstate', () => {
+        console.log("↩️ Popstate event");
+        const params = new URLSearchParams(window.location.search);
+        currentCategory = params.get('category') || 'All';
+        currentPage = parseInt(params.get('page'), 10) || 1;
+        render();
+      });
+
+      // Initialise from URL
+      const params = new URLSearchParams(window.location.search);
+      currentCategory = params.get('category') || 'All';
+      if (!categories.includes(currentCategory)) {
+        console.warn(`Category "${currentCategory}" not in list, falling back to All`);
+        currentCategory = 'All';
+      }
+      currentPage = parseInt(params.get('page'), 10) || 1;
+      console.log(`🚀 Initialising: category=${currentCategory}, page=${currentPage}`);
+      render();
+    });
+  })();
+</script>

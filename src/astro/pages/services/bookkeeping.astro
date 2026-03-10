@@ -1,0 +1,548 @@
+---
+// D:\Marsals\website\src\pages\services\bookkeeping.astro
+
+import Layout from "../../layouts/BaseLayout.astro";
+import ContactUs from "../../components/ContactUs.astro";
+
+// Sidebar menu items - Bookkeeping is active
+const sidebarItems = [
+  { text: "Accounting Services", href: "/services/accounting/" },
+  { text: "Bookkeeping Services", href: "/services/bookkeeping/", active: true },
+  { text: "Management Accounts Services", href: "/services/management-accounts/" },
+  { text: "Payroll Services", href: "/services/payroll/" },
+  { text: "Property Accounts Services", href: "/services/property-accounts/" },
+  { text: "Self Assessment Tax Returns", href: "/services/self-assessment-tax-returns/" },
+  { text: "Corporation Tax Return", href: "/services/corporation-tax-return-services/" },
+  { text: "Starting New Business", href: "/services/business-setup/" },
+  { text: "Tax Investigation", href: "/services/tax-investigation/" },
+  { text: "Value Added Tax Services", href: "/services/vat/" },
+];
+
+// Carousel items (same as accounting page)
+const carouselItems = [
+  { text: "<strong>QUALITY</strong> SERVICE DELIVERED ON TIME" },
+  { text: "<strong>FREE PHONE</strong> HELP LINE ON DAY TO DAY ACCOUNTING, TAX, EMPLOYMENT ISSUES......." },
+  { text: "WE COLLECT &amp; RETURN YOUR <strong>DOCUMENTS</strong>" },
+  { text: "FIXED COMPETITIVE FEES FOR ALL <strong>SERVICES</strong>" },
+  { text: "DEDICATED CONSULTANT WHO VISITS YOU REGULARLY MAKING SURE YOUR <strong>ACCOUNTING &amp; TAX AFFAIRS</strong> ARE UP TO DATE", class: "small" },
+  { text: "WE ARE CARING <strong>ACCOUNTANTS</strong>..... WE PUT OURSELVES IN YOUR SHOES" },
+  { text: "<strong>ACCOUNTANTS</strong> WHO SPEAK AND UNDERSTAND YOUR LANGUAGE" },
+  { text: "WE VISIT YOU TO DISCUSS <strong>ACCOUNTS</strong>" },
+];
+---
+
+<Layout title="Bookkeeping Services | Marsal Accountants Paisley">
+  <main class="services-detail-page">
+    
+    <!-- Carousel Section -->
+    <div class="carousel-section">
+      <div id="carousel-text" class="carousel">
+        <div class="carousel-inner">
+          {carouselItems.map((item, index) => (
+            <div 
+              class={`item ${index === 0 ? 'active' : ''} ${item.class || ''}`}
+              key={index}
+              set:html={item.text}
+            />
+          ))}
+        </div>
+      </div>
+      <hr class="carousel-divider">
+    </div>
+
+    <!-- Main Content Container -->
+    <div class="service-detail-container">
+      <div class="service-detail-grid">
+        
+        <!-- Main Content Column -->
+        <div class="service-detail-main">
+          <h2 class="service-detail-heading">Bookkeeping Services</h2>
+          <div class="divider-content"></div>
+          
+          <div class="service-detail-content">
+            <h3 class="service-subheading">Professional Bookkeeping Services for Your Business</h3>
+            <p><i>Reliable, accurate, and affordable bookkeeping solutions starting at just £12.50 per hour (ex VAT).</i></p>
+
+            <h4 class="service-mini-heading">Trusted Experts at Your Service</h4>
+            <div class="divider-content-small"></div>
+            <p>At Marsal Accountants, we take the stress out of managing your business finances. Our qualified and experienced bookkeepers work with businesses of all sizes to handle day-to-day bookkeeping — giving you the freedom and clarity to focus on growth.</p>
+
+            <h4 class="service-mini-heading">What We Offer</h4>
+            <div class="divider-content-small"></div>
+
+            <h5 class="service-small-heading">Flexible Document Handling</h5>
+            <p>We collect your financial documents as often as you need — weekly, fortnightly, or monthly — and ensure they're securely processed and returned promptly, keeping your records current and accurate.</p>
+
+            <h5 class="service-small-heading">Comprehensive Financial Management</h5>
+            <p>We handle all aspects of your bookkeeping with precision, including:</p>
+            <ul class="content-bullet">
+              <li>Sales invoicing, debtor management, and debt collection.</li>
+              <li>Processing and verifying purchase invoices, managing creditors.</li>
+              <li>Organising your purchase ledger efficiently.</li>
+              <li>Conducting bank reconciliations to maintain accurate accounts.</li>
+            </ul>
+
+            <h5 class="service-small-heading">HMRC-Compliant VAT Returns</h5>
+            <p>We manage your VAT returns from preparation to filing, ensuring full compliance and helping you avoid costly penalties.</p>
+
+            <h5 class="service-small-heading">Unlimited Day-to-Day Advice</h5>
+            <p>Our team is always available to provide expert guidance on bookkeeping matters, helping you make informed decisions.</p>
+
+            <h4 class="service-mini-heading">Why Choose Us?</h4>
+            <div class="divider-content-small"></div>
+
+            <h5 class="service-small-heading">Cost-Effective Solutions</h5>
+            <p>Bookkeeping services starting from just £12.50 per hour (ex VAT), saving you time and resources without compromising quality.</p>
+
+            <h5 class="service-small-heading">Tailored Support for Every Business</h5>
+            <p>From small businesses to large enterprises, we tailor our bookkeeping services to meet your specific needs.</p>
+
+            <h5 class="service-small-heading">Advanced resources and Technology</h5>
+            <p>We use secure, cutting-edge software to streamline record-keeping, giving you instant access to financial data for smarter decision-making.</p>
+
+            <h5 class="service-small-heading">Expertise You Can Trust</h5>
+            <p>With over a decade of experience across various industries, our bookkeepers deliver precision and professionalism in every task.</p>
+
+            <h5 class="service-small-heading">Focus on What Matters Most</h5>
+            <p>Outsource your bookkeeping to us and free up valuable time to grow your business, develop strategies, or simply enjoy life outside of work.</p>
+
+            <h4 class="service-mini-heading">Partner with Marsal Accountants for Stress-Free Bookkeeping</h4>
+            <div class="divider-content-small"></div>
+            <p>Your business deserves top-tier financial support. Our personalised bookkeeping services are designed to simplify your finances, reduce costs, and give you peace of mind.</p>
+
+            <h4 class="service-mini-heading">Let's Get Started!</h4>
+            <div class="divider-content-small"></div>
+            <p>Take the first step towards efficient bookkeeping today. <a href="/contact/"><strong>Contact us</strong></a> for a no-obligation consultation and see how Marsal Accountants can make a difference to your business.</p>
+
+            <div class="contact-info">
+              <h5>Call us on <a href="tel:07468641272" class="contact-link">074-6864-1272</a> or E-mail us at <a href="mailto:info@marsalaccountants.co.uk" class="contact-link">info@marsalaccountants.co.uk</a></h5>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar Column -->
+        <aside class="services-sidebar">
+          <div class="sidebar-header">
+            <h3>Services</h3>
+          </div>
+          <div class="sidebar-content">
+            <ul id="submenu">
+              {sidebarItems.map((item) => (
+                <li class={item.active ? 'active' : ''}>
+                  <a href={item.href}>{item.text}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+
+    <!-- Contact Us Component -->
+    <ContactUs />
+
+  </main>
+
+  <style is:global>
+    /* Service Detail Page Styles */
+    .services-detail-page {
+      padding-top: 40px;
+      padding-bottom: 80px;
+      background: var(--color-surface);
+      min-height: calc(100vh - 300px);
+    }
+
+    /* Carousel Styles */
+    .carousel-section {
+      max-width: 1200px;
+      margin: 0 auto 3rem;
+      padding: 0 20px;
+    }
+
+    #carousel-text {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .carousel-inner {
+      position: relative;
+      height: 80px;
+      overflow: hidden;
+    }
+
+    .carousel-inner .item {
+      position: absolute;
+      width: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--color-text);
+      line-height: 1.6;
+      top: 0;
+      left: 0;
+    }
+
+    .carousel-inner .item.active {
+      opacity: 1;
+    }
+
+    .carousel-inner .item.small {
+      font-size: 1.2rem;
+    }
+
+    .carousel-inner strong {
+      color: var(--color-primary);
+      font-weight: 700;
+    }
+
+    .carousel-divider {
+      max-width: 800px;
+      height: 1px;
+      margin: 2.5rem auto;
+      background: linear-gradient(90deg, 
+          transparent 0%, 
+          var(--color-border) 20%, 
+          var(--color-border) 80%, 
+          transparent 100%);
+      border: none;
+      opacity: 0.8;
+    }
+
+    /* Main Container */
+    .service-detail-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .service-detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 3rem;
+    }
+
+    /* Main Content Styles */
+    .service-detail-main {
+      background: var(--color-surface-card);
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--color-border-light);
+    }
+
+    .service-detail-heading {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .service-subheading {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-text);
+      margin: 2rem 0 1rem;
+    }
+
+    .service-mini-heading {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      margin: 2rem 0 0.5rem;
+    }
+
+    .service-small-heading {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--color-text);
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    .service-detail-content p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--color-text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .service-detail-content p i {
+      font-style: italic;
+      color: var(--color-text-secondary);
+    }
+
+    /* Divider Styles */
+    .divider-content {
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, 
+          var(--color-primary) 0%, 
+          var(--color-primary-light) 50%, 
+          var(--color-primary) 100%);
+      margin: 1.5rem 0 2rem;
+      border-radius: 2px;
+    }
+
+    .divider-content-small {
+      width: 80px;
+      height: 3px;
+      background: var(--color-primary);
+      border-radius: 2px;
+      margin: 0.8rem 0 1.5rem;
+    }
+
+    /* Bulleted List */
+    .content-bullet {
+      list-style: none;
+      padding-left: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .content-bullet li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.8rem;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: var(--color-text-secondary);
+    }
+
+    .content-bullet li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--color-primary);
+      font-weight: bold;
+    }
+
+    /* Contact Info */
+    .contact-info {
+      background: var(--color-primary-light);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .contact-info h5 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--color-text);
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .contact-link {
+      color: var(--color-primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color var(--transition-fast);
+    }
+
+    .contact-link:hover {
+      color: var(--color-primary-dark);
+      text-decoration: underline;
+    }
+
+    /* Sidebar Styles */
+    .services-sidebar {
+      position: sticky;
+      top: 100px;
+      height: fit-content;
+    }
+
+    .sidebar-header {
+      background: var(--color-primary);
+      color: var(--color-text-on-primary);
+      padding: 1rem 1.5rem;
+      border-radius: 12px 12px 0 0;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    .sidebar-content {
+      background: var(--color-surface-card);
+      border-radius: 0 0 12px 12px;
+      padding: 1.5rem;
+      border: 1px solid var(--color-border-light);
+      border-top: none;
+    }
+
+    #submenu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #submenu li {
+      margin-bottom: 0.8rem;
+    }
+
+    #submenu a {
+      display: block;
+      padding: 0.6rem 0.8rem;
+      border-radius: 8px;
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all var(--transition-fast);
+    }
+
+    #submenu a:hover {
+      background: var(--color-primary-light);
+      color: var(--color-text-on-primary);
+      transform: translateX(4px);
+    }
+
+    #submenu .active a {
+      background: var(--color-primary);
+      color: var(--color-text-on-primary);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .service-detail-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .services-sidebar {
+        position: relative;
+        top: 0;
+      }
+
+      .carousel-inner .item {
+        font-size: 1.2rem;
+      }
+
+      .carousel-inner .item.small {
+        font-size: 1.1rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .services-detail-page {
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
+
+      .service-detail-main {
+        padding: 1.5rem;
+      }
+
+      .service-detail-heading {
+        font-size: 1.8rem;
+      }
+
+      .service-subheading {
+        font-size: 1.3rem;
+      }
+
+      .service-mini-heading {
+        font-size: 1.2rem;
+      }
+
+      .service-small-heading {
+        font-size: 1.1rem;
+      }
+
+      .carousel-inner {
+        height: 100px;
+      }
+
+      .carousel-inner .item {
+        font-size: 1.1rem;
+      }
+
+      .carousel-inner .item.small {
+        font-size: 1rem;
+      }
+
+      .contact-info h5 {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .carousel-inner {
+        height: 120px;
+      }
+
+      .carousel-inner .item {
+        font-size: 1rem;
+      }
+
+      .service-detail-heading {
+        font-size: 1.6rem;
+      }
+
+      .service-subheading {
+        font-size: 1.2rem;
+      }
+
+      .service-mini-heading {
+        font-size: 1.1rem;
+      }
+    }
+
+    /* Dark Mode */
+    [data-theme="dark"] .service-detail-main {
+      background: var(--color-surface-elevated);
+      border-color: var(--color-border);
+    }
+
+    [data-theme="dark"] .sidebar-content {
+      background: var(--color-surface-elevated);
+      border-color: var(--color-border);
+    }
+
+    [data-theme="dark"] .contact-info {
+      background: var(--color-primary-dark);
+    }
+  </style>
+
+  <!-- Carousel JavaScript -->
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const carouselItems = document.querySelectorAll('.carousel-inner .item');
+      let currentIndex = 0;
+      const intervalTime = 6000; // 6 seconds
+
+      function showNextItem() {
+        // Hide current item
+        carouselItems[currentIndex].classList.remove('active');
+        
+        // Move to next item
+        currentIndex = (currentIndex + 1) % carouselItems.length;
+        
+        // Show next item
+        carouselItems[currentIndex].classList.add('active');
+      }
+
+      // Initialize first item
+      carouselItems[currentIndex].classList.add('active');
+
+      // Start carousel
+      let carouselInterval = setInterval(showNextItem, intervalTime);
+
+      // Pause on hover
+      const carousel = document.getElementById('carousel-text');
+      if (carousel) {
+        carousel.addEventListener('mouseenter', () => {
+          clearInterval(carouselInterval);
+        });
+
+        carousel.addEventListener('mouseleave', () => {
+          carouselInterval = setInterval(showNextItem, intervalTime);
+        });
+      }
+    });
+  </script>
+</Layout>

@@ -1,0 +1,232 @@
+/* ============================================
+   Fee Calculator – custom styles
+   Location: src/styles/pages/resources/fee-calculator.css
+   ============================================ */
+
+.fee-calculator-wrapper {
+  /* Base spacing */
+  margin-bottom: 40px;
+}
+
+/* ----- Form container (replaces inline white background) ----- */
+.calculator-form-container {
+  background: var(--color-surface-lighter);
+  padding: 30px 1px 20px 20px;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+}
+
+/* ----- Dividers (matching brand) ----- */
+.fee-calculator-wrapper .divider-content {
+  width: 60px;
+  height: 3px;
+  background: var(--color-primary);
+  margin: 15px 0 20px;
+}
+
+/* ----- Form elements ----- */
+.fee-calculator-wrapper .form-group {
+  margin-bottom: 20px;
+}
+
+.fee-calculator-wrapper .form-group label {
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.fee-calculator-wrapper select,
+.fee-calculator-wrapper input[type="radio"] + label {
+  margin-left: 10px;
+  margin-right: 28px;
+  cursor: pointer;
+}
+
+.fee-calculator-wrapper select {
+  padding: 6px 12px;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface-light);
+  color: var(--color-text);
+  min-width: 200px;
+}
+
+.fee-calculator-wrapper input[type="radio"] {
+  accent-color: var(--color-primary);
+}
+
+/* ----- Buttons (original .button) ----- */
+.fee-calculator-wrapper .button {
+  background-color: var(--color-primary);
+  border: none;
+  color: white;
+  padding: 10px 27px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 3px 1px;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: background 0.2s;
+}
+
+.fee-calculator-wrapper .button:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* ----- Outline buttons (preserved, not used in calculator but kept for consistency) ----- */
+.fee-calculator-wrapper .btn-outline {
+  color: #ffffff;
+  background-color: transparent;
+  border-color: #ffffff;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  border-radius: 0;
+}
+.fee-calculator-wrapper .btn-outline:hover,
+.fee-calculator-wrapper .btn-outline:active,
+.fee-calculator-wrapper .btn-outline:focus,
+.fee-calculator-wrapper .btn-outline.active {
+  background: #ffffff;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.fee-calculator-wrapper .btn-outline1 {
+  color: #ffffff;
+  background-color: var(--color-primary);
+  border-color: #ffffff;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  border-radius: 0;
+}
+.fee-calculator-wrapper .btn-outline1:hover,
+.fee-calculator-wrapper .btn-outline1:active,
+.fee-calculator-wrapper .btn-outline1:focus,
+.fee-calculator-wrapper .btn-outline1.active {
+  background: #ffffff;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* ----- Quote result display ----- */
+.fee-calculator-wrapper #AccountsQuote,
+.fee-calculator-wrapper #VatQuote,
+.fee-calculator-wrapper #PayrollQuote,
+.fee-calculator-wrapper #PayrollPensionQuote {
+  font-weight: bold;
+  color: var(--color-primary);
+  margin: 5px 0;
+}
+
+.fee-calculator-wrapper #TotalQuote {
+  color: var(--color-primary);
+  font-size: 1.6em;
+  font-weight: 700;
+  margin-top: 15px;
+}
+
+/* ----- Message area (tel link) ----- */
+.fee-calculator-wrapper #msg a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+.fee-calculator-wrapper #msg a:hover {
+  text-decoration: none;
+}
+
+/* ----- Responsive adjustments ----- */
+@media (max-width: 768px) {
+  .fee-calculator-wrapper .form-group .row > div {
+    margin-bottom: 10px;
+  }
+  .fee-calculator-wrapper select {
+    width: 100%;
+  }
+}
+
+/* =========================
+   SERVICES CAROUSEL (unchanged)
+========================= */
+.services-carousel-section {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.carousel-heading {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+}
+
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    animation: scroll 40s linear infinite;
+    will-change: transform;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-240px * 9));
+    }
+}
+
+.service-slide {
+    flex: 0 0 auto;
+    background: var(--color-surface-lighter);
+    padding: 1.5rem;
+    border-radius: 6px;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-border-light);
+}
+
+.service-slide:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-strong);
+    border-color: var(--color-primary);
+}
+
+.service-slide img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.service-slide h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.service-slide a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.service-slide a:hover {
+    color: var(--color-primary-hover);
+    text-decoration: underline;
+}

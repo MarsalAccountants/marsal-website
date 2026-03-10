@@ -1,0 +1,36 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../../styles/main.css";
+
+export interface Props {
+  theme?: "default" | "resources" | "services" | "dark";
+}
+
+const { theme = "default" } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marsal Accountants</title>
+    <!-- Font Awesome for icons (phone, email, etc.) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  </head>
+
+  <body data-theme={theme} style="margin: 0;">
+    <Header />
+
+    <slot name="hero" />
+
+    <main style="max-width: 1200px; margin: 2rem auto; padding: 0 1rem;">
+      <slot />
+    </main>
+
+    <Footer />
+
+    <!-- Browser-only JS -->
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
+</html>

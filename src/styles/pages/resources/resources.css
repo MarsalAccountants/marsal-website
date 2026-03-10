@@ -1,0 +1,328 @@
+/* =========================================================
+   RESOURCES PAGE - MARSAL ACCOUNTANTS
+   Styled to match Services Page design system
+========================================================= */
+
+/* =========================
+   PAGE WRAPPER
+========================= */
+.resources-page {
+    padding-top: 40px;
+    padding-bottom: 80px;
+    background: var(--color-surface);
+    min-height: calc(100vh - 300px);
+}
+
+.resources-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* =========================
+   HEADING & TYPOGRAPHY
+========================= */
+.resources-heading {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    text-align: left;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    position: relative;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.resources-heading::after {
+    content: '';
+    display: table;
+    width: 100px;
+    height: 3px;
+    background: var(--color-primary);
+    border-radius: 2px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    margin-left: 0;
+    margin-right: auto;
+}
+
+/* =========================
+   INTRO TEXT
+========================= */
+.resources-lead {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+.resources-lead strong {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+/* =========================
+   RESOURCES LIST
+========================= */
+.resources-list {
+    max-width: 1000px;
+    margin: 3rem auto 0;
+}
+
+/* =========================
+   RESOURCE ROW
+========================= */
+.resource-row {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 2rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--color-border-light);
+    margin-bottom: 0.5rem;
+    align-items: center;
+
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.resource-row.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================
+   RESOURCE IMAGE
+========================= */
+.resource-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+    border: 3px solid transparent;
+    background-color: var(--color-surface-card);
+    display: block;
+}
+
+.resource-img:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary);
+}
+
+/* =========================
+   RESOURCE CONTENT
+========================= */
+.resource-row > div {
+    padding-right: 1rem;
+}
+
+.resource-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    color: var(--color-text);
+}
+
+.resource-title a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.resource-title a:hover {
+    color: var(--color-primary-dark);
+    text-decoration: underline;
+}
+
+.divider-content-small {
+    width: 60px;
+    height: 3px;
+    background: var(--color-primary);
+    border-radius: 2px;
+    margin: 0.8rem 0 1.2rem;
+}
+
+.resource-row p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+/* =========================
+   BUTTON STYLES
+========================= */
+.btn-more {
+    background: var(--color-primary);
+    color: var(--color-text-on-primary);
+    padding: 0.7rem 1.5rem;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: background var(--transition-fast),
+                transform var(--transition-fast),
+                box-shadow var(--transition-fast);
+    box-shadow: var(--shadow-sm);
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.btn-more:hover {
+    background: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    color: var(--color-text-on-primary);
+    text-decoration: none;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+@media (max-width: 900px) {
+    .resources-heading {
+        font-size: 1.8rem;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .resources-lead {
+        font-size: 1.1rem;
+        padding: 0 15px;
+    }
+
+    .resource-row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        text-align: left;
+        padding: 1.5rem 15px;
+    }
+
+    .resource-img {
+        width: 140px;
+        height: 140px;
+        margin: 0 auto;
+    }
+
+    .resource-title {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    .divider-content-small {
+        margin: 0.8rem auto 1.2rem;
+    }
+
+    .resource-row p {
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .btn-more {
+        display: block;
+        width: fit-content;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .resources-page {
+        padding-top: 20px;
+        padding-bottom: 40px;
+    }
+
+    .resources-heading {
+        font-size: 1.6rem;
+    }
+
+    .resources-lead {
+        font-size: 1rem;
+    }
+
+    .section-divider {
+        margin: 1.5rem auto 2rem;
+    }
+
+    .resource-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .resource-title {
+        font-size: 1.2rem;
+    }
+
+    .resource-row {
+        padding: 1.5rem 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .resource-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .btn-more {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* =========================
+   DARK MODE ENHANCEMENTS
+========================= */
+[data-theme="dark"] .resource-row {
+    border-color: var(--color-border);
+}
+
+[data-theme="dark"] .resource-img {
+    background-color: var(--color-surface-elevated);
+    border: 3px solid var(--color-border-light);
+}
+
+[data-theme="dark"] .resource-img:hover {
+    border-color: var(--color-primary);
+}
+
+[data-theme="dark"] .resources-lead strong {
+    color: var(--color-primary-light);
+}
+
+/* =========================
+   PRINT STYLES
+========================= */
+@media print {
+    .resources-page {
+        padding: 20px 0;
+        background: white;
+    }
+
+    .resource-img {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+
+    .btn-more {
+        display: none;
+    }
+
+    .resource-row {
+        break-inside: avoid;
+        border-bottom: 1px solid #ddd;
+    }
+}

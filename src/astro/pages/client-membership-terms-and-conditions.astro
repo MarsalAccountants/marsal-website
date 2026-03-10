@@ -1,0 +1,266 @@
+---
+import Layout from "../layouts/BaseLayout.astro";
+import "../../styles/themes/tools.css";
+import "../../styles/pages/articles/article-page.css";
+import ContactUs from "../components/ContactUs.astro";
+
+const theme = "resources";
+---
+
+<Layout title="Client Membership Terms & Conditions" theme={theme}>
+  <main class="article-page container">
+
+    <article class="article-content">
+      <h1>Client Membership Terms & Conditions</h1>
+      <p>Below are the terms and conditions governing your membership with Marsal Accountants.</p>
+
+      <!-- Two‑column terms list with modern card styling -->
+      <ol class="terms-list">
+        <li>Membership entitles you to the service level outlined in your selected package.</li>
+        <li>The scope of services is detailed in your Membership Summary.</li>
+        <li>Upon approval, membership confirmation will be issued within 48 hours (excluding weekends/bank holidays). Services may commence from the date you submit your application.</li>
+        <li>Your annual fee includes one retainer payment followed by 11 monthly instalments via standing order.</li>
+        <li>Membership renewal requires an annual fee paid in 12 monthly instalments via standing order.</li>
+        <li>You will receive notice of next year’s fee approximately one month before renewal.</li>
+        <li>We are not responsible for any loss or damage incurred while providing the agreed services.</li>
+        <li>No refund is available if services are not utilised during your active membership period.</li>
+        <li>We reserve the right to amend these terms with one month’s notice sent to your registered trading address.</li>
+        <li>Except as allowed in clause 9, these terms represent our full agreement and may only be altered with mutual written consent.</li>
+        <li>You must notify us if your business turnover increases by more than 10% during your membership term.</li>
+        <li>Service begins from the membership acceptance date. Existing financial matters can be addressed separately at an agreed fee.</li>
+        <li>Membership may not be transferred or assigned without our prior written consent.</li>
+        <li><strong>These terms are governed by Scots law and subject to the exclusive jurisdiction of the Scottish courts.</strong></li>
+        <li>“You” refers to the business named on your form; “We” are Marsal Accountants Ltd, inclusive of our auditing services.</li>
+        <li>Tax guidance is restricted to UK legislation and practices.</li>
+        <li>To cancel, one month’s written notice is required. The final fee covers the transition period or closure work for HMRC.</li>
+        <li>By joining, you authorise Marsal Accountants to contact your previous provider for necessary financial documentation.</li>
+      </ol>
+    </article>
+
+    <!-- ================================
+         SERVICES CAROUSEL & TERMS STYLES
+         ================================ -->
+    <style>
+      /* ----- Modern two‑column terms list (Apple/Fintech style) ----- */
+      .terms-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        list-style: none;
+        padding: 0;
+        margin: 2rem 0 0;
+        counter-reset: terms-counter;
+      }
+
+      .terms-list li {
+        counter-increment: terms-counter;
+        position: relative;
+        background: var(--color-surface-lighter);
+        padding: 1.5rem 1.5rem 1.5rem 3rem;
+        border-radius: 20px;
+        border: 1px solid var(--color-border-light);
+        box-shadow: 0 8px 20px -12px rgba(0, 0, 0, 0.15);
+        transition: all 0.25s ease;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--color-text);
+        backdrop-filter: blur(2px);
+      }
+
+      .terms-list li:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 16px 30px -16px rgba(0, 0, 0, 0.25);
+        border-color: var(--color-primary);
+      }
+
+      .terms-list li::before {
+        content: counter(terms-counter);
+        position: absolute;
+        left: 1rem;
+        top: 1.5rem;
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: var(--color-primary);
+        background: rgba(46, 139, 62, 0.08);
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--color-primary-light);
+        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      }
+
+      @media (max-width: 700px) {
+        .terms-list {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+        .terms-list li {
+          padding: 1.2rem 1.2rem 1.2rem 3rem;
+        }
+        .terms-list li::before {
+          top: 1.2rem;
+        }
+      }
+
+      /* ----- Carousel styles (unchanged) ----- */
+      .services-carousel-section {
+        margin-top: 4rem;
+        text-align: center;
+      }
+
+      .carousel-heading {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--color-text);
+        margin-bottom: 1rem;
+      }
+
+      .carousel-container {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        padding: 20px 0;
+        pointer-events: auto;
+      }
+
+      .carousel-track {
+        display: flex;
+        gap: 20px;
+        animation: scroll 40s linear infinite;
+        will-change: transform;
+        pointer-events: auto;
+      }
+
+      @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-240px * 9)); }
+      }
+
+      .service-slide {
+        flex: 0 0 auto;
+        background: var(--color-surface-lighter);
+        padding: 1.5rem;
+        border-radius: 6px;
+        box-shadow: var(--shadow-soft);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--color-border-light);
+        pointer-events: auto;
+      }
+
+      .service-slide:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-strong);
+        border-color: var(--color-primary);
+      }
+
+      .service-slide img {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+        margin-bottom: 1rem;
+      }
+
+      .service-slide h4 {
+        font-size: 1rem;
+        font-weight: 700;
+        margin: 0;
+        text-align: center;
+        line-height: 1.4;
+      }
+
+      .service-slide a {
+        color: var(--color-primary);
+        text-decoration: none;
+        transition: color 0.2s ease;
+        pointer-events: auto;
+      }
+
+      .service-slide a:hover {
+        color: var(--color-primary-hover);
+        text-decoration: underline;
+      }
+    </style>
+
+    <!-- ================================
+         SERVICES CAROUSEL
+         ================================ -->
+    <section class="services-carousel-section">
+      <h2 class="carousel-heading">Explore Our Services</h2>
+      <div class="section-divider"></div>
+
+      <div class="carousel-container">
+        <div class="carousel-track">
+          <div class="service-slide">
+            <a href="/services/accounting/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/accounts-icon.png" alt="Accounting Services">
+              <h4>Accounting Services</h4>
+            </a>
+          </div>
+          <div class="service-slide">
+            <a href="/services/bookkeeping/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/bookkeeping-icon.png" alt="Bookkeeping Services">
+              <h4>Bookkeeping Services</h4>
+            </a>
+          </div>
+          <div class="service-slide">
+            <a href="/services/management-accounts/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/mngt-accounts-icon.png" alt="Management Accounts">
+              <h4>Management Accounts</h4>
+            </a>
+          </div>
+          <div class="service-slide">
+            <a href="/services/payroll/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/payroll-services-icon.png" alt="Payroll Services">
+              <h4>Payroll Services</h4>
+            </a>
+          </div>
+          <div class="service-slide">
+            <a href="/services/property-accounts/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/property-accounts-icon.png" alt="Property Accounts">
+              <h4>Property Accounts</h4>
+            </a>
+          </div>
+          <div class="service-slide">
+            <a href="/services/self-assessment-tax-returns/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/self-assessment-tax-returns-icon.png" alt="Self Assessment">
+              <h4>Self Assessment</h4>
+            </a>
+          </div>
+          <div class="service-slide">
+            <a href="/services/business-setup/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/starting-new-business-icon.png" alt="Starting New Business">
+              <h4>Starting New Business</h4>
+            </a>
+          </div>
+          <div class="service-slide">
+            <a href="/services/tax-investigation/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/tax-investigation-icon.png" alt="Tax Investigation">
+              <h4>Tax Investigation</h4>
+            </a>
+          </div>
+          <div class="service-slide">
+            <a href="/services/vat/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/value-added-icon.png" alt="VAT Services">
+              <h4>VAT Services</h4>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================
+         CONTACT US
+         ================================ -->
+    <section style="margin-top: 4rem;">
+      <ContactUs />
+    </section>
+  </main>
+</Layout>

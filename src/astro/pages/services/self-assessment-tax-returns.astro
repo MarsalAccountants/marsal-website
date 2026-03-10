@@ -1,0 +1,713 @@
+---
+// D:\Marsals\website\src\pages\services\self-assessment-tax-returns.astro
+
+import Layout from "../../layouts/BaseLayout.astro";
+import ContactUs from "../../components/ContactUs.astro";
+
+// Sidebar menu items - Self Assessment Tax Returns is active
+const sidebarItems = [
+  { text: "Accounting Services", href: "/services/accounting/" },
+  { text: "Bookkeeping Services", href: "/services/bookkeeping/" },
+  { text: "Management Accounts Services", href: "/services/management-accounts/" },
+  { text: "Payroll Services", href: "/services/payroll/" },
+  { text: "Property Accounts Services", href: "/services/property-accounts/" },
+  { text: "Self Assessment Tax Returns", href: "/services/self-assessment-tax-returns/", active: true },
+  { text: "Corporation Tax Return", href: "/services/corporation-tax-return-services/" },
+  { text: "Starting New Business", href: "/services/business-setup/" },
+  { text: "Tax Investigation", href: "/services/tax-investigation/" },
+  { text: "Value Added Tax Services", href: "/services/vat/" },
+];
+
+// Carousel items (same as other pages)
+const carouselItems = [
+  { text: "<strong>QUALITY</strong> SERVICE DELIVERED ON TIME" },
+  { text: "<strong>FREE PHONE</strong> HELP LINE ON DAY TO DAY ACCOUNTING, TAX, EMPLOYMENT ISSUES......." },
+  { text: "WE COLLECT &amp; RETURN YOUR <strong>DOCUMENTS</strong>" },
+  { text: "FIXED COMPETITIVE FEES FOR ALL <strong>SERVICES</strong>" },
+  { text: "DEDICATED CONSULTANT WHO VISITS YOU REGULARLY MAKING SURE YOUR <strong>ACCOUNTING &amp; TAX AFFAIRS</strong> ARE UP TO DATE", class: "small" },
+  { text: "WE ARE CARING <strong>ACCOUNTANTS</strong>..... WE PUT OURSELVES IN YOUR SHOES" },
+  { text: "<strong>ACCOUNTANTS</strong> WHO SPEAK AND UNDERSTAND YOUR LANGUAGE" },
+  { text: "WE VISIT YOU TO DISCUSS <strong>ACCOUNTS</strong>" },
+];
+---
+
+<Layout title="Accountant For Tax Returns | Marsal Accountants Paisley">
+  <main class="services-detail-page">
+    
+    <!-- Carousel Section -->
+    <div class="carousel-section">
+      <div id="carousel-text" class="carousel">
+        <div class="carousel-inner">
+          {carouselItems.map((item, index) => (
+            <div 
+              class={`item ${index === 0 ? 'active' : ''} ${item.class || ''}`}
+              key={index}
+              set:html={item.text}
+            />
+          ))}
+        </div>
+      </div>
+      <hr class="carousel-divider">
+    </div>
+
+    <!-- Main Content Container -->
+    <div class="service-detail-container">
+      <div class="service-detail-grid">
+        
+        <!-- Main Content Column -->
+        <div class="service-detail-main">
+          <h2 class="service-detail-heading">Accountant For Tax Returns</h2>
+          <div class="divider-content"></div>
+          
+          <div class="service-detail-content">
+            <p>Self-Assessment tax returns can feel overwhelming — from registration to understanding taxable income and deductions, accuracy is key to avoiding penalties.</p>
+            
+            <p>At Marsal Accountants, we've logged hundreds of hours helping sole traders, landlords, and directors file their tax returns with confidence. We focus on clarity, compliance, and tax efficiency — without the jargon.</p>
+
+            <h4 class="service-mini-heading">Our Specialised Services</h4>
+            <div class="divider-content-small"></div>
+            
+            <ul class="content-bullet">
+              <li>Tailored guidance for sole traders, directors, and property investors</li>
+              <li>Support for self-employed individuals, partnerships, and landlords</li>
+              <li>Tax return optimisation to reduce liabilities where possible</li>
+              <li>Serving clients across the UK — remote or in-person</li>
+            </ul>
+
+            <h4 class="service-mini-heading">Why Choose Marsal Accountants?</h4>
+            <div class="divider-content-small"></div>
+            
+            <ul class="content-bullet">
+              <li>Hands-on experience with real client scenarios</li>
+              <li>Personalised service for freelancers, directors, and landlords</li>
+              <li>Transparent pricing and proactive communication</li>
+            </ul>
+
+            <h4 class="service-mini-heading">Who Needs to File a Self Assessment Tax Return?</h4>
+            <div class="divider-content-small"></div>
+            
+            <p>If you've earned untaxed income — or your earnings aren't taxed at source — you may need to file. This includes:</p>
+            
+            <ul class="content-bullet">
+              <li>Sole traders earning over £1,000</li>
+              <li>Partners in a business partnership</li>
+              <li>Rental income from property</li>
+              <li>Income from savings, investments, or dividends</li>
+              <li>Foreign income</li>
+              <li>Claiming tax reliefs</li>
+              <li>Receiving child benefit with income over £50,000</li>
+            </ul>
+
+            <h4 class="service-mini-heading">How Much Does an Accountant Charge for Tax Returns?</h4>
+            <div class="divider-content-small"></div>
+            
+            <p>Our fees are based on income level and complexity. We include tax planning with every return.</p>
+            
+            <h5 class="service-small-heading">Individual Self Assessment Tax Return</h5>
+            
+            <div class="pricing-table">
+              <table class="fee-table">
+                <thead>
+                  <tr>
+                    <th>Annual Income £</th>
+                    <th>Fees ex VAT</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>Up to £79k</td><td>£175</td></tr>
+                  <tr><td>£80k – £124k</td><td>£200</td></tr>
+                  <tr><td>£125k +</td><td>£250</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h5 class="service-small-heading">Partnership Tax Return + 2 Partners</h5>
+            
+            <div class="pricing-table">
+              <table class="fee-table">
+                <thead>
+                  <tr>
+                    <th>Combined Annual Income £</th>
+                    <th>Fees ex VAT</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>£0 – £99k</td><td>£350</td></tr>
+                  <tr><td>£100k – £149k</td><td>£400</td></tr>
+                  <tr><td>£150k – £199k</td><td>£500</td></tr>
+                  <tr><td>£200k +</td><td>£600</td></tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <p class="table-note"><strong>Each additional partner: £175 ex VAT</strong></p>
+
+            <h4 class="service-mini-heading">Our Tax Return Process</h4>
+            <div class="divider-content-small"></div>
+            
+            <ul class="content-bullet">
+              <li>We'll contact you in May to begin gathering your tax info</li>
+              <li>You provide records for income, gains, reliefs, and deductions</li>
+              <li>We follow up via phone, email, and letter to ensure nothing is missed</li>
+            </ul>
+
+            <h4 class="service-mini-heading">What You'll Receive</h4>
+            <div class="divider-content-small"></div>
+            
+            <ul class="content-bullet">
+              <li>Online filing to HMRC before deadlines</li>
+              <li>Copies of your return and supporting schedules</li>
+              <li>Inclusion of all income types and reliefs</li>
+              <li>Discussion of your tax liability and planning opportunities</li>
+              <li>Return of your documents</li>
+              <li>Unlimited advice on accounting and tax matters</li>
+            </ul>
+
+            <div class="contact-info">
+              <h4>Contact Us</h4>
+              <div class="contact-details">
+                <div class="contact-item">
+                  <span class="contact-label">Call us on:</span>
+                  <a href="tel:07468641272" class="contact-link">074-6864-1272</a>
+                </div>
+                <div class="contact-item">
+                  <span class="contact-label">E-mail us at:</span>
+                  <a href="mailto:info@marsalaccountants.co.uk" class="contact-link">info@marsalaccountants.co.uk</a>
+                </div>
+              </div>
+              <p class="contact-note">We'll be happy to assist you with your tax return.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar Column -->
+        <aside class="services-sidebar">
+          <div class="sidebar-header">
+            <h3>Services</h3>
+          </div>
+          <div class="sidebar-content">
+            <ul id="submenu">
+              {sidebarItems.map((item) => (
+                <li class={item.active ? 'active' : ''}>
+                  <a href={item.href}>{item.text}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+
+    <!-- Contact Us Component -->
+    <ContactUs />
+
+  </main>
+
+  <style is:global>
+    /* Service Detail Page Styles */
+    .services-detail-page {
+      padding-top: 40px;
+      padding-bottom: 80px;
+      background: var(--color-surface);
+      min-height: calc(100vh - 300px);
+    }
+
+    /* Carousel Styles */
+    .carousel-section {
+      max-width: 1200px;
+      margin: 0 auto 3rem;
+      padding: 0 20px;
+    }
+
+    #carousel-text {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .carousel-inner {
+      position: relative;
+      height: 80px;
+      overflow: hidden;
+    }
+
+    .carousel-inner .item {
+      position: absolute;
+      width: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--color-text);
+      line-height: 1.6;
+      top: 0;
+      left: 0;
+    }
+
+    .carousel-inner .item.active {
+      opacity: 1;
+    }
+
+    .carousel-inner .item.small {
+      font-size: 1.2rem;
+    }
+
+    .carousel-inner strong {
+      color: var(--color-primary);
+      font-weight: 700;
+    }
+
+    .carousel-divider {
+      max-width: 800px;
+      height: 1px;
+      margin: 2.5rem auto;
+      background: linear-gradient(90deg, 
+          transparent 0%, 
+          var(--color-border) 20%, 
+          var(--color-border) 80%, 
+          transparent 100%);
+      border: none;
+      opacity: 0.8;
+    }
+
+    /* Main Container */
+    .service-detail-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .service-detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 3rem;
+    }
+
+    /* Main Content Styles */
+    .service-detail-main {
+      background: var(--color-surface-card);
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--color-border-light);
+    }
+
+    .service-detail-heading {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .service-subheading {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-text);
+      margin: 2rem 0 1rem;
+    }
+
+    .service-mini-heading {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      margin: 2rem 0 0.5rem;
+    }
+
+    .service-small-heading {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--color-text);
+      margin: 1.5rem 0 0.8rem;
+    }
+
+    .service-detail-content p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--color-text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Divider Styles */
+    .divider-content {
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, 
+          var(--color-primary) 0%, 
+          var(--color-primary-light) 50%, 
+          var(--color-primary) 100%);
+      margin: 1.5rem 0 2rem;
+      border-radius: 2px;
+    }
+
+    .divider-content-small {
+      width: 80px;
+      height: 3px;
+      background: var(--color-primary);
+      border-radius: 2px;
+      margin: 0.8rem 0 1.5rem;
+    }
+
+    /* Bulleted List */
+    .content-bullet {
+      list-style: none;
+      padding-left: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .content-bullet li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.8rem;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: var(--color-text-secondary);
+    }
+
+    .content-bullet li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--color-primary);
+      font-weight: bold;
+    }
+
+    /* Pricing Tables */
+    .pricing-table {
+      margin: 1.5rem 0;
+      overflow-x: auto;
+    }
+
+    .fee-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 1rem;
+    }
+
+    .fee-table thead {
+      background-color: var(--color-primary);
+    }
+
+    .fee-table th {
+      padding: 1rem;
+      text-align: left;
+      color: var(--color-text-on-primary);
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .fee-table tbody tr {
+      border-bottom: 1px solid var(--color-border-light);
+      transition: background-color var(--transition-fast);
+    }
+
+    .fee-table tbody tr:hover {
+      background-color: var(--color-primary-light);
+    }
+
+    .fee-table tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    .fee-table td {
+      padding: 1rem;
+      color: var(--color-text-secondary);
+      font-size: 1rem;
+    }
+
+    .fee-table td:first-child {
+      font-weight: 500;
+      color: var(--color-text);
+    }
+
+    .fee-table td:last-child {
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+
+    .table-note {
+      font-size: 1rem;
+      color: var(--color-text);
+      margin-top: -0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Contact Info */
+    .contact-info {
+      background: var(--color-primary-light);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+
+    .contact-info h4 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .contact-label {
+      font-weight: 600;
+      color: var(--color-text);
+    }
+
+    .contact-link {
+      font-size: 1.1rem;
+      color: var(--color-primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color var(--transition-fast);
+    }
+
+    .contact-link:hover {
+      color: var(--color-primary-dark);
+      text-decoration: underline;
+    }
+
+    .contact-note {
+      font-size: 1rem;
+      color: var(--color-text);
+      font-style: italic;
+      text-align: center;
+      margin-top: 1rem;
+      margin-bottom: 0;
+    }
+
+    /* Sidebar Styles */
+    .services-sidebar {
+      position: sticky;
+      top: 100px;
+      height: fit-content;
+    }
+
+    .sidebar-header {
+      background: var(--color-primary);
+      color: var(--color-text-on-primary);
+      padding: 1rem 1.5rem;
+      border-radius: 12px 12px 0 0;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    .sidebar-content {
+      background: var(--color-surface-card);
+      border-radius: 0 0 12px 12px;
+      padding: 1.5rem;
+      border: 1px solid var(--color-border-light);
+      border-top: none;
+    }
+
+    #submenu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #submenu li {
+      margin-bottom: 0.8rem;
+    }
+
+    #submenu a {
+      display: block;
+      padding: 0.6rem 0.8rem;
+      border-radius: 8px;
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all var(--transition-fast);
+    }
+
+    #submenu a:hover {
+      background: var(--color-primary-light);
+      color: var(--color-text-on-primary);
+      transform: translateX(4px);
+    }
+
+    #submenu .active a {
+      background: var(--color-primary);
+      color: var(--color-text-on-primary);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .service-detail-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .services-sidebar {
+        position: relative;
+        top: 0;
+      }
+
+      .carousel-inner .item {
+        font-size: 1.2rem;
+      }
+
+      .carousel-inner .item.small {
+        font-size: 1.1rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .services-detail-page {
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
+
+      .service-detail-main {
+        padding: 1.5rem;
+      }
+
+      .service-detail-heading {
+        font-size: 1.8rem;
+      }
+
+      .service-subheading {
+        font-size: 1.3rem;
+      }
+
+      .service-mini-heading {
+        font-size: 1.2rem;
+      }
+
+      .service-small-heading {
+        font-size: 1.1rem;
+      }
+
+      .carousel-inner {
+        height: 100px;
+      }
+
+      .carousel-inner .item {
+        font-size: 1.1rem;
+      }
+
+      .carousel-inner .item.small {
+        font-size: 1rem;
+      }
+
+      .contact-details {
+        flex-direction: column;
+      }
+
+      .contact-item {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.25rem;
+      }
+
+      .fee-table th,
+      .fee-table td {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .carousel-inner {
+        height: 120px;
+      }
+
+      .carousel-inner .item {
+        font-size: 1rem;
+      }
+
+      .service-detail-heading {
+        font-size: 1.6rem;
+      }
+
+      .service-subheading {
+        font-size: 1.2rem;
+      }
+
+      .service-mini-heading {
+        font-size: 1.1rem;
+      }
+
+      .service-small-heading {
+        font-size: 1rem;
+      }
+    }
+
+    /* Dark Mode */
+    [data-theme="dark"] .service-detail-main {
+      background: var(--color-surface-elevated);
+      border-color: var(--color-border);
+    }
+
+    [data-theme="dark"] .sidebar-content {
+      background: var(--color-surface-elevated);
+      border-color: var(--color-border);
+    }
+
+    [data-theme="dark"] .contact-info {
+      background: var(--color-primary-dark);
+    }
+
+    [data-theme="dark"] .fee-table thead {
+      background-color: var(--color-primary-dark);
+    }
+
+    [data-theme="dark"] .fee-table tbody tr:hover {
+      background-color: var(--color-primary-dark);
+    }
+  </style>
+
+  <!-- Carousel JavaScript -->
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const carouselItems = document.querySelectorAll('.carousel-inner .item');
+      let currentIndex = 0;
+      const intervalTime = 6000; // 6 seconds
+
+      function showNextItem() {
+        // Hide current item
+        carouselItems[currentIndex].classList.remove('active');
+        
+        // Move to next item
+        currentIndex = (currentIndex + 1) % carouselItems.length;
+        
+        // Show next item
+        carouselItems[currentIndex].classList.add('active');
+      }
+
+      // Initialize first item
+      carouselItems[currentIndex].classList.add('active');
+
+      // Start carousel
+      let carouselInterval = setInterval(showNextItem, intervalTime);
+
+      // Pause on hover
+      const carousel = document.getElementById('carousel-text');
+      if (carousel) {
+        carousel.addEventListener('mouseenter', () => {
+          clearInterval(carouselInterval);
+        });
+
+        carousel.addEventListener('mouseleave', () => {
+          carouselInterval = setInterval(showNextItem, intervalTime);
+        });
+      }
+    });
+  </script>
+</Layout>

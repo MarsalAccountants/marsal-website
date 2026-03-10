@@ -1,0 +1,227 @@
+/* ===============================
+   FAQ SECTION
+=============================== */
+
+.faq-section {
+  padding: 4rem 0;
+  background: var(--color-surface);
+}
+
+.faq-section h2 {
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+  color: #2e8b3e; 
+}
+
+.faq-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+/* ===============================
+   FAQ ITEM – container (no background)
+=============================== */
+.faq-item {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===============================
+   QUESTION BUTTON – Apple‑style banner
+=============================== */
+.faq-section .faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 18px 30px;
+  background: linear-gradient(
+    to right,
+    var(--color-surface-lighter),
+    var(--color-surface)
+  );
+  border: none;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  box-shadow: 0 4px 12px -8px rgba(0, 0, 0, 0.2);
+  border-bottom: 2px solid var(--color-primary-light, rgba(0,113,227,0.3));
+  transition: all 0.25s ease;
+  cursor: pointer;
+  text-align: left;
+}
+
+/* Hover effect – lift and stronger border */
+.faq-section .faq-question:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.3);
+  border-bottom-color: var(--color-primary);
+}
+
+/* Active (open) state – reverse gradient */
+.faq-item.active .faq-question {
+  background: linear-gradient(
+    to right,
+    var(--color-surface),
+    var(--color-surface-lighter)
+  );
+  border-bottom-color: var(--color-primary);
+}
+
+/* Icon – theme primary, rotates on open */
+.faq-section .faq-icon {
+  font-size: 1.25rem;
+  color: var(--color-primary);
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+/* ===============================
+   ANSWER CONTENT – with background and padding
+=============================== */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0 1.5rem;
+  background: var(--color-surface-lighter); /* matches accordion panel body */
+  border-radius: 0 0 14px 14px; /* soft corners at bottom */
+  margin-top: -2px; /* pulls up to touch the banner's bottom border */
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px; /* adjust if content is longer */
+  padding: 1.5rem 1.5rem 1.5rem;
+}
+
+.faq-answer p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+/* ===============================
+   RESPONSIVE
+=============================== */
+@media (max-width: 768px) {
+  .faq-grid {
+    gap: 0.75rem;
+  }
+  
+  .faq-section .faq-question {
+    padding: 16px 20px;
+    font-size: 1rem;
+  }
+  
+  .faq-item.active .faq-answer {
+    padding: 1.2rem;
+  }
+}
+
+/* ===============================
+   ABOUT SECTION (unchanged)
+=============================== */
+.about-section {
+  padding: 4rem 0;
+  background: var(--color-surface-alt);
+}
+
+.about-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Two-column */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  align-items: stretch; 
+}
+
+/* Card styling */
+.about-card {
+  background: var(--color-surface);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 2px solid rgba(148, 142, 142, 0.12);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  height: 100%; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Headings */
+.about-card h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+/* Divider */
+.about-divider {
+  width: 60px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--color-accent);
+  margin: 0.75rem 0 1.5rem;
+}
+
+/* Text */
+.about-card p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin-bottom: 1rem;
+}
+
+.about-card strong {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* List styling */
+.about-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.about-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.6rem;
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+}
+
+.about-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}

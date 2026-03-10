@@ -1,0 +1,377 @@
+---
+import Layout from "../layouts/BaseLayout.astro";
+import "../../styles/themes/tools.css";
+import "../../styles/pages/articles/article-page.css";
+import ContactUs from "../components/ContactUs.astro";
+
+const theme = "resources";
+---
+
+<Layout title="Forms" theme={theme}>
+  <main class="article-page container">
+
+    <!-- ================================
+         PAGE HEADER
+    ================================ -->
+    <section style="margin-bottom: 2rem;">
+      <h1 style="font-size: 2.8rem; font-weight: 700; letter-spacing: -0.02em; color: var(--color-text); margin-bottom: 0.25rem;">
+        Forms
+      </h1>
+      <p style="font-size: 1.2rem; color: var(--color-text-light); margin-top: 0.25rem;">
+        Download important HMRC, Companies House and payroll forms.
+      </p>
+    </section>
+
+    <!-- ================================
+         ACCORDION STYLES (Apple/Fintech)
+    ================================ -->
+    <style>
+      /* ----- Reset default accordion styles ----- */
+      .accordion {
+        margin-bottom: 1rem;
+        border: none;
+        background: transparent;
+      }
+
+      /* ----- Apple‑style banner for headers ----- */
+      .accordion-header {
+        display: block;
+        width: 100%;
+        padding: 18px 30px;
+        background: linear-gradient(
+          to right,
+          var(--color-surface-lighter),
+          var(--color-surface)
+        );
+        border: none;
+        border-radius: 14px;
+        font-weight: 600;
+        font-size: 1.2rem;
+        letter-spacing: -0.02em;
+        color: var(--color-text);
+        box-shadow: 0 4px 12px -8px rgba(0, 0, 0, 0.2);
+        border-bottom: 2px solid var(--color-primary-light, rgba(0,113,227,0.3));
+        transition: all 0.25s ease;
+        cursor: pointer;
+        text-align: left;
+      }
+
+      /* Hover effect – lift and stronger border */
+      .accordion-header:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.3);
+        border-bottom-color: var(--color-primary);
+      }
+
+      /* Open state – reverse gradient and accent border */
+      .accordion.open .accordion-header {
+        background: linear-gradient(
+          to right,
+          var(--color-surface),
+          var(--color-surface-lighter)
+        );
+        border-bottom-color: var(--color-primary);
+        border-radius: 14px 14px 0 0;  /* flat bottom when open */
+      }
+
+      /* ----- Content area styling (consistent with FAQ) ----- */
+      .accordion-content {
+        display: none;
+        padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+        background: var(--color-surface-lighter);
+        border-radius: 0 0 14px 14px;
+        border: 1px solid var(--color-border-light);
+        border-top: none;
+        animation: fadeIn 0.3s ease;
+      }
+
+      .accordion.open .accordion-content {
+        display: block;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-5px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      /* ----- Forms list styling (clean, modern) ----- */
+      .forms-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .forms-list li {
+        margin-bottom: 0.75rem;
+        padding-left: 1.5rem;
+        position: relative;
+      }
+
+      .forms-list li::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        top: 0.1rem;
+        color: var(--color-primary);
+        font-weight: 600;
+        font-size: 1rem;
+      }
+
+      .forms-list a {
+        color: var(--color-primary);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s ease;
+      }
+
+      .forms-list a:hover {
+        color: var(--color-primary-hover);
+        text-decoration: underline;
+      }
+
+      /* ----- Carousel styles (unchanged) ----- */
+      .services-carousel-section {
+        margin-top: 4rem;
+        text-align: center;
+      }
+
+      .carousel-heading {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--color-text);
+        margin-bottom: 1rem;
+      }
+
+      .carousel-container {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        padding: 20px 0;
+        pointer-events: auto;
+      }
+
+      .carousel-track {
+        display: flex;
+        gap: 20px;
+        animation: scroll 40s linear infinite;
+        will-change: transform;
+        pointer-events: auto;
+      }
+
+      @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-240px * 9)); }
+      }
+
+      .service-slide {
+        flex: 0 0 auto;
+        background: var(--color-surface-lighter);
+        padding: 1.5rem;
+        border-radius: 6px;
+        box-shadow: var(--shadow-soft);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--color-border-light);
+        pointer-events: auto;
+      }
+
+      .service-slide:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-strong);
+        border-color: var(--color-primary);
+      }
+
+      .service-slide img {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+        margin-bottom: 1rem;
+      }
+
+      .service-slide h4 {
+        font-size: 1rem;
+        font-weight: 700;
+        margin: 0;
+        text-align: center;
+        line-height: 1.4;
+      }
+
+      .service-slide a {
+        color: var(--color-primary);
+        text-decoration: none;
+        transition: color 0.2s ease;
+        pointer-events: auto;
+      }
+
+      .service-slide a:hover {
+        color: var(--color-primary-hover);
+        text-decoration: underline;
+      }
+    </style>
+
+    <!-- ================================
+         ACCORDION JS
+    ================================ -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".accordion-header").forEach(header => {
+          header.addEventListener("click", () => {
+            header.parentElement.classList.toggle("open");
+          });
+        });
+      });
+    </script>
+
+    <!-- ================================
+         ACCORDION SECTIONS
+    ================================ -->
+
+    <!-- GENERAL -->
+    <div class="accordion">
+      <div class="accordion-header">GENERAL</div>
+      <div class="accordion-content">
+        <ul class="forms-list">
+          <li><a href="/forms/1371559675wpdm_64-8.pdf" download>64-8 – Registering Marsal Accountants as your Agent</a></li>
+          <li><a href="/forms/cwf1.pdf" download>CWF1 – Registering for Self Employment (Registering Marsal Accountants as your Agent)</a></li>
+          <li><a href="/forms/sa1.pdf" download>SA1 – Registering for Self Assessment (Registering Marsal Accountants as your Agent)</a></li>
+          <li><a href="/forms/sa400.pdf" download>SA400 – Registering a Partnership (Registering Marsal Accountants as your Agent)</a></li>
+          <li><a href="/forms/sa401.pdf" download>SA401 – Registering a Partner (Registering Marsal Accountants as your Agent)</a></li>
+          <li><a href="/forms/1371709854wpdm_sa402.pdf" download>SA402 – Registering a Non‑Individual Partner (Registering Marsal Accountants as your Agent)</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PAYROLL -->
+    <div class="accordion">
+      <div class="accordion-header">PAYROLL</div>
+      <div class="accordion-content">
+        <ul class="forms-list">
+          <li><a href="/forms/p11d.pdf" download>P11D – Expenses & Benefits</a></li>
+          <li><a href="/forms/p46_new_employee.pdf" download>P46 – New Employee Starter</a></li>
+          <li><a href="/forms/paye_registration_ltd_co..pdf" download>PAYE Registration – LTD Company (Registering Marsal Accountants as your Agent)</a></li>
+          <li><a href="/forms/paye_registration_partnership.pdf" download>PAYE Registration – Partnership (Registering Marsal Accountants as your Agent)</a></li>
+          <li><a href="/forms/paye_registration_sole_trader.pdf" download>PAYE Registration – Sole Trader (Registering Marsal Accountants as your Agent)</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- COMPANY HOUSE -->
+    <div class="accordion">
+      <div class="accordion-header">COMPANY HOUSE</div>
+      <div class="accordion-content">
+        <ul class="forms-list">
+          <li><a href="/forms/aa01_change_of_accounting_reference_date.pdf" download>AA01 – Change of Accounting Reference Date</a></li>
+          <li><a href="/forms/ap01_appointment_of_director.pdf" download>AP01 – Appointment of Director</a></li>
+          <li><a href="/forms/tm01_termination_of_appointment_of_director.pdf" download>TM01 – Termination of Director</a></li>
+          <li><a href="/forms/ad01_change_of_registered_office_address.pdf" download>AD01 – Change of Registered Office</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TAX -->
+    <div class="accordion">
+      <div class="accordion-header">TAX</div>
+      <div class="accordion-content">
+        <ul class="forms-list">
+          <li><a href="/forms/ct600-2008.pdf" download>CT600 – Company Tax Return</a></li>
+          <li><a href="/forms/ct41g_new_company_enquiry.pdf" download>CT41G – New Company Tax Info</a></li>
+          <li><a href="/forms/sa100.pdf" download>SA100 – Individual Tax Return</a></li>
+          <li><a href="/forms/sa800.pdf" download>SA800 – Partnership Tax Return</a></li>
+          <li><a href="/forms/sa900.pdf" download>SA900 – Trust & Estate Tax Return</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- VAT -->
+    <div class="accordion">
+      <div class="accordion-header">VAT</div>
+      <div class="accordion-content">
+        <ul class="forms-list">
+          <li><a href="/forms/request-for-transfer-of-a-registration-number-vat68.pdf" download>VAT68 – Transfer VAT Number</a></li>
+          <li><a href="/forms/vat1-application-for-registration-vat1.pdf" download>VAT1 – VAT Registration (Registering Marsal Accountants as your Agent)</a></li>
+          <li><a href="/forms/vat7-pplication-to-cancel-your-vat-registration-vat7.pdf" download>VAT7 – Cancel VAT Registration</a></li>
+          <li><a href="/forms/vat2.pdf" download>VAT2 – Partnership VAT Details (Registering Marsal Accountants as your Agent)</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ================================
+         SERVICES CAROUSEL
+    ================================ -->
+    <section class="services-carousel-section" style="margin-top: 4rem;">
+      <h2 class="carousel-heading">Explore Our Services</h2>
+      <div class="section-divider"></div>
+
+      <div class="carousel-container">
+        <div class="carousel-track">
+          <div class="service-slide">
+            <a href="/services/accounting/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/accounts-icon.png" alt="Accounting Services">
+              <h4>Accounting Services</h4>
+            </a>
+          </div>
+          <div class="service-slide">
+            <a href="/services/bookkeeping/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/bookkeeping-icon.png" alt="Bookkeeping Services">
+              <h4>Bookkeeping Services</h4>
+            </a>
+          </div>
+          <div class="service-slide">
+            <a href="/services/management-accounts/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/mngt-accounts-icon.png" alt="Management Accounts">
+              <h4>Management Accounts</h4>
+            </a>
+          </div>
+          <div class="service-slide">
+            <a href="/services/payroll/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/payroll-services-icon.png" alt="Payroll Services">
+              <h4>Payroll Services</h4>
+            </a>
+          </div>
+          <div class="service-slide">
+            <a href="/services/property-accounts/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/property-accounts-icon.png" alt="Property Accounts">
+              <h4>Property Accounts</h4>
+            </a>
+          </div>
+          <div class="service-slide">
+            <a href="/services/self-assessment-tax-returns/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/self-assessment-tax-returns-icon.png" alt="Self Assessment">
+              <h4>Self Assessment</h4>
+            </a>
+          </div>
+          <div class="service-slide">
+            <a href="/services/business-setup/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/starting-new-business-icon.png" alt="Starting New Business">
+              <h4>Starting New Business</h4>
+            </a>
+          </div>
+          <div class="service-slide">
+            <a href="/services/tax-investigation/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/tax-investigation-icon.png" alt="Tax Investigation">
+              <h4>Tax Investigation</h4>
+            </a>
+          </div>
+          <div class="service-slide">
+            <a href="/services/vat/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/value-added-icon.png" alt="VAT Services">
+              <h4>VAT Services</h4>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================
+         CONTACT US
+    ================================ -->
+    <section style="margin-top: 4rem;">
+      <ContactUs />
+    </section>
+
+  </main>
+</Layout>

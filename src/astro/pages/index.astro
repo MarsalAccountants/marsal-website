@@ -1,0 +1,40 @@
+<!doctype html>
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import WelcomeText from "../components/WelcomeText.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import Insights from "../components/Insights.astro";
+import About from "../components/About.astro";
+import Reviews from "../components/Reviews.astro";
+import PricingAccounts from "../components/PricingAccounts.astro";
+import ContactUs from "../components/ContactUs.astro";
+---
+
+<BaseLayout>
+
+  <!-- HERO appears directly under the header -->
+  <Hero slot="hero" />
+
+  <!-- WELCOME TEXT appears right under the hero -->
+  <WelcomeText />
+
+ <!-- SERVICES SECTION appears under welcome text -->
+  <ServiceCard />
+
+ <!-- INSIGHTS SECTION appears under welcome text -->
+  <Insights />
+
+<!-- ABOUT SECTION appears under welcome text -->
+  <About />
+  <!-- REVIEWS SECTION appears under welcome text -->
+  <Reviews
+   />
+
+ <!-- Pricing Accounts SECTION appears under welcome text -->
+  <PricingAccounts />
+
+  <!-- CONTACTUS SECTION appears under welcome text -->
+  <ContactUs />
+
+</BaseLayout>

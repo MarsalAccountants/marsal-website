@@ -1,0 +1,232 @@
+/* ===============================
+   SERVICES SECTION
+=============================== */
+
+.services-section {
+  padding: 3.5rem 0;
+  background: var(--color-surface);
+}
+
+/* ===============================
+   HEADER
+=============================== */
+
+.services-header {
+  max-width: 800px;
+  margin-bottom: 3.5rem;
+  color: #2e8b3e;
+}
+
+.services-header h2 {
+  font-size: 2.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* ===============================
+   GRID
+=============================== */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+}
+
+/* ===============================
+   SERVICE CARD
+=============================== */
+
+.service-card {
+  position: relative;
+
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  padding: 2.25rem 2rem;
+
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.08),
+    0 4px 12px rgba(0, 0, 0, 0.04);
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Hover */
+
+.service-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.15);
+
+  border-color: rgba(37, 99, 235, 0.35);
+
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.16),
+    0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Glow Overlay */
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    circle at top left,
+    rgba(37, 99, 235, 0.12),
+    transparent 60%
+  );
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.3s ease;
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+/* ===============================
+   ICON
+=============================== */
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+
+  margin-bottom: 1.5rem;
+
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  backdrop-filter: blur(8px);
+}
+
+.service-icon img {
+  max-width: 65%;
+  height: auto;
+}
+
+/* ===============================
+   TEXT
+=============================== */
+
+.service-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.service-card p {
+  font-size: 0.96rem;
+  line-height: 1.65;
+
+  color: var(--color-text-secondary);
+
+  flex-grow: 1;
+}
+
+/* ===============================
+   LINK
+=============================== */
+
+.service-link {
+  margin-top: 1.5rem;
+
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: none;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  transition: gap 0.25s ease, opacity 0.25s ease;
+}
+
+.service-link::after {
+  content: "→";
+  font-size: 1rem;
+}
+
+.service-link:hover {
+  gap: 10px;
+  opacity: 0.85;
+}
+
+/* ===============================
+   DARK MODE
+=============================== */
+
+:root[data-theme="dark"] .service-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ===============================
+   SCROLL ANIMATION
+=============================== */
+
+.service-card {
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  filter: blur(6px);
+
+  transition:
+    opacity 0.7s ease-out,
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.7s ease-out;
+}
+
+.service-card.in-view {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+/* ===============================
+   MOBILE
+=============================== */
+
+@media (max-width: 768px) {
+
+  .services-header h2 {
+    font-size: 2rem;
+  }
+
+  .services-grid {
+    gap: 2rem;
+  }
+
+  .service-card {
+    padding: 2rem 1.75rem;
+    transition-duration: 0.6s;
+  }
+
+}

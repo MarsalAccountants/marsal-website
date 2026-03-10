@@ -1,0 +1,868 @@
+---
+import "../../../styles/pages/resources/scottish-paye-2025-26.css";
+import "../../../styles/themes/tools.css";  // Green theme for resources pages
+import Layout from "../../layouts/BaseLayout.astro";
+import ContactUs from "../../components/ContactUs.astro";
+
+// Set theme to "resources" to activate green variables
+const theme = "resources";
+---
+
+<Layout {theme}>
+  <!-- MAIN CONTENT (replaces manual <main> – using div to avoid nested mains) -->
+  <div class="calculator-page">
+    <section class="section">
+      <!-- PAGE HEADING -->
+      <div class="calculator-header">
+        <h1 class="calculator-heading">PAYE Calculator 2025–26</h1>
+        <div class="section-divider"></div>
+        <p class="calculator-lead">
+          Calculate your take-home pay after Scottish Income Tax, National Insurance, and other deductions. 
+          This calculator is specifically designed for Scottish residents and uses Scottish tax rates.
+        </p>
+        <div class="alert-box">
+          <i class="fas fa-info-circle"></i>
+          <span>This calculator uses the latest Scottish Income Tax rates for the 2025–26 tax year.</span>
+        </div>
+      </div>
+
+      <div class="calculator-grid">
+        <!-- INPUT CARD -->
+        <div class="calculator-card">
+          <div class="card-header">
+            <h2 class="card-title">
+              <i class="fas fa-edit"></i> Enter Your Details
+            </h2>
+            <p class="card-subtitle">Complete the form below to calculate your take-home pay</p>
+          </div>
+          <div class="card-body">
+            <!-- FORM CONTAINER - Using div instead of form to prevent submission -->
+            <div id="payeForm" class="calculator-form">
+              <!-- SALARY INPUT -->
+              <div class="form-group">
+                <label for="gross" class="form-label">
+                  <i class="fas fa-pound-sign"></i> Gross Annual Salary
+                </label>
+                <div class="input-group">
+                  <span class="input-group-text">£</span>
+                  <input type="number" id="gross" class="form-control" required min="0" step="100" 
+                         placeholder="Enter your annual salary" autofocus>
+                </div>
+                <div class="form-hint">Your total earnings before any deductions</div>
+              </div>
+
+              <div class="form-row">
+                <!-- TAX CODE -->
+                <div class="form-group">
+                  <label for="tax_code" class="form-label">
+                    <i class="fas fa-hashtag"></i> Tax Code
+                  </label>
+                  <input type="text" id="tax_code" class="form-control" value="1257L" 
+                         pattern="[A-Z0-9]{4,6}" title="Tax code must be 4-6 alphanumeric characters">
+                  <div class="form-hint">Default: 1257L (Standard Personal Allowance)</div>
+                </div>
+
+                <!-- NI CATEGORY -->
+                <div class="form-group">
+                  <label for="ni_category" class="form-label">
+                    <i class="fas fa-shield-alt"></i> NI Category
+                  </label>
+                  <select id="ni_category" class="form-select">
+                    <option value="A">Category A - Standard Rate</option>
+                    <option value="B">Category B - Married Women's Reduced Rate</option>
+                    <option value="C">Category C - Over State Pension Age</option>
+                    <option value="H">Category H - Apprentice Under 25</option>
+                    <option value="M">Category M - Not Contracted Out</option>
+                    <option value="Z">Category Z - Deferred</option>
+                  </select>
+                  <div class="form-hint">Select your National Insurance category</div>
+                </div>
+              </div>
+
+              <!-- PAY FREQUENCY -->
+              <div class="form-group">
+                <label class="form-label">
+                  <i class="fas fa-calendar-alt"></i> Pay Frequency
+                </label>
+                <div class="frequency-buttons">
+                  <input type="radio" class="btn-check" name="frequency" id="monthly" value="monthly" checked>
+                  <label class="frequency-btn" for="monthly">
+                    <i class="fas fa-calendar-month"></i>
+                    <span>Monthly</span>
+                  </label>
+                  <input type="radio" class="btn-check" name="frequency" id="weekly" value="weekly">
+                  <label class="frequency-btn" for="weekly">
+                    <i class="fas fa-calendar-week"></i>
+                    <span>Weekly</span>
+                  </label>
+                  <input type="radio" class="btn-check" name="frequency" id="annual" value="annual">
+                  <label class="frequency-btn" for="annual">
+                    <i class="fas fa-calendar-year"></i>
+                    <span>Annual</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- ADDITIONAL OPTIONS -->
+              <div class="accordion">
+                <div class="accordion-item">
+                  <button type="button" class="accordion-header" id="additionalOptionsBtn">
+                    <i class="fas fa-cogs"></i> Additional Options
+                    <span class="accordion-icon"></span>
+                  </button>
+                  <div class="accordion-content">
+                    <!-- PENSION -->
+                    <div class="form-group">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="pensionToggle">
+                        <label class="form-check-label" for="pensionToggle">
+                          <strong>Include Pension Contribution</strong>
+                        </label>
+                      </div>
+                      <div id="pensionInput" class="mt-2" style="display: none;">
+                        <div class="input-group">
+                          <input type="number" id="pensionPercent" class="form-control" 
+                                 placeholder="Enter percentage" min="0" max="100" step="0.5">
+                          <span class="input-group-text">%</span>
+                        </div>
+                        <div class="form-hint">Enter your pension contribution percentage</div>
+                      </div>
+                    </div>
+
+                    <!-- STUDENT LOAN -->
+                    <div class="form-group">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="studentLoanToggle">
+                        <label class="form-check-label" for="studentLoanToggle">
+                          <strong>Include Student Loan (Plan 1 Scotland)</strong>
+                        </label>
+                      </div>
+                      <div class="form-hint">
+                        <i class="fas fa-info-circle"></i> Threshold: £24,275 | Rate: 9% above threshold
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CALCULATE BUTTON -->
+              <div class="form-actions">
+                <button type="button" class="btn-calculate" id="calculateBtn">
+                  <span class="loading-spinner">
+                    <i class="fas fa-spinner fa-spin"></i>
+                  </span>
+                  <i class="fas fa-calculator"></i> Calculate Take-Home Pay
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RESULTS CARD -->
+        <div class="calculator-card results-card" id="payeResults">
+          <div class="card-header">
+            <h2 class="card-title">
+              <i class="fas fa-chart-pie"></i> Your Results
+            </h2>
+            <p class="card-subtitle">Breakdown of your take-home pay and deductions</p>
+          </div>
+          <div class="card-body">
+            <!-- SUMMARY CARDS -->
+            <div class="results-summary">
+              <div class="summary-card">
+                <div class="summary-icon">
+                  <i class="fas fa-home"></i>
+                </div>
+                <div class="summary-content">
+                  <div class="summary-label">Annual Take-Home</div>
+                  <div class="summary-value" id="netResult">£0.00</div>
+                  <div class="summary-hint">After all deductions</div>
+                </div>
+              </div>
+              <div class="summary-card">
+                <div class="summary-icon">
+                  <i class="fas fa-calendar-alt"></i>
+                </div>
+                <div class="summary-content">
+                  <div class="summary-label" id="frequencyLabel">Monthly Take-Home</div>
+                  <div class="summary-value" id="monthlyResult">£0.00</div>
+                  <div class="summary-hint" id="frequencyText">Per month</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- DEDUCTIONS BREAKDOWN -->
+            <div class="breakdown-section">
+              <h3 class="breakdown-title">
+                <i class="fas fa-receipt"></i> Deductions Breakdown
+              </h3>
+              <div class="breakdown-list">
+                <div class="breakdown-item">
+                  <div class="breakdown-label">
+                    <span class="breakdown-name">Income Tax</span>
+                    <span class="breakdown-rate">Scottish Rates</span>
+                  </div>
+                  <div class="breakdown-value" id="taxResult">£0.00</div>
+                </div>
+                <div class="breakdown-item">
+                  <div class="breakdown-label">
+                    <span class="breakdown-name">National Insurance</span>
+                    <span class="breakdown-rate" id="niCategoryLabel">Category A</span>
+                  </div>
+                  <div class="breakdown-value" id="niResult">£0.00</div>
+                </div>
+                <div class="breakdown-item">
+                  <div class="breakdown-label">
+                    <span class="breakdown-name">Pension Contribution</span>
+                    <span class="breakdown-rate" id="pensionRateLabel">0%</span>
+                  </div>
+                  <div class="breakdown-value" id="pensionResult">£0.00</div>
+                </div>
+                <div class="breakdown-item">
+                  <div class="breakdown-label">
+                    <span class="breakdown-name">Student Loan</span>
+                    <span class="breakdown-rate">Plan 1</span>
+                  </div>
+                  <div class="breakdown-value" id="studentLoanResult">£0.00</div>
+                </div>
+                <div class="breakdown-total">
+                  <div class="breakdown-label">
+                    <span class="breakdown-name">Total Deductions</span>
+                  </div>
+                  <div class="breakdown-value" id="deductionsResult">£0.00</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TAX BAND BREAKDOWN -->
+            <div class="breakdown-section">
+              <h3 class="breakdown-title">
+                <i class="fas fa-chart-bar"></i> Tax Band Breakdown
+              </h3>
+              <div class="tax-bands-list" id="taxBreakdown">
+                <!-- Tax bands will be populated here -->
+              </div>
+              
+              <!-- CHART -->
+              <div class="chart-container">
+                <canvas id="taxChart"></canvas>
+              </div>
+            </div>
+
+            <!-- ACTIONS -->
+            <div class="results-actions">
+              <button class="btn-action" id="printResultsBtn">
+                <i class="fas fa-print"></i> Print Results
+              </button>
+              <button class="btn-action" id="resetCalculatorBtn">
+                <i class="fas fa-redo"></i> New Calculation
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- INFO SIDEBAR -->
+        <div class="calculator-sidebar">
+          <!-- SCOTTISH TAX RATES -->
+          <div class="sidebar-card">
+            <h3 class="sidebar-title">
+              <i class="fas fa-percentage"></i> Scottish Tax Rates 2025–26
+            </h3>
+            <div class="tax-rates-list">
+              <div class="tax-rate-item">
+                <div class="tax-rate-band">Starter Rate</div>
+                <div class="tax-rate-range">£0 – £2,306</div>
+                <div class="tax-rate-percent">19%</div>
+              </div>
+              <div class="tax-rate-item">
+                <div class="tax-rate-band">Basic Rate</div>
+                <div class="tax-rate-range">£2,307 – £14,322</div>
+                <div class="tax-rate-percent">20%</div>
+              </div>
+              <div class="tax-rate-item">
+                <div class="tax-rate-band">Intermediate Rate</div>
+                <div class="tax-rate-range">£14,323 – £31,092</div>
+                <div class="tax-rate-percent">21%</div>
+              </div>
+              <div class="tax-rate-item">
+                <div class="tax-rate-band">Higher Rate</div>
+                <div class="tax-rate-range">£31,093 – £62,430</div>
+                <div class="tax-rate-percent">42%</div>
+              </div>
+              <div class="tax-rate-item">
+                <div class="tax-rate-band">Top Rate</div>
+                <div class="tax-rate-range">£62,431+</div>
+                <div class="tax-rate-percent">47%</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- NATIONAL INSURANCE -->
+          <div class="sidebar-card">
+            <h3 class="sidebar-title">
+              <i class="fas fa-shield-alt"></i> National Insurance 2025–26
+            </h3>
+            <div class="ni-info">
+              <div class="ni-item">
+                <div class="ni-label">Primary Threshold</div>
+                <div class="ni-value">£12,570</div>
+              </div>
+              <div class="ni-item">
+                <div class="ni-label">Upper Earnings Limit</div>
+                <div class="ni-value">£50,270</div>
+              </div>
+              <div class="ni-item">
+                <div class="ni-label">Rate up to UEL</div>
+                <div class="ni-value">12%</div>
+              </div>
+              <div class="ni-item">
+                <div class="ni-label">Rate above UEL</div>
+                <div class="ni-value">2%</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- IMPORTANT NOTES -->
+          <div class="sidebar-card">
+            <h3 class="sidebar-title">
+              <i class="fas fa-lightbulb"></i> Important Notes
+            </h3>
+            <ul class="notes-list">
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <span>Based on Scottish Income Tax rates only</span>
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <span>Personal Allowance: £12,570 (1257L code)</span>
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <span>Student Loan threshold: £24,275</span>
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <span>Results are estimates only</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICES CAROUSEL -->
+      <section class="services-carousel-section">
+        <h2 class="carousel-heading">Explore Our Services</h2>
+        <div class="section-divider"></div>
+        <div class="carousel-container">
+          <div class="carousel-track" id="carouselTrack">
+            <!-- Original Set of Slides -->
+            <div class="service-slide">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/accounts-icon.png" alt="Accounting Services">
+              <h4><a href="/services/accounting/">Accounting Services</a></h4>
+            </div>
+            <div class="service-slide">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/bookkeeping-icon.png" alt="Bookkeeping Services">
+              <h4><a href="/services/bookkeeping/">Bookkeeping Services</a></h4>
+            </div>
+            <div class="service-slide">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/mngt-accounts-icon.png" alt="Management Accounts">
+              <h4><a href="/services/management-accounts/">Management Accounts</a></h4>
+            </div>
+            <div class="service-slide">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/payroll-services-icon.png" alt="Payroll Services">
+              <h4><a href="/services/payroll/">Payroll Services</a></h4>
+            </div>
+            <div class="service-slide">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/property-accounts-icon.png" alt="Property Accounts">
+              <h4><a href="/services/property-accounts/">Property Accounts</a></h4>
+            </div>
+            <div class="service-slide">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/self-assessment-tax-returns-icon.png" alt="Self Assessment">
+              <h4><a href="/services/self-assessment-tax-returns/">Self Assessment</a></h4>
+            </div>
+            <div class="service-slide">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/starting-new-business-icon.png" alt="Starting New Business">
+              <h4><a href="/services/business-setup/">Starting New Business</a></h4>
+            </div>
+            <div class="service-slide">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/tax-investigation-icon.png" alt="Tax Investigation">
+              <h4><a href="/services/tax-investigation/">Tax Investigation</a></h4>
+            </div>
+            <div class="service-slide">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/value-added-icon.png" alt="VAT Services">
+              <h4><a href="/services/vat/">VAT Services</a></h4>
+            </div>
+            
+            <!-- Duplicate Set for Seamless Loop -->
+            <div class="service-slide">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/accounts-icon.png" alt="Accounting Services">
+              <h4><a href="/services/accounting/">Accounting Services</a></h4>
+            </div>
+            <div class="service-slide">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/bookkeeping-icon.png" alt="Bookkeeping Services">
+              <h4><a href="/services/bookkeeping/">Bookkeeping Services</a></h4>
+            </div>
+            <div class="service-slide">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/mngt-accounts-icon.png" alt="Management Accounts">
+              <h4><a href="/services/management-accounts/">Management Accounts</a></h4>
+            </div>
+            <div class="service-slide">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/payroll-services-icon.png" alt="Payroll Services">
+              <h4><a href="/services/payroll/">Payroll Services</a></h4>
+            </div>
+            <div class="service-slide">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/property-accounts-icon.png" alt="Property Accounts">
+              <h4><a href="/services/property-accounts/">Property Accounts</a></h4>
+            </div>
+            <div class="service-slide">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/self-assessment-tax-returns-icon.png" alt="Self Assessment">
+              <h4><a href="/services/self-assessment-tax-returns/">Self Assessment</a></h4>
+            </div>
+            <div class="service-slide">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/starting-new-business-icon.png" alt="Starting New Business">
+              <h4><a href="/services/business-setup/">Starting New Business</a></h4>
+            </div>
+            <div class="service-slide">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/tax-investigation-icon.png" alt="Tax Investigation">
+              <h4><a href="/services/tax-investigation/">Tax Investigation</a></h4>
+            </div>
+            <div class="service-slide">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/value-added-icon.png" alt="VAT Services">
+              <h4><a href="/services/vat/">VAT Services</a></h4>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </div>
+
+  <!-- CONTACT US COMPONENT (if needed) -->
+  <ContactUs />
+
+  <!-- Inline CSS for calculator-specific fixes -->
+  <style>
+    /* Fix for results card display issues */
+    #payeResults {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+    
+    #payeResults.show-results {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    
+    /* Ensure no other CSS interferes */
+    .calculator-grid .calculator-card {
+        display: block !important;
+    }
+    
+    .results-card {
+        position: relative !important;
+        z-index: 10 !important;
+    }
+    
+    /* Form validation styles */
+    .error {
+        border-color: #dc3545 !important;
+        background-color: #fff5f5 !important;
+    }
+    
+    .error-message {
+        color: #dc3545;
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+        display: block;
+    }
+    
+    /* Loading animation */
+    .loading-spinner {
+        display: none;
+    }
+    
+    .loading-spinner.active {
+        display: inline-block;
+        margin-right: 8px;
+    }
+  </style>
+
+  <!-- PAYE CALCULATOR SCRIPT (unchanged) -->
+  <script is:inline>
+    // PAYE Calculator Logic
+    const Marsal = {
+        initializeCalculator: function() {
+            console.log('PAYE Calculator Initialized');
+            
+            // Initialize accordion
+            const accordionBtn = document.getElementById('additionalOptionsBtn');
+            if (accordionBtn) {
+                accordionBtn.addEventListener('click', this.toggleAccordion);
+            }
+            
+            // Initialize pension toggle
+            const pensionToggle = document.getElementById('pensionToggle');
+            if (pensionToggle) {
+                pensionToggle.addEventListener('change', this.togglePension);
+            }
+            
+            // Initialize calculate button
+            const calculateBtn = document.getElementById('calculateBtn');
+            if (calculateBtn) {
+                calculateBtn.addEventListener('click', this.calculatePAYE);
+            }
+            
+            // Initialize print button
+            const printBtn = document.getElementById('printResultsBtn');
+            if (printBtn) {
+                printBtn.addEventListener('click', this.printResults);
+            }
+            
+            // Initialize reset button
+            const resetBtn = document.getElementById('resetCalculatorBtn');
+            if (resetBtn) {
+                resetBtn.addEventListener('click', this.resetCalculator);
+            }
+            
+            // Initialize carousel
+            this.initializeCarousel();
+            
+            // Hide results card initially
+            const resultsCard = document.getElementById('payeResults');
+            if (resultsCard) {
+                resultsCard.style.display = 'none';
+                resultsCard.style.opacity = '0';
+                resultsCard.style.visibility = 'hidden';
+            }
+        },
+        
+        toggleAccordion: function(event) {
+            const btn = event.currentTarget;
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector('.accordion-icon');
+            
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+                icon.textContent = '+';
+            } else {
+                content.style.display = 'block';
+                icon.textContent = '-';
+            }
+        },
+        
+        togglePension: function() {
+            const pensionInput = document.getElementById('pensionInput');
+            const pensionToggle = document.getElementById('pensionToggle');
+            
+            if (pensionToggle.checked) {
+                pensionInput.style.display = 'block';
+            } else {
+                pensionInput.style.display = 'none';
+            }
+        },
+        
+        calculatePAYE: function(event) {
+            event.preventDefault();
+            const btn = event.currentTarget;
+            const spinner = btn.querySelector('.loading-spinner');
+            
+            // Show loading spinner
+            spinner.classList.add('active');
+            btn.disabled = true;
+            
+            // Simulate calculation delay
+            setTimeout(() => {
+                // Get form values
+                const grossSalary = parseFloat(document.getElementById('gross').value) || 0;
+                const taxCode = document.getElementById('tax_code').value;
+                const niCategory = document.getElementById('ni_category').value;
+                const pensionToggle = document.getElementById('pensionToggle').checked;
+                const pensionPercent = parseFloat(document.getElementById('pensionPercent').value) || 0;
+                const studentLoanToggle = document.getElementById('studentLoanToggle').checked;
+                
+                // Calculate PAYE (simplified for demo)
+                const personalAllowance = 12570;
+                const taxableIncome = Math.max(0, grossSalary - personalAllowance);
+                
+                // Scottish tax bands 2025-26
+                const taxBands = [
+                    { limit: 2306, rate: 0.19 },
+                    { limit: 14322, rate: 0.20 },
+                    { limit: 31092, rate: 0.21 },
+                    { limit: 62430, rate: 0.42 },
+                    { limit: Infinity, rate: 0.47 }
+                ];
+                
+                let remainingTaxable = taxableIncome;
+                let totalTax = 0;
+                
+                taxBands.forEach((band, index) => {
+                    const previousLimit = index === 0 ? 0 : taxBands[index - 1].limit;
+                    const bandWidth = band.limit - previousLimit;
+                    
+                    if (remainingTaxable > 0) {
+                        const taxableInBand = Math.min(remainingTaxable, bandWidth);
+                        totalTax += taxableInBand * band.rate;
+                        remainingTaxable -= taxableInBand;
+                    }
+                });
+                
+                // National Insurance calculation (simplified)
+                const niPrimaryThreshold = 12570;
+                const niUpperLimit = 50270;
+                let niContribution = 0;
+                
+                if (grossSalary > niPrimaryThreshold) {
+                    const niLowerBand = Math.min(grossSalary, niUpperLimit) - niPrimaryThreshold;
+                    const niUpperBand = Math.max(0, grossSalary - niUpperLimit);
+                    
+                    niContribution = (niLowerBand * 0.12) + (niUpperBand * 0.02);
+                }
+                
+                // Pension calculation
+                let pensionContribution = 0;
+                if (pensionToggle && pensionPercent > 0) {
+                    pensionContribution = grossSalary * (pensionPercent / 100);
+                }
+                
+                // Student loan calculation
+                let studentLoan = 0;
+                const studentLoanThreshold = 24275;
+                if (studentLoanToggle && grossSalary > studentLoanThreshold) {
+                    studentLoan = (grossSalary - studentLoanThreshold) * 0.09;
+                }
+                
+                // Calculate totals
+                const totalDeductions = totalTax + niContribution + pensionContribution + studentLoan;
+                const netAnnual = grossSalary - totalDeductions;
+                
+                // Get frequency
+                const frequency = document.querySelector('input[name="frequency"]:checked').value;
+                let netFrequency = 0;
+                let frequencyLabel = '';
+                let frequencyText = '';
+                
+                switch(frequency) {
+                    case 'monthly':
+                        netFrequency = netAnnual / 12;
+                        frequencyLabel = 'Monthly Take-Home';
+                        frequencyText = 'Per month';
+                        break;
+                    case 'weekly':
+                        netFrequency = netAnnual / 52;
+                        frequencyLabel = 'Weekly Take-Home';
+                        frequencyText = 'Per week';
+                        break;
+                    case 'annual':
+                        netFrequency = netAnnual;
+                        frequencyLabel = 'Annual Take-Home';
+                        frequencyText = 'Per year';
+                        break;
+                }
+                
+                // Update results display
+                document.getElementById('netResult').textContent = `£${netAnnual.toFixed(2)}`;
+                document.getElementById('monthlyResult').textContent = `£${netFrequency.toFixed(2)}`;
+                document.getElementById('frequencyLabel').textContent = frequencyLabel;
+                document.getElementById('frequencyText').textContent = frequencyText;
+                document.getElementById('taxResult').textContent = `£${totalTax.toFixed(2)}`;
+                document.getElementById('niResult').textContent = `£${niContribution.toFixed(2)}`;
+                document.getElementById('niCategoryLabel').textContent = `Category ${niCategory}`;
+                document.getElementById('pensionResult').textContent = `£${pensionContribution.toFixed(2)}`;
+                document.getElementById('pensionRateLabel').textContent = `${pensionPercent}%`;
+                document.getElementById('studentLoanResult').textContent = `£${studentLoan.toFixed(2)}`;
+                document.getElementById('deductionsResult').textContent = `£${totalDeductions.toFixed(2)}`;
+                
+                // Update tax breakdown
+                const taxBreakdown = document.getElementById('taxBreakdown');
+                taxBreakdown.innerHTML = `
+                    <div class="tax-band-item">
+                        <div class="tax-band-label">Personal Allowance</div>
+                        <div class="tax-band-value">£${Math.min(grossSalary, personalAllowance).toFixed(2)}</div>
+                        <div class="tax-band-rate">0%</div>
+                    </div>
+                    <div class="tax-band-item">
+                        <div class="tax-band-label">Taxable Income</div>
+                        <div class="tax-band-value">£${taxableIncome.toFixed(2)}</div>
+                        <div class="tax-band-rate">Various</div>
+                    </div>
+                `;
+                
+                // Show results card
+                const resultsCard = document.getElementById('payeResults');
+                if (resultsCard) {
+                    resultsCard.style.display = 'block';
+                    setTimeout(() => {
+                        resultsCard.classList.add('show-results');
+                    }, 10);
+                }
+                
+                // Hide loading spinner
+                spinner.classList.remove('active');
+                btn.disabled = false;
+                
+                // Initialize chart
+                Marsal.initializeChart({
+                    tax: totalTax,
+                    ni: niContribution,
+                    pension: pensionContribution,
+                    studentLoan: studentLoan,
+                    net: netAnnual
+                });
+                
+            }, 800);
+        },
+        
+        initializeChart: function(data) {
+            const ctx = document.getElementById('taxChart').getContext('2d');
+            
+            // Destroy existing chart if it exists
+            if (window.payeChart) {
+                window.payeChart.destroy();
+            }
+            
+            window.payeChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: ['Income Tax', 'National Insurance', 'Pension', 'Student Loan', 'Take-Home Pay'],
+                    datasets: [{
+                        data: [data.tax, data.ni, data.pension, data.studentLoan, data.net],
+                        backgroundColor: [
+                            '#ff6384',
+                            '#36a2eb',
+                            '#ffce56',
+                            '#4bc0c0',
+                            '#9966ff'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const label = context.label || '';
+                                    const value = context.raw || 0;
+                                    const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                    const percentage = Math.round((value / total) * 100);
+                                    return `${label}: £${value.toFixed(2)} (${percentage}%)`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        },
+        
+        printResults: function() {
+            const resultsCard = document.getElementById('payeResults');
+            const originalDisplay = resultsCard.style.display;
+            
+            // Show results card for printing
+            resultsCard.style.display = 'block';
+            resultsCard.classList.add('show-results');
+            
+            // Print
+            window.print();
+            
+            // Restore original state
+            resultsCard.style.display = originalDisplay;
+        },
+        
+        resetCalculator: function() {
+            // Reset form
+            document.getElementById('gross').value = '';
+            document.getElementById('tax_code').value = '1257L';
+            document.getElementById('ni_category').value = 'A';
+            document.getElementById('pensionToggle').checked = false;
+            document.getElementById('pensionPercent').value = '';
+            document.getElementById('studentLoanToggle').checked = false;
+            document.getElementById('pensionInput').style.display = 'none';
+            
+            // Hide results
+            const resultsCard = document.getElementById('payeResults');
+            resultsCard.classList.remove('show-results');
+            setTimeout(() => {
+                resultsCard.style.display = 'none';
+            }, 300);
+            
+            // Reset to monthly frequency
+            document.getElementById('monthly').checked = true;
+            
+            // Close accordion
+            const accordionContent = document.querySelector('.accordion-content');
+            if (accordionContent) {
+                accordionContent.style.display = 'none';
+            }
+            
+            // Focus on salary input
+            document.getElementById('gross').focus();
+        },
+        
+        initializeCarousel: function() {
+            const carouselTrack = document.getElementById('carouselTrack');
+            const slides = document.querySelectorAll('.service-slide');
+            
+            if (!carouselTrack || slides.length === 0) return;
+            
+            // Calculate total width of all slides
+            const slideWidth = slides[0].offsetWidth;
+            const totalSlides = slides.length / 2; // We have duplicated slides
+            const totalWidth = slideWidth * totalSlides;
+            
+            // Set animation duration based on total width
+            const animationDuration = totalWidth / 30; // pixels per second
+            
+            // Set CSS variables for animation
+            carouselTrack.style.setProperty('--slide-width', `${slideWidth}px`);
+            carouselTrack.style.setProperty('--total-slides', totalSlides);
+            carouselTrack.style.setProperty('--animation-duration', `${animationDuration}s`);
+            
+            // Pause animation on hover
+            const carouselContainer = document.querySelector('.carousel-container');
+            if (carouselContainer) {
+                carouselContainer.addEventListener('mouseenter', () => {
+                    carouselTrack.style.animationPlayState = 'paused';
+                });
+                
+                carouselContainer.addEventListener('mouseleave', () => {
+                    carouselTrack.style.animationPlayState = 'running';
+                });
+            }
+            
+            // Handle window resize
+            let resizeTimeout;
+            window.addEventListener('resize', function() {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(() => {
+                    const newSlideWidth = slides[0].offsetWidth;
+                    const newTotalWidth = newSlideWidth * totalSlides;
+                    const newAnimationDuration = newTotalWidth / 30;
+                    
+                    carouselTrack.style.setProperty('--slide-width', `${newSlideWidth}px`);
+                    carouselTrack.style.setProperty('--animation-duration', `${newAnimationDuration}s`);
+                }, 250);
+            });
+        }
+    };
+    
+    // Initialize calculator when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        Marsal.initializeCalculator();
+    });
+    
+    // Initialize on window load as well
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            Marsal.initializeCalculator();
+        }, 500);
+    });
+  </script>
+</Layout>

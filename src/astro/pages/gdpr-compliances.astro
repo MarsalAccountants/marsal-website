@@ -1,0 +1,313 @@
+---
+import Layout from "../layouts/BaseLayout.astro";
+import "../../styles/themes/tools.css";
+import "../../styles/pages/articles/article-page.css";
+import ContactUs from "../components/ContactUs.astro";
+
+const theme = "resources";
+---
+
+<Layout title="GDPR Compliance" theme={theme}>
+  <main class="article-page container">
+
+    <!-- ================================
+         CUSTOM GDPR STYLES
+    ================================ -->
+    <style>
+      /* Main title green */
+      .gdpr-title {
+        color: var(--color-primary);
+        font-weight: 800;
+      }
+
+      /* Section headings green */
+      .gdpr-section h2 {
+        color: var(--color-primary);
+        font-weight: 800;
+        margin-top: 2rem;
+      }
+
+      /* ICO link red */
+      .ico-link {
+        color: #d9534f !important;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .ico-link:hover {
+        text-decoration: underline;
+      }
+
+      /* Email blue */
+      .gdpr-email {
+        color: #007bff !important;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .gdpr-email:hover {
+        text-decoration: underline;
+      }
+    </style>
+
+
+    <!-- ================================
+         PAGE HEADER
+    ================================ -->
+    <section style="margin-bottom: 2rem;">
+      <h1 class="gdpr-title" style="font-size: 2.4rem;">
+        GDPR Compliance at Marsal Accountants
+      </h1>
+      <p style="font-size: 1.1rem; color: var(--color-text-light); margin-top: .5rem;">
+        Your privacy matters. We are fully compliant with the General Data Protection Regulation (GDPR).
+      </p>
+    </section>
+
+
+    <!-- ================================
+         GDPR CONTENT
+    ================================ -->
+    <section class="gdpr-section" style="margin-bottom: 3rem; line-height: 1.7; font-size: 1.1rem;">
+
+      <p>
+        At Marsal, safeguarding your personal data is a core responsibility. We are fully compliant with the General Data Protection Regulation (GDPR), which governs how organisations collect, process, and protect personal data across the UK and EU.
+      </p>
+
+      <h2>Our Commitment</h2>
+      <p>
+        We’ve implemented robust technical and organisational measures to ensure your data is handled securely, lawfully, and transparently. Our team is trained to uphold GDPR principles across every interaction.
+      </p>
+
+      <h2>GDPR Principles We Follow</h2>
+      <ul style="margin-left: 1.2rem;">
+        <li>Lawful, fair, and transparent processing</li>
+        <li>Purpose-specific data collection</li>
+        <li>Data minimisation</li>
+        <li>Accuracy and timely updates</li>
+        <li>Retention only as long as necessary</li>
+        <li>Security and confidentiality</li>
+      </ul>
+
+      <h2>How Marsal Ensures Compliance</h2>
+      <p>
+        We maintain detailed records of the data we hold, its origin, and its destination. Our internal policies are regularly reviewed to ensure confidentiality and security at every stage of processing.
+      </p>
+
+      <h2>Legal Basis & Consent</h2>
+      <p>
+        By engaging with Marsal Accountants, you provide consent for us to process your data in line with GDPR. This includes contact details, payroll information, tax identifiers, and other relevant documentation.
+      </p>
+
+      <h2>Your Rights</h2>
+      <p>
+        You have the right to request access to your data, correct inaccuracies, or request deletion—subject to legal retention requirements. We honour these rights promptly and transparently.
+      </p>
+
+      <h2>Security & Risk Management</h2>
+      <p>
+        We continuously assess potential threats and adapt our systems to stay ahead of evolving risks. Our infrastructure is designed to protect your data from unauthorised access, loss, or misuse.
+      </p>
+
+      <h2>ICO Registration & Oversight</h2>
+      <p>
+        Marsal Accountants is registered with the UK Information Commissioner’s Office (ICO) under agreement number <strong>ZC066499</strong>.
+      </p>
+
+      <p style="margin-top: 1rem;">
+        <a 
+          href="https://ico.org.uk/ESDWebPages/Entry/ZC066499" 
+          target="_blank" 
+          class="ico-link"
+        >
+          View our ICO registration →
+        </a>
+      </p>
+
+      <p style="margin-top: 1.5rem;">
+        In the unlikely event of a data breach, we are legally obligated to notify the ICO within 72 hours and inform affected clients transparently.
+      </p>
+
+      <h2>Contact Us</h2>
+      <p>
+        If you have questions about how we handle your data, please contact us at 
+        <a href="mailto:info@marsalaccountants.co.uk" class="gdpr-email">
+          info@marsalaccountants.co.uk
+        </a>.
+      </p>
+
+      <p>
+        This statement is reviewed regularly to reflect regulatory updates and client feedback. As our services evolve, so will our commitment to data privacy and protection.
+      </p>
+
+    </section>
+
+
+    <!-- ================================
+         SERVICES CAROUSEL
+    ================================ -->
+    <style>
+      .services-carousel-section {
+        margin-top: 4rem;
+        text-align: center;
+      }
+
+      .carousel-heading {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--color-text);
+        margin-bottom: 1rem;
+      }
+
+      .carousel-container {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        padding: 20px 0;
+        pointer-events: auto;
+      }
+
+      .carousel-track {
+        display: flex;
+        gap: 20px;
+        animation: scroll 40s linear infinite;
+        will-change: transform;
+        pointer-events: auto;
+      }
+
+      @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-240px * 9)); }
+      }
+
+      .service-slide {
+        flex: 0 0 auto;
+        background: var(--color-surface-lighter);
+        padding: 1.5rem;
+        border-radius: 6px;
+        box-shadow: var(--shadow-soft);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--color-border-light);
+        pointer-events: auto;
+      }
+
+      .service-slide:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-strong);
+        border-color: var(--color-primary);
+      }
+
+      .service-slide img {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+        margin-bottom: 1rem;
+      }
+
+      .service-slide h4 {
+        font-size: 1rem;
+        font-weight: 700;
+        margin: 0;
+        text-align: center;
+        line-height: 1.4;
+      }
+
+      .service-slide a {
+        color: var(--color-primary);
+        text-decoration: none;
+        transition: color 0.2s ease;
+        pointer-events: auto;
+      }
+
+      .service-slide a:hover {
+        color: var(--color-primary-hover);
+        text-decoration: underline;
+      }
+    </style>
+
+    <section class="services-carousel-section">
+      <h2 class="carousel-heading">Explore Our Services</h2>
+      <div class="section-divider"></div>
+
+      <div class="carousel-container">
+        <div class="carousel-track">
+
+          <div class="service-slide">
+            <a href="/services/accounting/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/accounts-icon.png">
+              <h4>Accounting Services</h4>
+            </a>
+          </div>
+
+          <div class="service-slide">
+            <a href="/services/bookkeeping/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/bookkeeping-icon.png">
+              <h4>Bookkeeping Services</h4>
+            </a>
+          </div>
+
+          <div class="service-slide">
+            <a href="/services/management-accounts/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/mngt-accounts-icon.png">
+              <h4>Management Accounts</h4>
+            </a>
+          </div>
+
+          <div class="service-slide">
+            <a href="/services/payroll/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/payroll-services-icon.png">
+              <h4>Payroll Services</h4>
+            </a>
+          </div>
+
+          <div class="service-slide">
+            <a href="/services/property-accounts/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/property-accounts-icon.png">
+              <h4>Property Accounts</h4>
+            </a>
+          </div>
+
+          <div class="service-slide">
+            <a href="/services/self-assessment-tax-returns/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/self-assessment-tax-returns-icon.png">
+              <h4>Self Assessment</h4>
+            </a>
+          </div>
+
+          <div class="service-slide">
+            <a href="/services/business-setup/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/starting-new-business-icon.png">
+              <h4>Starting New Business</h4>
+            </a>
+          </div>
+
+          <div class="service-slide">
+            <a href="/services/tax-investigation/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/tax-investigation-icon.png">
+              <h4>Tax Investigation</h4>
+            </a>
+          </div>
+
+          <div class="service-slide">
+            <a href="/services/vat/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/value-added-icon.png">
+              <h4>VAT Services</h4>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================
+         CONTACT US
+    ================================ -->
+    <section style="margin-top: 4rem;">
+      <ContactUs />
+    </section>
+
+  </main>
+</Layout>

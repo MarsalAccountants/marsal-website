@@ -1,0 +1,415 @@
+/* =========================================================
+   HERO SECTION — FULL THEME SUPPORT (LIGHT + DARK)
+========================================================= */
+
+/* =========================
+   LIGHT MODE HERO
+========================= */
+:root[data-theme="light"] .hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 110px 7%;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.75), rgba(245, 247, 250, 0.75)),
+    url("https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1600&q=80&h=1000");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #1a1a1a;
+  font-family: "Open Sans", sans-serif;
+  overflow: hidden;
+}
+
+/* =========================
+   DARK MODE HERO
+========================= */
+:root[data-theme="dark"] .hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 110px 7%;
+  background:
+    linear-gradient(rgba(13, 17, 23, 0.85), rgba(13, 17, 23, 0.85)),
+    url("https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1600&q=80&h=1000");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #e6edf3;
+  font-family: "Open Sans", sans-serif;
+  overflow: hidden;
+}
+
+/* =========================================================
+   HERO CONTAINER
+========================================================= */
+
+.hero-container {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Left Content Styling */
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-left h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-left > p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+/* Desktop CTA Container */
+.hero-left .desktop-cta {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* =========================================================
+   ROTATING CARD — PREMIUM ANIMATION
+========================================================= */
+
+.glass-rotator {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+}
+
+/* LIGHT MODE GLASS CARD */
+:root[data-theme="light"] .glass-card {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #1a1a1a;
+}
+
+/* DARK MODE GLASS CARD */
+:root[data-theme="dark"] .glass-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e6edf3;
+}
+
+/* Base card state */
+.glass-card {
+  position: absolute;
+  top: 0;
+  right: -120%;
+  width: 100%;
+  opacity: 0;
+  transform: translateX(40px) scale(0.96);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    right 2s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Active card */
+.glass-card.active {
+  right: 0;
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+/* Typography inside cards */
+.glass-card h3 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.glass-card p {
+  line-height: 1.7;
+  font-size: 1.05rem;
+  margin-top: 12px;
+}
+
+.glass-card p + p {
+  margin-top: 10px;
+}
+
+/* Marsal Green Highlight */
+.mg {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn {
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn.primary {
+  background: var(--color-primary);
+  color: white;
+}
+
+.btn.primary:hover {
+  background: var(--color-primary-hover);
+  transform: translateY(-2px);
+}
+
+.btn.secondary {
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  background: transparent;
+}
+
+.btn.secondary:hover {
+  background: var(--color-primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   MOBILE RESPONSIVE (Under 900px)
+========================================================= */
+
+@media (max-width: 900px) {
+
+  /* LIGHT MODE MOBILE */
+  :root[data-theme="light"] .hero {
+    background:
+      linear-gradient(rgba(255, 255, 255, 0.85), rgba(245, 247, 250, 0.85)),
+      url("https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1200&q=80&h=1600");
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* DARK MODE MOBILE */
+  :root[data-theme="dark"] .hero {
+    background:
+      linear-gradient(rgba(13, 17, 23, 0.9), rgba(13, 17, 23, 0.9)),
+      url("https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1200&q=80&h=1600");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero {
+    min-height: 100vh;
+    padding: 10px 5%;
+    display: block;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 10px;
+    text-align: center;
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero-left .desktop-cta {
+    display: none;
+  }
+
+  .hero-left {
+    grid-row: 1;
+    order: 1;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .hero-left h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+
+  .hero-left > p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+  }
+
+  .glass-rotator {
+    grid-row: 2;
+    order: 2;
+    height: 300px;
+    margin: 20px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .glass-card {
+    padding: 30px;
+    text-align: left;
+  }
+
+  .glass-card h3 {
+    font-size: 2rem;
+  }
+
+  .mobile-cta {
+    grid-row: 3;
+    order: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .mobile-cta .btn {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+/* =========================================================
+   TABLET OPTIMIZATION (600px - 900px)
+========================================================= */
+
+@media (max-width: 768px) and (min-width: 600px) {
+  .hero {
+    padding: 80px 7%;
+  }
+
+  .hero-left h1 {
+    font-size: 2.8rem;
+  }
+
+  .glass-rotator {
+    height: 320px;
+  }
+
+  .glass-card {
+    padding: 35px;
+  }
+
+  .glass-card h3 {
+    font-size: 2.2rem;
+  }
+
+  .hero-left .desktop-cta {
+    display: none;
+  }
+  
+  .mobile-cta {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .mobile-cta .btn {
+    width: auto;
+    min-width: 200px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE (Under 600px)
+========================================================= */
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 40px 5%;
+  }
+
+  .hero-left h1 {
+    font-size: 2rem;
+  }
+
+  .hero-left > p {
+    font-size: 1rem;
+  }
+
+  .glass-rotator {
+    height: 280px;
+  }
+
+  .glass-card {
+    padding: 25px;
+  }
+
+  .glass-card h3 {
+    font-size: 1.8rem;
+  }
+
+  .glass-card p {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+  }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE (Under 400px)
+========================================================= */
+
+@media (max-width: 400px) {
+  .hero {
+    padding: 30px 4%;
+  }
+
+  .glass-rotator {
+    height: 250px;
+  }
+
+  .glass-card {
+    padding: 20px;
+  }
+
+  .glass-card h3 {
+    font-size: 1.6rem;
+  }
+
+  .mobile-cta {
+    gap: 10px;
+  }
+}
+
+/* =========================================================
+   DESKTOP ONLY (Above 900px)
+========================================================= */
+
+@media (min-width: 901px) {
+  .mobile-cta {
+    display: none;
+  }
+  
+  .hero-left .desktop-cta {
+    display: flex;
+  }
+}

@@ -1,0 +1,177 @@
+---
+import "../../styles/components/services.css";
+---
+
+<section class="services-section">
+  <div class="container">
+
+    <!-- Header -->
+    <header class="services-header">
+      <h2>Accounting & Advisory Services in Paisley</h2>
+      <p class="section-subtitle">
+        We provide specialist accounting, tax, and business advisory services to
+        individuals and growing businesses across Paisley, Glasgow, and
+        Central Scotland.
+      </p>
+    </header>
+
+    <!-- Services Grid -->
+    <div class="services-grid">
+
+      <!-- Accounting -->
+      <article class="service-card">
+        <div class="service-icon">
+          <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/accounts-icon.png" alt="Accounting services in Paisley" loading="lazy" />
+        </div>
+        <h3>Accounting Services</h3>
+        <p>
+          Professional year-end accounts and statutory compliance for limited companies
+          and sole traders across Paisley and Scotland, with proactive guidance every step of the way.
+        </p>
+        <a href="/services/accounting/" class="service-link">Learn more</a>
+      </article>
+
+      <!-- Bookkeeping -->
+      <article class="service-card">
+        <div class="service-icon">
+          <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/bookkeeping-icon.png" alt="Bookkeeping services in Paisley" loading="lazy" />
+        </div>
+        <h3>Bookkeeping Services</h3>
+        <p>
+          Accurate and reliable bookkeeping services with weekly, fortnightly,
+          or monthly schedules to keep your records compliant and up to date.
+        </p>
+        <a href="/services/bookkeeping/" class="service-link">Learn more</a>
+      </article>
+
+      <!-- Management Accounts -->
+      <article class="service-card">
+        <div class="service-icon">
+          <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/mngt-accounts-icon.png" alt="Management accounts Scotland" loading="lazy" />
+        </div>
+        <h3>Management Accounts</h3>
+        <p>
+          Clear monthly or quarterly management reports to help business owners
+          across Renfrewshire understand cash flow, profitability, and performance.
+        </p>
+        <a href="/services/management-accounts/" class="service-link">Learn more</a>
+      </article>
+
+      <!-- Payroll -->
+      <article class="service-card">
+        <div class="service-icon">
+          <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/payroll-services-icon.png" alt="Payroll services Scotland" loading="lazy" />
+        </div>
+        <h3>Payroll Services</h3>
+        <p>
+          Fully managed payroll services for Scottish employers, including RTI
+          submissions, payslips, and ongoing HMRC compliance.
+        </p>
+        <a href="/services/payroll/" class="service-link">Learn more</a>
+      </article>
+
+      <!-- Property -->
+      <article class="service-card">
+        <div class="service-icon">
+          <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/property-accounts-icon.png" alt="Property accountants Paisley" loading="lazy" />
+        </div>
+        <h3>Property Accounts</h3>
+        <p>
+          Specialist property accounting services with per-property reporting to
+          help landlords across Scotland minimise tax and maximise returns.
+        </p>
+        <a href="/services/property-accounts/" class="service-link">Learn more</a>
+      </article>
+
+      <!-- Self Assessment -->
+      <article class="service-card">
+        <div class="service-icon">
+          <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/self-assessment-tax-returns-icon.png" alt="Self assessment tax returns Paisley" loading="lazy" />
+        </div>
+        <h3>Self Assessment & Tax Returns</h3>
+        <p>
+          Personal and business self-assessment tax returns prepared accurately
+          and submitted on time, with planning support where needed.
+        </p>
+        <a href="/services/self-assessment-tax-returns/" class="service-link">Learn more</a>
+      </article>
+
+      <!-- Business Setup -->
+      <article class="service-card">
+        <div class="service-icon">
+          <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/starting-new-business-icon.png" alt="Start a business in Scotland" loading="lazy" />
+        </div>
+        <h3>Starting a New Business</h3>
+        <p>
+          End-to-end business setup support, including registrations, cash flow
+          forecasts, and business plans for new ventures across Scotland.
+        </p>
+        <a href="/services/business-setup/" class="service-link">Learn more</a>
+      </article>
+
+      <!-- Tax Investigation -->
+      <article class="service-card">
+        <div class="service-icon">
+          <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/tax-investigation-icon.png" alt="HMRC tax investigation support" loading="lazy" />
+        </div>
+        <h3>Tax Investigation Support</h3>
+        <p>
+          Experienced support during HMRC enquiries and investigations, with
+          clear guidance and free initial insight into your position.
+        </p>
+        <a href="/services/tax-investigation/" class="service-link">Learn more</a>
+      </article>
+
+      <!-- VAT -->
+      <article class="service-card">
+        <div class="service-icon">
+          <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/value-added-icon.png" alt="VAT services Paisley" loading="lazy" />
+        </div>
+        <h3>VAT Services</h3>
+        <p>
+          VAT registration, returns, and advisory services, ensuring the most
+          suitable VAT scheme is applied for your business.
+        </p>
+        <a href="/services/vat/" class="service-link">Learn more</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- Scroll Reveal -->
+<script is:inline>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const cards = document.querySelectorAll(".service-card");
+
+  if (!("IntersectionObserver" in window)) {
+    cards.forEach(card => card.classList.add("in-view"));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, index) => {
+
+        if (entry.isIntersecting) {
+
+          setTimeout(() => {
+            entry.target.classList.add("in-view");
+          }, index * 120);
+
+          observer.unobserve(entry.target);
+        }
+
+      });
+    },
+    {
+      threshold: 0.15,
+      rootMargin: "0px 0px -60px 0px"
+    }
+  );
+
+  cards.forEach(card => observer.observe(card));
+
+});
+</script>

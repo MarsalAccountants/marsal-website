@@ -1,0 +1,333 @@
+/* =========================================================
+   ABOUT PAGE — MERGED FROM COMPANY PROFILE + PHILOSOPHY
+   Clean, premium, fintech‑inspired, using your existing system
+========================================================= */
+
+.about-page {
+    padding-top: 40px;
+    padding-bottom: 80px;
+    background: var(--color-surface);
+}
+
+/* HEADINGS */
+.about-heading {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.about-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--color-border) 20%, var(--color-border) 80%, transparent 100%);
+    margin: 2rem auto 3rem;
+    max-width: 800px;
+}
+
+/* SECTION WRAPPER */
+.about-section {
+    max-width: 1200px;
+    margin: 0 auto 5rem;
+    padding: 0 20px;
+}
+
+/* LEAD TEXT */
+.about-lead {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--color-text);
+    max-width: 900px;
+    margin: 0 auto 2rem;
+}
+
+/* PHILOSOPHY SECTION GRID */
+.about-grid.philosophy-grid {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 3.5rem;
+}
+
+/* IMAGE WRAPPER */
+.about-image-wrapper {
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--color-surface-card);
+    box-shadow: var(--shadow-lg);
+    transition: transform var(--transition-base);
+}
+
+.about-image-wrapper:hover {
+    transform: translateY(-5px);
+}
+
+.about-image {
+    width: 100%;
+    display: block;
+}
+
+.about-caption {
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    background: var(--color-surface-card);
+    border-top: 1px solid var(--color-border-light);
+    text-align: center;
+    font-style: italic;
+}
+
+/* TEXT BLOCK */
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.philosophy-text {
+    align-self: center;
+}
+
+/* ===== UPDATED: .about-subheading now uses primary colour ===== */
+.about-subheading {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin: 2rem 0 1rem;
+    color: var(--color-primary);
+}
+
+.about-subheading:first-child {
+    margin-top: 0;
+}
+
+/* COMPANY PROFILE SECTION */
+.company-profile-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.profile-text-above {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.profile-text-above p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin-bottom: 0;
+}
+
+.profile-image-center {
+    width: 75%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--color-surface-card);
+    box-shadow: var(--shadow-lg);
+    transition: transform var(--transition-base);
+}
+
+.profile-image-center:hover {
+    transform: translateY(-5px);
+}
+
+.profile-center-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* OUR STRENGTH SECTION */
+.strength-section {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.strength-section h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.strength-section p {
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+/* CLIENTS BOX SECTION */
+.clients-section {
+    max-width: 1100px;
+    margin: 3rem auto 0;
+}
+
+.clients-box {
+    background: var(--color-surface-card);
+    border-radius: 16px;
+    padding: 2.5rem 3rem;
+    border: 1px solid var(--color-border-light);
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.clients-box:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.clients-box h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* ===== UPDATED: .clients-box h3 now uses primary colour ===== */
+.clients-box h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.clients-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem 2rem;
+    margin-top: 2rem;
+}
+
+.client-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.5rem 0;
+}
+
+.client-checkmark {
+    color: var(--color-primary);
+    font-size: 1rem;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.client-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+/* VALUES GRID */
+.values-grid {
+    margin: 3rem auto;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.8rem;
+}
+
+.value-card {
+    background: var(--color-surface-card);
+    padding: 1.8rem 1.6rem;
+    border-radius: 18px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border-light);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.value-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+
+.value-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(var(--color-primary-rgb), 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    font-size: 1.1rem;
+}
+
+.value-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: 1rem;
+}
+
+.value-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .about-grid.philosophy-grid {
+        grid-template-columns: 350px 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .about-grid.philosophy-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .philosophy-text {
+        text-align: left;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .profile-image-center {
+        width: 90%;
+        max-width: 100%;
+    }
+    
+    .clients-list {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .clients-box {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-image-center {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+    
+    .clients-box {
+        padding: 1.5rem;
+    }
+    
+    .client-text {
+        font-size: 0.95rem;
+    }
+}

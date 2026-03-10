@@ -1,0 +1,19 @@
+.welcome-text {
+  padding: 40px 0;
+  text-align: center;             
+  color: var(--color-text);
+  line-height: 1.8;
+  font-size: 1.35rem;              
+  font-weight: 500;                
+}
+
+.welcome-text p {
+  max-width: 800px;
+  margin: 0 auto 20px;            
+  color: var(--color-text-secondary);
+}
+
+.welcome-text .mg {
+  color: var(--color-primary);
+  font-weight: 700;                
+}

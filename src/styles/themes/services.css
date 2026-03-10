@@ -1,0 +1,6 @@
+@layer theme {
+  [data-theme="services"] {
+    --color-primary: #2ecc71;
+    /* or a different accent */
+  }
+}

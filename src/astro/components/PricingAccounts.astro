@@ -1,0 +1,379 @@
+<!-- ======================================
+     CINEMATIC DARK DASHBOARD PRICING TABLE
+     ====================================== -->
+
+<style>
+
+/* SECTION BACKGROUND */
+
+.pricing-chart-section {
+  padding: 5rem 1rem;
+  text-align: center;
+  background:
+    radial-gradient(circle at top, #1b1d21, #07090c 75%);
+  color: #e6e6e6;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Star / data field */
+
+.pricing-chart-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px);
+  background-size: 80px 80px, 120px 120px;
+  background-position: 0 0, 40px 60px;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+/* Headings */
+
+.pricing-heading {
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin-bottom: 0.6rem;
+  background: linear-gradient(90deg,#2e8b3e,#bdbdbd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pricing-subtitle {
+  font-size: 1.1rem;
+  color: ;
+  margin-bottom: 3.5rem;
+}
+
+
+/* FLOATING PANEL */
+
+.pricing-table-container {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  background:
+    linear-gradient(
+      rgba(22,24,28,0.92),
+      rgba(22,24,28,0.92)
+    );
+
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  border-radius: 26px;
+  overflow: hidden;
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.03),
+    0 40px 80px rgba(0,0,0,0.9);
+}
+
+
+/* TABLE */
+
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+
+/* HEADER BAR */
+
+.table-header {
+  background: linear-gradient(135deg,#1e2127,#121419);
+}
+
+.header-cell {
+  padding: 1.8rem 2rem;
+  color: #dcdcdc;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+
+/* ROWS */
+
+.table-row {
+  position: relative;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: all 0.4s ease;
+}
+
+.table-row::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.06),
+    transparent
+  );
+  opacity: 0;
+}
+
+.table-row:hover::after {
+  opacity: 1;
+}
+
+.table-row:hover {
+  background: rgba(255,255,255,0.04);
+  transform: translateX(6px);
+}
+
+
+/* CELLS */
+
+.table-cell {
+  padding: 1.6rem 2rem;
+  text-align: left;
+}
+
+
+/* SERVICE */
+
+.service-cell {
+  font-weight: 600;
+  color: #f0f0f0;
+  font-size: 1.05rem;
+}
+
+
+/* BANDING */
+
+.banding-cell {
+  color: rgba(200,200,200,0.75);
+  font-size: 0.95rem;
+}
+
+.banding-detail {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.85rem;
+  color: rgba(170,170,170,0.6);
+}
+
+
+/* PRICE */
+
+.price-cell {
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 1.15rem;
+  text-align: right;
+}
+
+.price-amount {
+  display: inline-block;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.12),
+    rgba(255,255,255,0.04)
+  );
+
+  padding: 0.6rem 1.2rem;
+  border-radius: 14px;
+
+  border: 1px solid rgba(255,255,255,0.15);
+
+  box-shadow:
+    inset 0 0 15px rgba(255,255,255,0.08);
+
+  transition: all 0.35s ease;
+}
+
+.table-row:hover .price-amount {
+  transform: scale(1.08);
+
+  box-shadow:
+    0 0 25px rgba(255,255,255,0.25),
+    inset 0 0 20px rgba(255,255,255,0.15);
+}
+
+
+/* STRIPING */
+
+.table-row:nth-child(even):not(:hover) {
+  background: rgba(255,255,255,0.02);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .pricing-table {
+    display: block;
+  }
+
+  .table-header {
+    display: none;
+  }
+
+  .table-row {
+    display: block;
+    margin-bottom: 1.5rem;
+
+    border-radius: 18px;
+    padding: 1.4rem;
+
+    background: rgba(24,26,30,0.9);
+  }
+
+  .table-row:hover {
+    transform: translateY(-4px);
+  }
+
+  .table-cell {
+    display: block;
+    padding: 0.6rem 0;
+  }
+
+  .service-cell {
+    font-size: 1.15rem;
+    border-bottom: 1px dashed rgba(255,255,255,0.15);
+    padding-bottom: 0.8rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .banding-cell::before {
+    content: "Banding: ";
+    font-weight: 600;
+  }
+
+  .price-cell {
+    text-align: left;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 0.8rem;
+  }
+
+  .price-cell::before {
+    content: "Annual Price: ";
+    font-weight: 600;
+    margin-right: 0.4rem;
+  }
+
+  .price-amount {
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+  }
+}
+
+</style>
+
+
+<div class="pricing-chart-section">
+
+  <h2 class="pricing-heading">Our Starting Prices</h2>
+  <p class="pricing-subtitle">Transparent annual fees for our core services</p>
+
+  <div class="pricing-table-container">
+
+    <table class="pricing-table">
+
+      <thead class="table-header">
+        <tr>
+          <th class="header-cell">Service Name</th>
+          <th class="header-cell">Banding</th>
+          <th class="header-cell">Annual Price</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr class="table-row">
+          <td class="table-cell service-cell">VAT Returns</td>
+          <td class="table-cell banding-cell">
+            Revenue-based pricing
+            <span class="banding-detail">£0 – £99,000 annual revenue</span>
+          </td>
+          <td class="table-cell price-cell">
+            <span class="price-amount">£525 / year</span>
+          </td>
+        </tr>
+
+        <tr class="table-row">
+          <td class="table-cell service-cell">Ltd Company Accounts & Tax Return</td>
+          <td class="table-cell banding-cell">
+            Revenue-based pricing
+            <span class="banding-detail">£0 – £90,000 annual revenue</span>
+          </td>
+          <td class="table-cell price-cell">
+            <span class="price-amount">£850 / year</span>
+          </td>
+        </tr>
+
+        <tr class="table-row">
+          <td class="table-cell service-cell">Sole Trader / Partnership Accounts</td>
+          <td class="table-cell banding-cell">
+            Revenue-based pricing
+            <span class="banding-detail">£0 – £90,000 annual revenue</span>
+          </td>
+          <td class="table-cell price-cell">
+            <span class="price-amount">£680 / year</span>
+          </td>
+        </tr>
+
+        <tr class="table-row">
+          <td class="table-cell service-cell">Payroll Services</td>
+          <td class="table-cell banding-cell">
+            Employee-based pricing
+            <span class="banding-detail">1 – 5 employees</span>
+          </td>
+          <td class="table-cell price-cell">
+            <span class="price-amount">£150 / year</span>
+          </td>
+        </tr>
+
+        <tr class="table-row">
+          <td class="table-cell service-cell">Self Assessment Tax Return</td>
+          <td class="table-cell banding-cell">
+            Income-based pricing
+            <span class="banding-detail">Up to £79,000 annual income</span>
+          </td>
+          <td class="table-cell price-cell">
+            <span class="price-amount">£175 / year</span>
+          </td>
+        </tr>
+
+        <tr class="table-row">
+          <td class="table-cell service-cell">Property Accounts</td>
+          <td class="table-cell banding-cell">
+            Property-based pricing
+            <span class="banding-detail">1 property</span>
+          </td>
+          <td class="table-cell price-cell">
+            <span class="price-amount">£150 / year</span>
+          </td>
+        </tr>
+
+        <tr class="table-row">
+          <td class="table-cell service-cell">ATED Returns</td>
+          <td class="table-cell banding-cell">
+            Property-based pricing
+            <span class="banding-detail">1 property</span>
+          </td>
+          <td class="table-cell price-cell">
+            <span class="price-amount">£150 / year</span>
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>

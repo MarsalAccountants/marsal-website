@@ -1,0 +1,68 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../../styles/pages/contact.css";
+---
+
+<BaseLayout>
+
+  <main class="contact-page">
+
+    <section class="contact-container">
+      <div class="container">
+        <div class="row">
+
+          <!-- CONTACT DETAILS -->
+          <div class="col-sm-6 contact-details">
+
+            <h1>Contact Us</h1>
+            <div class="divider-content"></div>
+
+            <p>
+              <strong>Marsal Accountants</strong><br />
+              Your local accountants in Paisley, supporting clients across
+              Glasgow and Central Scotland.
+            </p>
+
+            <p>
+              Office 1.4<br />
+              1 Macdowall Street<br />
+              Paisley<br />
+              Scotland<br />
+              PA3 2NB
+            </p>
+
+            <p>
+              <strong>Telephone:</strong><br />
+              <a href="tel:07468641272">07468 641272</a>
+            </p>
+
+            <p>
+              <strong>Email:</strong><br />
+              <a href="mailto:info@marsalaccountants.co.uk">
+                info@marsalaccountants.co.uk
+              </a>
+            </p>
+
+          </div>
+
+          <!-- MAP -->
+          <div class="col-sm-6 contact-map">
+            <div class="map-wrapper">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2239.7253069429416!2d-4.4319203!3d55.8500814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4888494bd8005793%3A0xe8791a8ed3da3c0b!2sStorage%20Vault%20Self%20Storage%20-%20Paisley!5e0!3m2!1sen!2suk!4v1760492009402!5m2!1sen!2suk"
+                height="450"
+                style="width:100%; border:0;"
+                allowfullscreen
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+</BaseLayout>

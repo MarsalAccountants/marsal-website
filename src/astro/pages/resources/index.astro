@@ -1,0 +1,104 @@
+---
+import Layout from "../../layouts/BaseLayout.astro";
+import ContactUs from "../../components/ContactUs.astro";
+import "../../../styles/pages/resources/resources.css";
+---
+
+<Layout title="Resources | Marsal Accountants">
+  <main class="resources-page">
+
+    <section class="resources-container">
+
+      <!-- PAGE HEADING -->
+      <h1 class="resources-heading">Useful Tools & Resources</h1>
+      <div class="section-divider"></div>
+
+      <!-- INTRO -->
+      <p class="resources-lead">
+        At <strong>Marsal Accountants</strong>, we believe in empowering clients with clear, simple, and practical tools.
+        Below you’ll find our most popular resources — designed to help you calculate PAYE, understand our fees,
+        and estimate your accounting costs with ease.
+      </p>
+
+      <!-- RESOURCES LIST -->
+      <div class="resources-list">
+
+        <!-- RESOURCE ITEM -->
+        <div class="resource-row">
+          <img src="/images/marsal-paye-calculator.png" alt="Scottish PAYE Calculator" class="resource-img" loading="lazy" />
+          <div>
+            <h2 class="resource-title"><a href="/resources/scottish-paye-2025-26/">Scottish PAYE Calculator 2025–26</a></h2>
+            <div class="divider-content-small"></div>
+            <p>
+              Calculate your Scottish PAYE tax for the 2025–26 tax year using our simple, accurate calculator.
+              Perfect for employees, contractors, and employers.
+            </p>
+            <a href="/resources/scottish-paye-2025-26/" class="btn-more">Use Calculator</a>
+          </div>
+        </div>
+
+        <!-- RESOURCE ITEM -->
+        <div class="resource-row">
+          <img src="/images/fee-calculator.png" alt="Fee Calculator" class="resource-img" loading="lazy" />
+          <div>
+            <h2 class="resource-title"><a href="/resources/fee-calculator/">Fee Calculator</a></h2>
+            <div class="divider-content-small"></div>
+            <p>
+              Estimate your accounting fees instantly. Choose your business type, services, and get a clear,
+              transparent cost breakdown.
+            </p>
+            <a href="/resources/fee-calculator/" class="btn-more">Calculate Fees</a>
+          </div>
+        </div>
+
+        <!-- RESOURCE ITEM -->
+        <div class="resource-row">
+          <img src="/images/our-fee.jpg" alt="Our Fee Structure" class="resource-img" loading="lazy" />
+          <div>
+            <h2 class="resource-title"><a href="/resources/our-fee/">Our Fee Structure</a></h2>
+            <div class="divider-content-small"></div>
+            <p>
+              A clear, simple explanation of how our pricing works — including fixed fees, monthly plans,
+              and service‑based pricing.
+            </p>
+            <a href="/resources/our-fee/" class="btn-more">View Fees</a>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Contact Us Component -->
+    <ContactUs />
+
+  </main>
+
+  <!-- Scroll Reveal Animation -->
+  <script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+      const resourceRows = document.querySelectorAll(".resource-row");
+      
+      if (!("IntersectionObserver" in window)) {
+        resourceRows.forEach(row => row.classList.add("in-view"));
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => {
+                entry.target.classList.add("in-view");
+              }, index * 120);
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
+      );
+
+      resourceRows.forEach(row => observer.observe(row));
+    });
+  </script>
+</Layout>

@@ -1,0 +1,237 @@
+---
+import "../../styles/components/header.css";
+
+const contactInfo = {
+  phone: "+44 7468 641272",
+  email: "info@marsalaccountants.co.uk",
+  address: "Office 1.4, 1 Macdowall St, PA3 2NB"
+};
+---
+
+<header class="site-header">
+
+  <!-- Top Contact Bar -->
+  <div class="top-contact-bar">
+    <div class="contact-container">
+
+      <div class="contact-group left-group">
+        <a href={`tel:${contactInfo.phone}`} class="contact-item">
+          <i class="fas fa-phone-alt"></i>
+          <span>{contactInfo.phone}</span>
+        </a>
+      </div>
+
+      <div class="contact-group center-group">
+        <a href={`mailto:${contactInfo.email}`} class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <span>{contactInfo.email}</span>
+        </a>
+      </div>
+
+      <div class="contact-group right-group">
+        <div class="contact-item address-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>{contactInfo.address}</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Main Navigation -->
+  <nav class="nav-container">
+
+    <!-- Logo + Login + Theme Toggle -->
+    <div class="logo-login-group">
+      <a href="/" class="logo">
+        <img src="/images/MSlogo.png" alt="Marsal Icon" class="logo-icon" />
+      </a>
+
+      <!-- Login Icon -->
+      <a href={"http://localhost:5173/sign-in"} 
+   class="login-icon" 
+   title="Login / Admin" 
+   rel="external" 
+   target="_self">
+  <i class="fas fa-user-circle"></i>
+</a>
+
+
+      <!-- Dark/Light Mode Toggle -->
+      <button id="themeToggle" class="theme-toggle" title="Toggle Dark/Light Mode">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <ul class="nav-menu desktop-nav">
+
+      <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+
+      <li class="nav-item"><a href="/company-profiles/" class="nav-link">About</a></li>
+
+      <li class="nav-item dropdown">
+        <a href="/services/" class="nav-link dropdown-toggle">
+          Services <i class="fas fa-chevron-down"></i>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="/services/accounting/">Accounting Services</a></li>
+          <li><a href="/services/bookkeeping/">Bookkeeping Services</a></li>
+          <li><a href="/services/management-accounts/">Management Accounts</a></li>
+          <li><a href="/services/payroll/">Payroll Services</a></li>
+          <li><a href="/services/property-accounts/">Property Accounts</a></li>
+          <li><a href="/services/self-assessment-tax-returns/">Self Assessment Tax Returns</a></li>
+          <li><a href="/services/corporation-tax-return-services/">Corporation Tax Return</a></li>
+          <li><a href="/services/business-setup/">Starting New Business</a></li>
+          <li><a href="/services/tax-investigation/">Tax Investigation</a></li>
+          <li><a href="/services/vat/">Value Added Tax (VAT)</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a href="/resources/" class="nav-link dropdown-toggle">
+          Resources <i class="fas fa-chevron-down"></i>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="/resources/scottish-paye-2025-26/">PAYE Calculator</a></li>
+          <li><a href="/resources/our-fee/">Our Fee</a></li>
+          <li><a href="/resources/fee-calculator/">Fee Calculator</a></li>
+          <li><a href="/resources/tax-tables/">Tax Tables</a></li>
+          <li><a href="https://www.gov.uk/government/organisations/hm-revenue-customs" target="_blank">HMRC Links</a></li>
+          <li><a href="https://www.gov.uk/government/organisations/companies-house" target="_blank">Companies House</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-item"><a href="/articles/" class="nav-link">Articles</a></li>
+      <li class="nav-item"><a href="/contact/" class="nav-link">Contact</a></li>
+
+    </ul>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-toggle" id="mobileToggle">
+      <i class="fas fa-bars"></i>
+    </button>
+
+  </nav>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav-container" id="mobileNav">
+
+    <div class="mobile-contact-info">
+      <a href={`tel:${contactInfo.phone}`} class="mobile-contact-item">
+        <i class="fas fa-phone-alt"></i>
+        <span>{contactInfo.phone}</span>
+      </a>
+
+      <a href={`mailto:${contactInfo.email}`} class="mobile-contact-item">
+        <i class="fas fa-envelope"></i>
+        <span>{contactInfo.email}</span>
+      </a>
+
+      <div class="mobile-contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>{contactInfo.address}</span>
+      </div>
+    </div>
+
+    <ul class="nav-menu mobile-nav">
+
+      <li><a href="/">Home</a></li>
+      <li><a href="/company-profiles/">About</a></li>
+
+      <li class="mobile-dropdown">
+        <a href="/services/" class="mobile-dropdown-toggle">Services</a>
+        <ul class="mobile-dropdown-menu">
+          <li><a href="/services/accounting/">Accounting Services</a></li>
+          <li><a href="/services/bookkeeping/">Bookkeeping Services</a></li>
+          <li><a href="/services/management-accounts/">Management Accounts</a></li>
+          <li><a href="/services/payroll/">Payroll Services</a></li>
+          <li><a href="/services/property-accounts/">Property Accounts</a></li>
+          <li><a href="/services/self-assessment-tax-returns/">Self Assessment</a></li>
+          <li><a href="/services/corporation-tax-return-services/">Corporation Tax</a></li>
+          <li><a href="/services/business-setup/">Starting New Business</a></li>
+          <li><a href="/services/tax-investigation/">Tax Investigation</a></li>
+          <li><a href="/services/vat/">VAT</a></li>
+        </ul>
+      </li>
+
+      <li class="mobile-dropdown">
+        <a href="/resources/" class="mobile-dropdown-toggle">Resources</a>
+        <ul class="mobile-dropdown-menu">
+          <li><a href="/resources/scottish-paye-2025-26/">PAYE Calculator</a></li>
+          <li><a href="/resources/our-fee/">Our Fee</a></li>
+          <li><a href="/resources/fee-calculator/">Fee Calculator</a></li>
+          <li><a href="https://www.gov.uk/government/organisations/hm-revenue-customs" target="_blank">HMRC Links</a></li>
+          <li><a href="https://www.gov.uk/government/organisations/companies-house" target="_blank">Companies House</a></li>
+        </ul>
+      </li>
+
+      <li><a href="/articles/">Articles</a></li>
+      <li><a href="/contact/">Contact</a></li>
+
+    </ul>
+
+  </div>
+
+</header>
+
+<!-- ================================
+     DARK/LIGHT MODE SCRIPT
+================================ -->
+<script>
+  const themeToggle = document.getElementById("themeToggle");
+  const root = document.documentElement;
+
+  // Load saved theme
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    root.setAttribute("data-theme", savedTheme);
+    updateIcon(savedTheme);
+  }
+
+  themeToggle?.addEventListener("click", () => {
+    const current = root.getAttribute("data-theme") || "light";
+    const next = current === "light" ? "dark" : "light";
+
+    root.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+    updateIcon(next);
+  });
+
+  function updateIcon(theme) {
+    const icon = themeToggle.querySelector("i");
+    if (theme === "dark") {
+      icon.classList.remove("fa-moon");
+      icon.classList.add("fa-sun");
+    } else {
+      icon.classList.remove("fa-sun");
+      icon.classList.add("fa-moon");
+    }
+  }
+
+  // Mobile menu logic
+  const toggle = document.getElementById("mobileToggle");
+  const mobileNav = document.getElementById("mobileNav");
+
+  toggle?.addEventListener("click", () => {
+    mobileNav.classList.toggle("open");
+  });
+
+  document.querySelectorAll(".dropdown-toggle").forEach(link => {
+    link.addEventListener("mouseenter", () => {
+      link.parentElement.classList.add("open");
+    });
+    link.parentElement.addEventListener("mouseleave", () => {
+      link.parentElement.classList.remove("open");
+    });
+  });
+
+  document.querySelectorAll(".mobile-dropdown-toggle").forEach(link => {
+    link.addEventListener("click", (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        link.nextElementSibling.classList.toggle("open");
+      }
+    });
+  });
+</script>

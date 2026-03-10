@@ -1,0 +1,38 @@
+@layer tokens {
+  :root {
+    /* Spacing */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 32px;
+    --space-xl: 48px;
+
+    /* Radii */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+
+    /* Shadows */
+    --shadow-soft: 0 4px 12px rgba(0,0,0,0.25);
+    --shadow-strong: 0 8px 24px rgba(0,0,0,0.35);
+
+    /* Grays / Neutrals – for dark/light mode */
+    --gray-100: #f5f7fa;
+    --gray-200: #e4e7eb;
+    --gray-300: #cbd2d9;
+    --gray-400: #9aa5b1;
+    --gray-500: #7b8794;
+    --gray-600: #616e7c;
+    --gray-700: #52606d;
+    --gray-800: #3e4c59;
+    --gray-900: #323f4b;
+
+    /* Surfaces – these can be overridden by dark theme if needed */
+    --color-surface: #0d1117;
+    --color-surface-light: #161b22;
+    --color-surface-lighter: #1f2630;
+    --color-text: #e6edf3;
+    --color-text-secondary: #9ba3af;
+    --color-border-light: #30363d;
+  }
+}

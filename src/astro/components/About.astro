@@ -1,0 +1,108 @@
+---
+import "../../styles/components/about.css";
+
+const faqs = [
+  {
+    question: "What types of accounting services do you offer?",
+    answer: "We provide comprehensive accounting and tax services including bookkeeping, management accounts, payroll, VAT returns, self-assessment, corporation tax, and property accounts."
+  },
+  {
+    question: "Do you offer services for startups and small businesses?",
+    answer: "Yes! We specialize in helping new businesses get up and running, with tailored advice and cloud accounting solutions to simplify your finances."
+  },
+  {
+    question: "Can I access my accounts online?",
+    answer: "Absolutely. We use cloud accounting platforms that allow you real-time access to your financial reports anytime, anywhere."
+  },
+  {
+    question: "How do you charge for your services?",
+    answer: "We offer transparent, fixed pricing for most services, so you know exactly what to expect. Custom packages are also available for complex needs."
+  },
+  {
+    question: "Are my financial data and documents secure?",
+    answer: "Yes. We use secure cloud systems with encryption, and adhere to strict GDPR and HMRC compliance standards."
+  }
+];
+---
+
+<!-- ===============================
+     FAQ SECTION
+=============================== -->
+<section class="faq-section">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-grid">
+      {faqs.map((faq, index) => (
+        <div class="faq-item">
+          <button class="faq-question" data-index={index}>
+            <span>{faq.question}</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>{faq.answer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  const items = document.querySelectorAll(".faq-item");
+
+  items.forEach(item => {
+    const button = item.querySelector(".faq-question");
+    button.addEventListener("click", () => {
+      // Close other open items
+      items.forEach(i => {
+        if (i !== item) i.classList.remove("active");
+      });
+      // Toggle current
+      item.classList.toggle("active");
+    });
+  });
+</script>
+
+<!-- ===============================
+     ABOUT SECTION
+=============================== -->
+<section class="about-section">
+  <div class="container">
+    <div class="about-grid">
+
+      <!-- ABOUT US -->
+      <div class="about-card">
+        <h2>About Us</h2>
+        <div class="about-divider"></div>
+
+        <p>
+          We can prepare your accounts within one month. We provide a range of
+          world-class accounting and taxation services, covering both business
+          and personal needs.
+        </p>
+
+        <p>
+          Marsal Accountants is a newly established firm, backed by over
+          <strong>80,000 hours of collective experience</strong>. Our strength lies in our
+          diverse expertise and collaborative approach.
+        </p>
+      </div>
+
+      <!-- OUR CLIENTS -->
+      <div class="about-card">
+        <h2>Our Clients</h2>
+        <div class="about-divider"></div>
+
+        <ul class="about-list">
+          <li>Doctors, Dentists, Solicitors, Opticians, Pharmacies, Estate Agents</li>
+          <li>Hotels, Pubs, Restaurants, Cafés, Franchise Businesses</li>
+          <li>Supermarkets, Newsagents, Off-Licences, Retail Stores</li>
+          <li>Wholesalers, Importers, Exporters, Logistics Companies</li>
+          <li>Electricians, Plumbers, Contractors, IT Consultants</li>
+          <li>Travel Agents, Care Homes, Hair Salons, Launderettes, Charities</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>

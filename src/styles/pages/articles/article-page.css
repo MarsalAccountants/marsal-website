@@ -1,0 +1,110 @@
+/* =========================================================
+   MARSAL PREMIUM ARTICLE PAGE
+   ========================================================= */
+
+/* PAGE WRAPPER */
+.article-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+  color: #ffffff; /* White body text */
+  line-height: 1.75;
+  font-size: 1.1rem;
+}
+
+.article-hero {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 2rem;
+  border-radius: 12px;
+}
+
+
+
+/* TITLE */
+.article-content h1 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #ffffff; /* White title */
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+/* SUBHEADINGS */
+.article-content h2 {
+  font-size: 1.9rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #2e8b3e; /* Marsal green */
+}
+
+/* PARAGRAPHS */
+.article-content p {
+  margin-bottom: 1.5rem;
+  color: #e6e6e6; /* Softer white for readability */
+}
+
+/* LISTS */
+.article-content ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.article-content li {
+  margin-bottom: 0.6rem;
+  color: #e6e6e6;
+}
+
+/* META INFO */
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.95rem;
+  color: #cccccc;
+  margin-bottom: 2.5rem;
+}
+
+.category-tag {
+  background: #2e8b3e;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* FAQ BOX */
+.faq {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.faq p strong {
+  color: #2e8b3e;
+}
+
+/* LINKS */
+.article-content a {
+  color: #2e8b3e;
+  text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .article-hero {
+    height: 260px;
+  }
+
+  .article-content h1 {
+    font-size: 2.1rem;
+  }
+
+  .article-content h2 {
+    font-size: 1.5rem;
+  }
+}

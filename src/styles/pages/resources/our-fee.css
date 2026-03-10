@@ -1,0 +1,213 @@
+/* ============================================
+   Our Fees page – custom styles
+   Location: src/styles/pages/resources/our-fee.css
+   ============================================ */
+
+.pricing-fees-wrapper {
+  /* Spacing & container refinements */
+  margin-bottom: 40px;
+}
+
+/* ----- Dividers (using theme primary color) ----- */
+.pricing-fees-wrapper .divider-content {
+  width: 60px;
+  height: 3px;
+  background: var(--color-primary);
+  margin: 15px 0 20px;
+}
+
+.pricing-fees-wrapper .divider-content-small {
+  width: 40px;
+  height: 2px;
+  background: var(--color-primary);
+  margin: 10px 0 15px;
+}
+
+/* ----- Content bullet lists ----- */
+.pricing-fees-wrapper .content-bullet {
+  list-style: none;
+  padding-left: 0;
+}
+
+.pricing-fees-wrapper .content-bullet li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+}
+
+.pricing-fees-wrapper .content-bullet li::before {
+  content: "•";
+  color: var(--color-primary);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* ============================================
+   Apple‑style banners for accordion headings
+   ============================================ */
+.pricing-fees-wrapper .panel-title {
+  margin: 0;                /* remove default heading margin */
+}
+
+.pricing-fees-wrapper .panel-title a {
+  display: block;           /* make the whole area clickable */
+  background: linear-gradient(
+    to right,
+    var(--color-surface-lighter),
+    var(--color-surface)
+  );
+  padding: 18px 30px;
+  max-width: 800px;;
+  border-radius: 14px;    
+  font-weight: 600;
+  font-size: 1.3rem;      
+  letter-spacing: -0.02em;
+  color: var(--color-text); /* ensure text contrast */
+  text-decoration: none;
+  box-shadow: 0 4px 12px -8px rgba(0, 0, 0, 0.2);
+  border-bottom: 2px solid var(--color-primary-light, rgba(0,113,227,0.3));
+  transition: all 0.25s ease;
+}
+
+/* Lift effect on hover (very Apple) */
+.pricing-fees-wrapper .panel-title a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.3);
+  border-bottom-color: var(--color-primary);
+  text-decoration: none;    /* remove underline if any */
+}
+
+/* Optional: active / open state indicator */
+.pricing-fees-wrapper .panel-title a[aria-expanded="true"] {
+  background: linear-gradient(
+    to right,
+    var(--color-surface),
+    var(--color-surface-lighter)
+  );
+  border-bottom-color: var(--color-primary);
+}
+
+/* ----- Spacing between accordion panels ----- */
+.pricing-fees-wrapper .panel {
+  margin-bottom: 12px;  /* Adjust to your liking */
+}
+
+/* ----- Accordion panel body (unchanged) ----- */
+.pricing-fees-wrapper .panel-body {
+  background-color: var(--color-surface-lighter);
+  padding: 25px;
+}
+
+/* ----- Table enhancements (readability, using theme colors) ----- */
+.pricing-fees-wrapper .table-bordered {
+  border: 1px solid var(--color-border-light);
+}
+
+.pricing-fees-wrapper .table-bordered > thead > tr > th {
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary-hover);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  letter-spacing: 0.03em;
+}
+
+.pricing-fees-wrapper .table-bordered > tbody > tr > td {
+  padding: 12px 8px;
+}
+
+/* Zebra striping for better legibility – using theme-appropriate light/dark */
+.pricing-fees-wrapper .table-bordered > tbody > tr:nth-of-type(odd) {
+  background-color: var(--color-surface-light);
+}
+
+.pricing-fees-wrapper .table-bordered > tbody > tr:nth-of-type(even) {
+  background-color: var(--color-surface);
+}
+
+/* =========================
+   SERVICES CAROUSEL (unchanged)
+========================= */
+.services-carousel-section {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.carousel-heading {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+}
+
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    animation: scroll 40s linear infinite;
+    will-change: transform;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-240px * 9));
+    }
+}
+
+.service-slide {
+    flex: 0 0 auto;
+    background: var(--color-surface-lighter);
+    padding: 1.5rem;
+    border-radius: 6px;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-border-light);
+}
+
+.service-slide:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-strong);
+    border-color: var(--color-primary);
+}
+
+.service-slide img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.service-slide h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.service-slide a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.service-slide a:hover {
+    color: var(--color-primary-hover);
+    text-decoration: underline;
+}

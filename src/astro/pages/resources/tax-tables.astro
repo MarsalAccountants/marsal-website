@@ -1,0 +1,1661 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../../styles/pages/tax-tables.css';
+---
+
+<BaseLayout theme="resources">
+
+  <!-- HERO -->
+  <section class="tax-hero" slot="hero">
+    <div class="container">
+      <h1>Tax Tables</h1>
+      <p>Your complete reference for UK tax rates, allowances, and thresholds.</p>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <section class="tax-section">
+    <div class="container">
+
+      <div class="tax-accordion">
+<!-- ============================
+     INCOME TAX
+============================ -->
+<div class="tax-item">
+  <button class="tax-header">
+    <span>Income Tax</span>
+    <span class="tax-icon">+</span>
+  </button>
+
+  <div class="tax-content">
+    <div class="table-wrapper">
+
+      <!-- MAIN RATES TABLE -->
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th rowspan="2">Band</th>
+            <th colspan="3">2024-25</th>
+            <th colspan="3">2025-26</th>
+          </tr>
+          <tr>
+            <th>Taxable Income</th>
+            <th>Rate %</th>
+            <th>Dividend Rate %</th>
+            <th>Taxable Income</th>
+            <th>Rate %</th>
+            <th>Dividend Rate %</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Basic rate</td>
+            <td>£ 0 to £ 37,700</td>
+            <td>20.0% *</td>
+            <td>8.75%</td>
+            <td>£ 0 to £ 37,700</td>
+            <td>20.0% *</td>
+            <td>8.75%</td>
+          </tr>
+
+          <tr>
+            <td>Higher rate</td>
+            <td>£ 37,701 to £ 125,140</td>
+            <td>40.0%</td>
+            <td>33.75%</td>
+            <td>£ 37,701 to £ 125,140</td>
+            <td>40.0%</td>
+            <td>33.75%</td>
+          </tr>
+
+          <tr>
+            <td>Additional rate</td>
+            <td>Over £ 125,141</td>
+            <td>45.0%</td>
+            <td>39.35%</td>
+            <td>Over £ 125,141</td>
+            <td>45.0%</td>
+            <td>39.35%</td>
+          </tr>
+
+          <tr>
+            <td colspan="7"><strong>Personal Savings Allowance (PSA) **</strong></td>
+          </tr>
+
+          <tr>
+            <td>Basic rate taxpayer</td>
+            <td>£ 1,000</td><td></td><td></td>
+            <td>£ 1,000</td><td></td><td></td>
+          </tr>
+
+          <tr>
+            <td>Higher rate taxpayer</td>
+            <td>£ 500</td><td></td><td></td>
+            <td>£ 500</td><td></td><td></td>
+          </tr>
+
+          <tr>
+            <td>Additional rate taxpayer</td>
+            <td>Nil</td><td></td><td></td>
+            <td>Nil</td><td></td><td></td>
+          </tr>
+
+          <tr>
+            <td colspan="7">
+              Certain trusts taxed at 45% (39.35% on dividend income).
+            </td>
+          </tr>
+
+          <tr>
+            <th colspan="7">
+              * Savings income of up to £ 5,000 taxable at 0% in certain circumstances.<br>
+              ** Personal saving allowance utilises the basic and higher rate bands.
+            </th>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- ALLOWANCES TABLE -->
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th colspan="2">Allowances</th>
+            <th>2024-25</th>
+            <th>2025-26</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Dividend Allowance (DA)</td><td></td>
+            <td>£ 500</td><td>£ 500</td>
+          </tr>
+          <tr>
+            <td>Personal Allowance (PA)</td><td>(A,B)</td>
+            <td>£ 12,570</td><td>£ 12,570</td>
+          </tr>
+          <tr>
+            <td>Marriage Allowance</td><td>(B,C)</td>
+            <td>£ 1,260</td><td>£ 1,260</td>
+          </tr>
+          <tr>
+            <td>Blind Person’s Allowance</td><td>(B)</td>
+            <td>£ 3,070</td><td>£ 3,130</td>
+          </tr>
+          <tr>
+            <td>Rent a room relief (maximum)</td><td></td>
+            <td>£ 7,500</td><td>£ 7,500</td>
+          </tr>
+          <tr>
+            <td>Trading Income Allowance</td><td>(D)</td>
+            <td>£ 1,000</td><td>£ 1,000</td>
+          </tr>
+          <tr>
+            <td>Property Income Allowance</td><td>(D)</td>
+            <td>£ 1,000</td><td>£ 1,000</td>
+          </tr>
+
+          <tr>
+            <th colspan="4">
+              (A) Reduced by £1 for every £2 of income over £100,000.<br>
+              (B) Non-residents may not be entitled to personal allowances.<br>
+              (C) Transferable allowance applies only to basic-rate taxpayers.<br>
+              (D) £1,000 deduction instead of actual expenses if gross income exceeds £1,000.
+            </th>
+          </tr>
+
+          <tr>
+            <td colspan="4">
+              High Income Child Benefit Charge: 1% of benefit per £200 of adjusted net income between £60,000 and £80,000.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+<!-- ============================
+     NATIONAL INSURANCE
+============================ -->
+<div class="tax-item">
+  <button class="tax-header">
+    <span>National Insurance Contributions</span>
+    <span class="tax-icon">+</span>
+  </button>
+
+  <div class="tax-content">
+    <div class="table-wrapper">
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th rowspan="2">Class 1 (Employees)</th>
+            <th colspan="2">2025-26</th>
+          </tr>
+          <tr>
+            <th>Employee</th>
+            <th>Employer</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Main NIC rate</td>
+            <td>8%</td>
+            <td>15%</td>
+          </tr>
+
+          <tr>
+            <td>No NICs for employees generally on the first</td>
+            <td>£ 242 pw</td>
+            <td>£ 96 pw</td>
+          </tr>
+
+          <tr>
+            <td>No NICs for younger employees*</td>
+            <td>£ 242 pw</td>
+            <td>£ 967 pw</td>
+          </tr>
+
+          <tr>
+            <td>NICs rate charged up to</td>
+            <td>£ 967 pw</td>
+            <td>no limit</td>
+          </tr>
+
+          <tr>
+            <td>2% NICs on earnings over</td>
+            <td>£ 967 pw</td>
+            <td>N/A</td>
+          </tr>
+
+          <tr>
+            <th colspan="3">
+              * No employer NICs on the first £967 pw for employees under 21, apprentices under 25, veterans (first 12 months), and freeport/investment zone employees.
+            </th>
+          </tr>
+
+          <tr><td colspan="3">&nbsp;</td></tr>
+
+          <tr>
+            <th colspan="2">Employment Allowance</th>
+            <td>£ 10,500</td>
+          </tr>
+
+          <tr>
+            <td colspan="3">Per business – not available if sole employee is a director</td>
+          </tr>
+
+          <tr><td colspan="3">&nbsp;</td></tr>
+
+          <tr>
+            <th colspan="3">Class 1A Employer</th>
+          </tr>
+
+          <tr>
+            <td colspan="2">On most employees’ and directors’ taxable benefits</td>
+            <td>15%</td>
+          </tr>
+
+          <tr><td colspan="3">&nbsp;</td></tr>
+
+          <tr>
+            <th colspan="3">Class 2 (Self-employed)</th>
+          </tr>
+
+          <tr>
+            <td colspan="2">Flat rate (if earnings exceed £ 6,845)</td>
+            <td>£ 3.50 pw</td>
+          </tr>
+
+          <tr>
+            <td colspan="2">Small profits threshold</td>
+            <td>£ 6,845</td>
+          </tr>
+
+          <tr><td colspan="3">&nbsp;</td></tr>
+
+          <tr>
+            <th colspan="3">Class 3 (Voluntary)</th>
+          </tr>
+
+          <tr>
+            <td colspan="2">Class 3: Flat rate per week</td>
+            <td>£ 17.75</td>
+          </tr>
+
+          <tr><td colspan="3">&nbsp;</td></tr>
+
+          <tr>
+            <th colspan="3">Class 4 (Self-employed)</th>
+          </tr>
+
+          <tr>
+            <td colspan="2">On profits between £12,570 and £50,270</td>
+            <td>6%</td>
+          </tr>
+
+          <tr>
+            <td colspan="2">On profits over £50,270</td>
+            <td>2%</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+<!-- ============================
+     CAPITAL GAINS TAX
+============================ -->
+<div class="tax-item">
+  <button class="tax-header">
+    <span>Capital Gains Tax</span>
+    <span class="tax-icon">+</span>
+  </button>
+
+  <div class="tax-content">
+    <div class="table-wrapper">
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Details</th>
+            <th>2024-25</th>
+            <th>2025-26</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th colspan="3">Annual exempt amount</th>
+          </tr>
+
+          <tr>
+            <td>Individuals</td>
+            <td>£ 3,000</td>
+            <td>£ 3,000</td>
+          </tr>
+
+          <tr>
+            <td>Trusts</td>
+            <td>£ 1,500 (A)</td>
+            <td>£ 1,500 (A)</td>
+          </tr>
+
+          <tr>
+            <th colspan="3">Tax rate</th>
+          </tr>
+
+          <tr>
+            <td>Basic rate taxpayers</td>
+            <td>18%</td>
+            <td>18%</td>
+          </tr>
+
+          <tr>
+            <td>Higher rate taxpayers</td>
+            <td>24% (B)</td>
+            <td>24% (B)</td>
+          </tr>
+
+          <tr>
+            <td>Trustees</td>
+            <td>24% (B)</td>
+            <td>24% (B)</td>
+          </tr>
+
+          <tr>
+            <td>Business Asset Disposal (capped at £1m lifetime)</td>
+            <td>10%</td>
+            <td>14%</td>
+          </tr>
+
+          <tr>
+            <td>Investors’ Relief</td>
+            <td>10%</td>
+            <td>14% (C)</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <th colspan="3">
+              <strong>(A)</strong> Exempt amount subject to related trusts rules.<br>
+              <strong>(B)</strong> Gains on carried interest taxed at 28% (32% in 2025–26).<br>
+              <strong>(C)</strong> Increasing to 18% from 6 April 2026.
+            </th>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+<!-- ============================
+     CORPORATION TAX
+============================ -->
+<div class="tax-item">
+  <button class="tax-header">
+    <span>Corporation Tax</span>
+    <span class="tax-icon">+</span>
+  </button>
+
+  <div class="tax-content">
+    <div class="table-wrapper">
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th colspan="3">Year to</th>
+            <th>2024-25</th>
+            <th>2025-26</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td colspan="2">Corporation Tax (Main rate)</td>
+            <td>(A,C)</td>
+            <td>25.00%</td>
+            <td>25.00%</td>
+          </tr>
+
+          <tr>
+            <td colspan="2">Corporation Tax (Small profits rate)</td>
+            <td>(B,C)</td>
+            <td>19.00%</td>
+            <td>19.00%</td>
+          </tr>
+
+          <tr><td colspan="5">&nbsp;</td></tr>
+
+          <tr>
+            <td colspan="2">Loans to participators</td>
+            <td></td>
+            <td>33.75%</td>
+            <td>33.75%</td>
+          </tr>
+
+          <tr>
+            <td colspan="2">Corporation tax on restitution interest payments</td>
+            <td>(D)</td>
+            <td>45%</td>
+            <td>45%</td>
+          </tr>
+
+          <tr>
+            <td colspan="2">Diverted profits tax</td>
+            <td>(E)</td>
+            <td>31%</td>
+            <td>31%</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <th colspan="4">
+              <strong>(A)</strong> Applies to companies with taxable profits over £250,000 (adjusted for associated companies).<br>
+              <strong>(B)</strong> Applies to companies with taxable profits below £50,000 (adjusted for associated companies).<br>
+              <strong>(C)</strong> Marginal relief applies between £50,000 and £250,000.<br>
+              <strong>(D)</strong> Withheld at source.<br>
+              <strong>(E)</strong> Applies to profits diverted from the UK (55% for ring-fenced entities).
+            </th>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+<!-- ============================
+     VALUE ADDED TAX (VAT)
+============================ -->
+<div class="tax-item">
+  <button class="tax-header">
+    <span>Value Added Tax (VAT)</span>
+    <span class="tax-icon">+</span>
+  </button>
+
+  <div class="tax-content">
+    <div class="table-wrapper">
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Details</th>
+            <th>2025-26</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Standard rate</td>
+            <td>20%</td>
+          </tr>
+
+          <tr>
+            <td>Reduced rate</td>
+            <td>5%</td>
+          </tr>
+
+          <tr>
+            <th colspan="2">Taxable Turnover Limits</th>
+          </tr>
+
+          <tr>
+            <td>Annual turnover threshold for registration</td>
+            <td>£ 90,000 per annum</td>
+          </tr>
+
+          <tr>
+            <td>Annual turnover limit for deregistration</td>
+            <td>£ 88,000 per annum</td>
+          </tr>
+
+          <tr>
+            <td colspan="2"><strong>Flat Rate Scheme (FRS)</strong></td>
+          </tr>
+
+          <tr>
+            <td>Flat rate scheme turnover limit</td>
+            <td>£ 150,000</td>
+          </tr>
+
+          <tr>
+            <td colspan="2"><strong>Cash accounting & Annual accounting schemes</strong></td>
+          </tr>
+
+          <tr>
+            <td>Annual taxable turnover to enter scheme</td>
+            <td>Up to £ 1.35m</td>
+          </tr>
+
+          <tr>
+            <td>Must leave scheme if annual taxable turnover</td>
+            <td>Exceeds £ 1.60m</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+<!-- ============================
+     BASIC STATE PENSION
+============================ -->
+<div class="tax-item">
+  <button class="tax-header">
+    <span>Basic State Pension</span>
+    <span class="tax-icon">+</span>
+  </button>
+
+  <div class="tax-content">
+    <div class="table-wrapper">
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>State pension (per week)</th>
+            <th>2024–25</th>
+            <th>2025–26</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Basic State Pension</td>
+            <td>£ 169.50</td>
+            <td>£ 176.45</td>
+          </tr>
+
+          <tr>
+            <td>New State Pension *</td>
+            <td>£ 221.20</td>
+            <td>£ 230.25</td>
+          </tr>
+
+          <tr>
+            <td colspan="3"><strong>* For those reaching State Pension age on or after 6 April 2016</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+<!-- ============================
+     CAR BENEFIT FOR EMPLOYEES
+============================ -->
+<div class="tax-item">
+  <button class="tax-header">
+    <span>Car Benefit for Employees</span>
+    <span class="tax-icon">+</span>
+  </button>
+
+  <div class="tax-content">
+    <div class="table-wrapper">
+
+      <h5>Taxable benefit: List price of car × chargeable percentage.</h5>
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th rowspan="2">CO₂ g/km</th>
+            <th rowspan="2">Electric Range (miles)</th>
+            <th>2024–25</th>
+            <th>2025–26</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>0</td>
+            <td>N/A</td>
+            <td>2%</td>
+            <td>3%</td>
+          </tr>
+
+          <tr>
+            <td>1–50</td>
+            <td>&gt;130</td>
+            <td>2%</td>
+            <td>3%</td>
+          </tr>
+
+          <tr>
+            <td>1–50</td>
+            <td>70–129</td>
+            <td>5%</td>
+            <td>6%</td>
+          </tr>
+
+          <tr>
+            <td>1–50</td>
+            <td>40–69</td>
+            <td>8%</td>
+            <td>9%</td>
+          </tr>
+
+          <tr>
+            <td>1–50</td>
+            <td>30–39</td>
+            <td>12%</td>
+            <td>13%</td>
+          </tr>
+
+          <tr>
+            <td>1–50</td>
+            <td>&lt;30</td>
+            <td>14%</td>
+            <td>15%</td>
+          </tr>
+
+          <tr>
+            <td>51–54</td>
+            <td>N/A</td>
+            <td>15%</td>
+            <td>16%</td>
+          </tr>
+
+          <tr>
+            <td colspan="4">
+              Then +1% for each 5g/km CO₂, up to a maximum of 37%.
+            </td>
+          </tr>
+
+          <tr>
+            <th colspan="4">
+              Diesel cars not meeting RDE2 standards incur a 4% supplement (still capped at 37%).
+            </th>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+<!-- ============================
+     FUEL BENEFIT
+============================ -->
+<div class="tax-item">
+  <button class="tax-header">
+    <span>Fuel Benefit</span>
+    <span class="tax-icon">+</span>
+  </button>
+
+  <div class="tax-content">
+    <div class="table-wrapper">
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Fuel Benefit</th>
+            <th>2024–25</th>
+            <th>2025–26</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><strong>Multiply the CO₂% used for the car benefit by</strong></td>
+            <td>£ 27,800</td>
+            <td>£ 28,200</td>
+          </tr>
+
+          <tr>
+            <td><strong>Vans – Fixed charge</strong></td>
+            <td>£ 3,960</td>
+            <td>£ 4,020</td>
+          </tr>
+
+          <tr>
+            <td><strong>Vans – Fuel benefit</strong> (private fuel provided)</td>
+            <td>£ 757</td>
+            <td>£ 769</td>
+          </tr>
+
+          <tr>
+            <td><strong>Zero-emission vans</strong></td>
+            <td>£ 0</td>
+            <td>£ 0</td>
+          </tr>
+
+          <tr>
+            <td colspan="3">
+              <strong>Employee contributions do not reduce the taxable figure unless ALL private fuel is paid by the employee.</strong>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+<!-- ============================
+     CHILD TRUST FUND
+============================ -->
+<div class="tax-item">
+  <button class="tax-header">
+    <span>Child Trust Fund</span>
+    <span class="tax-icon">+</span>
+  </button>
+
+  <div class="tax-content">
+    <div class="table-wrapper">
+
+      <p>
+        The Child Trust Fund (CTF) is a long-term tax-free savings account for children born between
+        1 September 2002 and 2 January 2011.
+      </p>
+
+      <p>
+        The money belongs to the child and cannot be withdrawn until age 18.
+        Up to £9,000 can be added in the 2024–25 tax year.
+      </p>
+
+      <h5><i>The scheme is now closed. New accounts cannot be opened.</i></h5>
+
+      <br>
+
+      <h5>Junior ISA</h5>
+
+      <p>
+        You cannot have both a Junior ISA and a Child Trust Fund.
+        If you want a Junior ISA, the provider must transfer the CTF into it.
+      </p>
+
+      <p>Your child can only have:</p>
+
+      <ul class="content-bullet">
+        <li>1 cash Junior ISA</li>
+        <li>1 stocks and shares Junior ISA</li>
+      </ul>
+
+      <p>
+        Anyone can contribute, but the total limit is £9,000 per tax year (2024–25).
+      </p>
+
+    </div>
+  </div>
+</div>
+<!-- ============================
+     COMPANY CARS ADVISORY FUEL RATES
+============================ -->
+<div class="tax-item">
+  <button class="tax-header">
+    <span>Company Cars Advisory Fuel Rates</span>
+    <span class="tax-icon">+</span>
+  </button>
+
+  <div class="tax-content">
+    <div class="table-wrapper">
+
+      <p><strong>Effective from 01 December 2024</strong></p>
+      <p>For employee private mileage reimbursement or employer reimbursement of business mileage in company cars.</p>
+
+      <!-- PETROL -->
+      <h4>Petrol – rate per mile</h4>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Engine Size</th>
+            <th>Rate per mile</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1400cc or less</td>
+            <td>12p</td>
+          </tr>
+          <tr>
+            <td>1401cc – 2000cc</td>
+            <td>14p</td>
+          </tr>
+          <tr>
+            <td>Over 2000cc</td>
+            <td>23p</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- LPG -->
+      <h4>LPG – rate per mile</h4>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Engine Size</th>
+            <th>Rate per mile</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1400cc or less</td>
+            <td>11p</td>
+          </tr>
+          <tr>
+            <td>1401cc – 2000cc</td>
+            <td>13p</td>
+          </tr>
+          <tr>
+            <td>Over 2000cc</td>
+            <td>21p</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- DIESEL -->
+      <h4>Diesel – rate per mile</h4>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Engine Size</th>
+            <th>Rate per mile</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1600cc or less</td>
+            <td>11p</td>
+          </tr>
+          <tr>
+            <td>1601cc – 2000cc</td>
+            <td>13p</td>
+          </tr>
+          <tr>
+            <td>Over 2000cc</td>
+            <td>17p</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+<!-- ============================
+     EMPLOYEE SHARE SCHEMES LIMITS
+============================ -->
+<div class="tax-item">
+  <button class="tax-header">
+    <span>Employee Share Schemes Limits</span>
+    <span class="tax-icon">+</span>
+  </button>
+
+  <div class="tax-content">
+    <div class="table-wrapper">
+
+      <h4>2023–24</h4>
+
+      <h5>Share Incentive Plans</h5>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Employer contributions</td>
+            <td>£3,600</td>
+          </tr>
+          <tr>
+            <td>Employer matching</td>
+            <td>(2:1)</td>
+          </tr>
+          <tr>
+            <td>Employee</td>
+            <td>£1,800</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h5>Other Limits</h5>
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <td>Enterprise Management Incentive option value</td>
+            <td>£250,000</td>
+          </tr>
+          <tr>
+            <td>Approved share option schemes option value</td>
+            <td>£30,000</td>
+          </tr>
+          <tr>
+            <td>Savings-related share options per month (up to)</td>
+            <td>£500</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+<!-- ============================
+     INDIVIDUAL SAVINGS ACCOUNT (ISA)
+============================ -->
+<div class="tax-item">
+  <button class="tax-header">
+    <span>Individual Savings Account (ISA)</span>
+    <span class="tax-icon">+</span>
+  </button>
+
+  <div class="tax-content">
+    <div class="table-wrapper">
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>2024–25</th>
+            <th>2025–26</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Overall limit</td>
+            <td>£20,000</td>
+            <td>£20,000</td>
+          </tr>
+          <tr>
+            <td>Lifetime ISA</td>
+            <td>£4,000</td>
+            <td>£4,000</td>
+          </tr>
+          <tr>
+            <td>Junior ISA</td>
+            <td>£9,000</td>
+            <td>£9,000</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>Investment Reliefs</h4>
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Relief Type</th>
+            <th>Relief %</th>
+            <th>Limit</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>EIS</td>
+            <td>30%</td>
+            <td>£2,000,000</td>
+          </tr>
+          <tr>
+            <td>Seed EIS (SEIS)</td>
+            <td>50%</td>
+            <td>£200,000</td>
+          </tr>
+          <tr>
+            <td>Venture Capital Trust (VCT)</td>
+            <td>30%</td>
+            <td>£200,000</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+<!-- ============================
+     INHERITANCE TAX
+============================ -->
+<div class="tax-item">
+  <button class="tax-header">
+    <span>Inheritance Tax</span>
+    <span class="tax-icon">+</span>
+  </button>
+
+  <div class="tax-content">
+    <div class="table-wrapper">
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>2024–25</th>
+            <th>2025–26</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Nil rate band (NRB) (1)</td>
+            <td>£325,000</td>
+            <td>£325,000</td>
+          </tr>
+
+          <tr>
+            <td>NRB Residential enhancement (RNRB) (2)</td>
+            <td>£175,000</td>
+            <td>£175,000</td>
+          </tr>
+
+          <tr>
+            <td>Tax rate on death (3)</td>
+            <td>40%</td>
+            <td>40%</td>
+          </tr>
+
+          <tr>
+            <td>Tax rate on lifetime transfers to most trusts</td>
+            <td>20%</td>
+            <td>20%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <th>
+              (1) Up to 100% of unused NRB/RNRB from a deceased spouse/civil partner may be transferred.<br><br>
+              (2) RNRB applies to transfers of a main residence to direct descendants. Tapers by £1 for every £2 above £2m estate value.<br><br>
+              (3) Rate reduced to 36% if ≥10% of estate left to charity. Unlimited exemption for transfers between spouses/civil partners (with exceptions for foreign domiciled transferees).
+            </th>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>100% Business Property Relief (BPR)</h4>
+      <p>
+        Applies to qualifying unquoted trading companies, unincorporated trading businesses, and certain farmland/buildings.
+      </p>
+
+      <h4>Reduced Tax Charge on Gifts Within 7 Years Before Death</h4>
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Years before death</th>
+            <th>% of full death tax charge payable</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr><td>0–3</td><td>100%</td></tr>
+          <tr><td>3–4</td><td>80%</td></tr>
+          <tr><td>4–5</td><td>60%</td></tr>
+          <tr><td>5–6</td><td>40%</td></tr>
+          <tr><td>6–7</td><td>20%</td></tr>
+        </tbody>
+      </table>
+
+      <p>
+        Annual exemptions for lifetime gifts include £3,000 per donor and £250 per recipient.
+      </p>
+
+    </div>
+  </div>
+</div>
+<!-- ============================
+     MAIN CAPITAL AND OTHER ALLOWANCES
+============================ -->
+<div class="tax-item">
+  <button class="tax-header">
+    <span>Main Capital and Other Allowances</span>
+    <span class="tax-icon">+</span>
+  </button>
+
+  <div class="tax-content">
+    <div class="table-wrapper">
+
+      <h4>Plant and Machinery Allowances</h4>
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Rate</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>First-year allowance (main pool expenditure)</td>
+            <td>100%</td>
+            <td>Expenditure 1.4.25 – 31.3.26 (companies only)</td>
+          </tr>
+          <tr>
+            <td>Super-deduction (main pool expenditure)</td>
+            <td>N/A</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>First-year allowance (special rate pool)</td>
+            <td>50%</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Annual Investment Allowance (AIA)</td>
+            <td>100%</td>
+            <td>Up to £1m (1.4.25 – 31.3.26)</td>
+          </tr>
+          <tr>
+            <td>New electric vans</td>
+            <td>100%</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Writing down allowance – general pool</td>
+            <td>18%</td>
+            <td>Reducing balance</td>
+          </tr>
+          <tr>
+            <td>Writing down allowance – special rate pool</td>
+            <td>6%</td>
+            <td>Reducing balance</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>Motor Cars Purchased</h4>
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>CO₂ (g/km)</th>
+            <th>Allowance</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Nil (new cars only)</td>
+            <td>100%</td>
+            <td>Up to 50 g/km</td>
+          </tr>
+          <tr>
+            <td>Up to 50</td>
+            <td>18%</td>
+            <td>General pool</td>
+          </tr>
+          <tr>
+            <td>Above 50</td>
+            <td>6%</td>
+            <td>Special rate pool</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>Structures and Buildings Allowance</h4>
+
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <td>Fixed deduction per annum</td>
+            <td>3%</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+<!-- ============================
+     MAIN DUE DATES FOR TAX PAYMENT
+============================ -->
+<div class="tax-item">
+  <button class="tax-header">
+    <span>Main Due Dates for Tax Payment</span>
+    <span class="tax-icon">+</span>
+  </button>
+
+  <div class="tax-content">
+    <div class="table-wrapper">
+
+      <h4>Self Assessment</h4>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Payment</th>
+            <th>2024/25</th>
+            <th>2025/26</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1st payment on account</td>
+            <td>31 January 2025</td>
+            <td>31 January 2026</td>
+          </tr>
+          <tr>
+            <td>2nd payment on account</td>
+            <td>31 July 2025</td>
+            <td>31 July 2026</td>
+          </tr>
+          <tr>
+            <td>Balancing payment</td>
+            <td>31 January 2026</td>
+            <td>31 January 2027</td>
+          </tr>
+          <tr>
+            <td>Capital Gains Tax (A)</td>
+            <td>31 January 2026</td>
+            <td>31 January 2027</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><strong>(A)</strong> A CGT return is due within 60 days of completion of sale of UK land/buildings by non‑residents, and UK residential property with tax due by residents.</p>
+
+      <h4>Other Payment Dates</h4>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Payment</th>
+            <th>2024/25</th>
+            <th>2025/26</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Class 1A NIC</td>
+            <td>19 July 2025</td>
+            <td>19 July 2026</td>
+          </tr>
+          <tr>
+            <td>Class 1B NIC</td>
+            <td>19 October 2025</td>
+            <td>19 October 2026</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Corporation tax is due 9 months and 1 day after the end of the accounting period, unless paid by quarterly instalments.</p>
+
+      <h4>Filing Deadlines</h4>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Filing</th>
+            <th>2024/25</th>
+            <th>2025/26</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Issue P60s to employees</td>
+            <td>31 May 2025</td>
+            <td>31 May 2026</td>
+          </tr>
+          <tr>
+            <td>P11D, P11D(b)</td>
+            <td>6 July 2025</td>
+            <td>6 July 2026</td>
+          </tr>
+          <tr>
+            <td>Paper SATR</td>
+            <td>31 October 2025</td>
+            <td>31 October 2026</td>
+          </tr>
+          <tr>
+            <td>Online SATR (PAYE coding option)</td>
+            <td>30 December 2025</td>
+            <td>30 December 2026</td>
+          </tr>
+          <tr>
+            <td>Online SATR</td>
+            <td>31 January 2026</td>
+            <td>31 January 2027</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>A CGT return is due within 60 days of completion of sale of UK land/buildings where tax is payable.</p>
+
+    </div>
+  </div>
+</div>
+<!-- ============================
+     WORKING TAX CREDIT & CHILD TAX CREDIT
+============================ -->
+<div class="tax-item">
+  <button class="tax-header">
+    <span>Working Tax Credit & Child Tax Credit</span>
+    <span class="tax-icon">+</span>
+  </button>
+
+  <div class="tax-content">
+    <div class="table-wrapper">
+
+      <h4>Working Tax Credit (No Children)</h4>
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Annual Income (£)</th>
+            <th>Single (30+ hrs)</th>
+            <th>Couple (30+ hrs)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>11,700*</td><td>795</td><td>2,615</td></tr>
+          <tr><td>12,000</td><td>485</td><td>2,495</td></tr>
+          <tr><td>13,000</td><td>75</td><td>2,085</td></tr>
+          <tr><td>14,000</td><td>–</td><td>1,675</td></tr>
+          <tr><td>15,000</td><td>–</td><td>1,265</td></tr>
+          <tr><td>16,000</td><td>–</td><td>855</td></tr>
+          <tr><td>17,000</td><td>–</td><td>445</td></tr>
+          <tr><td>18,000</td><td>–</td><td>35</td></tr>
+          <tr><td>19,000+</td><td>–</td><td>–</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>*</strong> Based on National Living Wage (April 2017 rates).</p>
+
+      <h4>Working & Child Tax Credit (With Children)</h4>
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Annual Income (£)</th>
+            <th>One Child</th>
+            <th>Two Children</th>
+            <th>Three Children</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>6,240</td><td>7,300</td><td>10,080</td><td>12,865</td></tr>
+          <tr><td>11,700</td><td>5,945</td><td>8,725</td><td>11,510</td></tr>
+          <tr><td>15,000</td><td>4,595</td><td>7,375</td><td>10,155</td></tr>
+          <tr><td>20,000</td><td>2,545</td><td>5,325</td><td>8,105</td></tr>
+          <tr><td>25,000</td><td>495</td><td>3,275</td><td>6,055</td></tr>
+          <tr><td>30,000</td><td>–</td><td>1,225</td><td>4,005</td></tr>
+          <tr><td>35,000</td><td>–</td><td>–</td><td>1,955</td></tr>
+          <tr><td>40,000+</td><td>–</td><td>–</td><td>–</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Child Tax Credit Only</h4>
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Annual Income (£)</th>
+            <th>One Child</th>
+            <th>Two Children</th>
+            <th>Three Children</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>No income</td><td>3,330</td><td>6,110</td><td>8,890</td></tr>
+          <tr><td>5,000</td><td>3,330</td><td>6,110</td><td>8,890</td></tr>
+          <tr><td>8,000</td><td>3,330</td><td>6,110</td><td>8,890</td></tr>
+          <tr><td>10,000</td><td>3,330</td><td>6,110</td><td>8,890</td></tr>
+          <tr><td>15,000</td><td>3,330</td><td>6,110</td><td>8,890</td></tr>
+          <tr><td>20,000</td><td>1,730</td><td>4,515</td><td>7,295</td></tr>
+          <tr><td>25,000</td><td>–</td><td>2,465</td><td>5,245</td></tr>
+          <tr><td>30,000</td><td>–</td><td>415</td><td>3,195</td></tr>
+          <tr><td>35,000</td><td>–</td><td>–</td><td>1,145</td></tr>
+          <tr><td>40,000</td><td>–</td><td>–</td><td>–</td></tr>
+        </tbody>
+      </table>
+
+      <p>If your income is £15,000 and you have 2 children (not eligible for WTC), you could receive £6,110 per year (£117.50/week).</p>
+
+    </div>
+  </div>
+</div>
+<!-- ============================
+     REGISTERED PENSIONS
+============================ -->
+<div class="tax-item">
+  <button class="tax-header">
+    <span>Registered Pensions</span>
+    <span class="tax-icon">+</span>
+  </button>
+
+  <div class="tax-content">
+    <div class="table-wrapper">
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>2024/25</th>
+            <th>2025/26</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Lump sum and death benefit allowance</td>
+            <td>£1,073,100</td>
+            <td>£1,073,100</td>
+          </tr>
+
+          <tr>
+            <td>Lump sum allowance</td>
+            <td>£268,275</td>
+            <td>£268,275</td>
+          </tr>
+
+          <tr>
+            <td>Money purchase annual allowance</td>
+            <td>£10,000</td>
+            <td>£10,000</td>
+          </tr>
+
+          <tr>
+            <td>Annual Allowance (AA)*</td>
+            <td>£60,000</td>
+            <td>£60,000</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><strong>Annual allowance charge:</strong> Excess is taxed at applicable income tax rates.</p>
+
+      <p>
+        <strong>*</strong> Reduced by £1 for every £2 of adjusted income over £260,000  
+        (minimum £10,000), subject to threshold income exceeding £200,000.
+      </p>
+
+    </div>
+  </div>
+</div>
+<!-- ============================
+     STAMP DUTIES
+============================ -->
+<div class="tax-item">
+  <button class="tax-header">
+    <span>Stamp Duties</span>
+    <span class="tax-icon">+</span>
+  </button>
+
+  <div class="tax-content">
+    <div class="table-wrapper">
+
+      <h4>Residential Property (From 1 April 2025)</h4>
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Value Band</th>
+            <th>Standard Rate (Single)</th>
+            <th>Buy-to-Let / Second Home</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Up to £125,000</td>
+            <td>0%</td>
+            <td>5%</td>
+          </tr>
+
+          <tr>
+            <td>£125,000* – £250,000</td>
+            <td>2%</td>
+            <td>7%</td>
+          </tr>
+
+          <tr>
+            <td>£250,000 – £925,000</td>
+            <td>5%</td>
+            <td>10%</td>
+          </tr>
+
+          <tr>
+            <td>£925,000 – £1,500,000</td>
+            <td>10%</td>
+            <td>15%</td>
+          </tr>
+
+          <tr>
+            <td>Over £1,500,000**</td>
+            <td>12%</td>
+            <td>17%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        SDLT on non-residential property now uses the same banded system as residential.
+      </p>
+
+      <h4>Commercial Property</h4>
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Value Band</th>
+            <th>Tax Rate</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Up to £150,000</td>
+            <td>0%</td>
+          </tr>
+
+          <tr>
+            <td>£150,000 – £250,000</td>
+            <td>2%</td>
+          </tr>
+
+          <tr>
+            <td>Over £250,000</td>
+            <td>5%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>Shares & Securities</h4>
+      <p>Stamp duty / SDRT generally charged at <strong>0.5%</strong>.</p>
+      <p>No duty on purchases of £1,000 or less.</p>
+
+      <h4>New Leases</h4>
+      <p><strong>Residential:</strong> 1% on NPV over £125,000.</p>
+      <p><strong>Non-residential:</strong> 1% on NPV over £150,000, rising to 2% above £5m.</p>
+      <p>VAT excluded unless landlord has opted to charge VAT.</p>
+
+      <h4>Lease Premiums</h4>
+      <p>Duty on premiums follows the same rates as transfers of land.</p>
+
+    </div>
+  </div>
+</div>
+<!-- ============================
+     TAX-FREE MILEAGE ALLOWANCE
+============================ -->
+<div class="tax-item">
+  <button class="tax-header">
+    <span>Tax-Free Mileage Allowance</span>
+    <span class="tax-icon">+</span>
+  </button>
+
+  <div class="tax-content">
+    <div class="table-wrapper">
+
+      <p>
+        Approved Mileage Allowance Payments (AMAPs) apply when employees use their own vehicles for business travel.
+      </p>
+
+      <h4>Cars & Vans</h4>
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Mileage Band</th>
+            <th>Rate</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>First 10,000 miles</td>
+            <td>45p per mile</td>
+          </tr>
+
+          <tr>
+            <td>Each additional mile</td>
+            <td>25p per mile</td>
+          </tr>
+
+          <tr>
+            <td>Business passengers</td>
+            <td>5p per mile</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>Motorcycles</h4>
+      <p>24p per mile</p>
+
+      <h4>Bicycles</h4>
+      <p>20p per mile</p>
+
+      <p>
+        If employers reimburse below AMAP rates, employees may claim tax relief on the shortfall.
+      </p>
+
+      <p>
+        Up to 5p per mile per passenger is tax/NIC‑free for carrying fellow employees or volunteers on business journeys.
+      </p>
+
+    </div>
+  </div>
+</div>
+
+
+
+      </div> <!-- end accordion -->
+    </div> <!-- end container -->
+  </section>
+
+  <!-- INLINE JS (same behaviour as FAQ) -->
+  <script>
+    const items = document.querySelectorAll(".tax-item");
+
+    items.forEach(item => {
+      const header = item.querySelector(".tax-header");
+
+      header.addEventListener("click", () => {
+        items.forEach(i => {
+          if (i !== item) i.classList.remove("active");
+        });
+
+        item.classList.toggle("active");
+      });
+    });
+  </script>
+
+</BaseLayout>

@@ -1,0 +1,219 @@
+---
+import Layout from "../../layouts/BaseLayout.astro";
+import "../../../styles/pages/articles/article-page.css";
+import "../../../styles/themes/tools.css";
+import { getCollection } from "astro:content";
+import ContactUs from "../../components/ContactUs.astro";
+
+const theme = "resources";
+
+// Generate all article paths for dynamic routing
+export async function getStaticPaths() {
+  const articles = await getCollection("articles");
+
+  return articles.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+// Get post content from props
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout title={post.data.title} theme={theme}>
+  <main class="article-page container">
+
+    <article class="article-content">
+
+      <h1>{post.data.title}</h1>
+
+      <div class="article-meta">
+        {post.data.category && <span class="category-tag">{post.data.category}</span>}
+        {post.data.date && <span class="date">{post.data.date}</span>}
+        {post.data.readTime && <span class="read-time">{post.data.readTime}</span>}
+      </div>
+
+      {post.data.heroImage && (
+        <img 
+          src={post.data.heroImage} 
+          alt={post.data.title} 
+          class="article-hero"
+          loading="lazy"
+        />
+      )}
+
+      <Content />
+
+    </article>
+
+    <!-- ================================
+         INLINE CSS FOR CAROUSEL
+         ================================ -->
+    <style>
+      .services-carousel-section {
+        margin-top: 4rem;
+        text-align: center;
+      }
+
+      .carousel-heading {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--color-text);
+        margin-bottom: 1rem;
+      }
+
+      .carousel-container {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        padding: 20px 0;
+      }
+
+      .carousel-track {
+        display: flex;
+        gap: 20px;
+        animation: scroll 40s linear infinite;
+        will-change: transform;
+      }
+
+      @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-240px * 9)); }
+      }
+
+      .service-slide {
+        flex: 0 0 auto;
+        background: var(--color-surface-lighter);
+        padding: 1.5rem;
+        border-radius: 6px;
+        box-shadow: var(--shadow-soft);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--color-border-light);
+      }
+
+      .service-slide:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-strong);
+        border-color: var(--color-primary);
+      }
+
+      .service-slide img {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+        margin-bottom: 1rem;
+      }
+
+      .service-slide h4 {
+        font-size: 1rem;
+        font-weight: 700;
+        margin: 0;
+        text-align: center;
+        line-height: 1.4;
+      }
+
+      .service-slide a {
+        color: var(--color-primary);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      .service-slide a:hover {
+        color: var(--color-primary-hover);
+        text-decoration: underline;
+      }
+    </style>
+
+    <!-- ================================
+         SERVICES CAROUSEL
+         ================================ -->
+    <section class="services-carousel-section">
+      <h2 class="carousel-heading">Explore Our Services</h2>
+      <div class="section-divider"></div>
+
+      <div class="carousel-container">
+        <div class="carousel-track">
+
+          <div class="service-slide">
+            <a href="/services/accounting/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/accounts-icon.png" alt="Accounting Services">
+              <h4>Accounting Services</h4>
+            </a>
+          </div>
+
+          <div class="service-slide">
+            <a href="/services/bookkeeping/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/bookkeeping-icon.png" alt="Bookkeeping Services">
+              <h4>Bookkeeping Services</h4>
+            </a>
+          </div>
+
+          <div class="service-slide">
+            <a href="/services/management-accounts/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/mngt-accounts-icon.png" alt="Management Accounts">
+              <h4>Management Accounts</h4>
+            </a>
+          </div>
+
+          <div class="service-slide">
+            <a href="/services/payroll/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/payroll-services-icon.png" alt="Payroll Services">
+              <h4>Payroll Services</h4>
+            </a>
+          </div>
+
+          <div class="service-slide">
+            <a href="/services/property-accounts/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/property-accounts-icon.png" alt="Property Accounts">
+              <h4>Property Accounts</h4>
+            </a>
+          </div>
+
+          <div class="service-slide">
+            <a href="/services/self-assessment-tax-returns/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/self-assessment-tax-returns-icon.png" alt="Self Assessment">
+              <h4>Self Assessment</h4>
+            </a>
+          </div>
+
+          <div class="service-slide">
+            <a href="/services/business-setup/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/starting-new-business-icon.png" alt="Starting New Business">
+              <h4>Starting New Business</h4>
+            </a>
+          </div>
+
+          <div class="service-slide">
+            <a href="/services/tax-investigation/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/tax-investigation-icon.png" alt="Tax Investigation">
+              <h4>Tax Investigation</h4>
+            </a>
+          </div>
+
+          <div class="service-slide">
+            <a href="/services/vat/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/value-added-icon.png" alt="VAT Services">
+              <h4>VAT Services</h4>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================
+         CONTACT US
+         ================================ -->
+    <section style="margin-top: 4rem;">
+      <ContactUs />
+    </section>
+
+  </main>
+</Layout>

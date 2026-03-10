@@ -1,0 +1,270 @@
+---
+import Layout from "../layouts/BaseLayout.astro";
+import "../../styles/themes/tools.css";
+import "../../styles/pages/articles/article-page.css";
+import ContactUs from "../components/ContactUs.astro";
+
+const theme = "resources";
+---
+
+<Layout title="Accountants Glasgow & Surrounding Areas" theme={theme}>
+  <main class="article-page container">
+
+    <!-- ================================
+         PAGE HEADER
+    ================================ -->
+    <section style="margin-bottom: 2rem;">
+      <h1 style="font-size: 2.4rem; font-weight: 800; color: var(--color-primary);">
+        Accountants Glasgow & Surrounding Areas
+      </h1>
+      <p style="font-size: 1.1rem; color: var(--color-text-light); margin-top: .5rem;">
+        Local, trusted accountants serving Glasgow and West Central Scotland.
+      </p>
+    </section>
+
+
+    <!-- ================================
+         INTRO CONTENT
+    ================================ -->
+    <section style="margin-bottom: 2rem; line-height: 1.7; font-size: 1.1rem;">
+      <p>
+        Marsal Accountants provides reliable accountancy services across Glasgow and Central Scotland, supporting businesses in East Kilbride, Paisley, Hamilton, Motherwell, and neighbouring towns. Our consultants are local, experienced, and dedicated to helping you manage accounts, tax, payroll, VAT, and compliance with confidence.
+      </p>
+
+      <p style="margin-top: 1rem;">
+        Whether you're a sole trader in Clydebank, a retailer in the East End, or a growing startup in Stirling, we offer tailored accounting and tax support designed around your industry, location, and business needs.
+      </p>
+    </section>
+
+
+    <!-- ================================
+         LOCAL AREAS GRID
+    ================================ -->
+    <style>
+      .areas-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.2rem;
+        margin: 2rem 0;
+      }
+
+      .area-box {
+        background: var(--color-surface-lighter);
+        padding: 1rem;
+        border-radius: 6px;
+        text-align: center;
+        border: 1px solid var(--color-border-light);
+        font-weight: 700;
+        color: var(--color-text);
+      }
+    </style>
+
+    <h2 style="color: var(--color-primary); font-weight: 800; margin-top: 2rem;">
+      Find Your Local Marsal Accountants Team
+    </h2>
+
+    <div class="areas-grid">
+      <div class="area-box">Accountants Glasgow G1</div>
+      <div class="area-box">Accountants East Kilbride G74</div>
+      <div class="area-box">Accountants Paisley PA1</div>
+      <div class="area-box">Accountants Motherwell ML1</div>
+
+      <div class="area-box">Accountants Hamilton ML3</div>
+      <div class="area-box">Accountants Clydebank G81</div>
+      <div class="area-box">Accountants Dumbarton G82</div>
+      <div class="area-box">Accountants Cumbernauld G67</div>
+
+      <div class="area-box">Accountants Stirling FK8</div>
+      <div class="area-box">Accountants Coatbridge ML5</div>
+      <div class="area-box">Accountants Airdrie ML6</div>
+      <div class="area-box">Accountants Irvine KA12</div>
+
+      <div class="area-box">Accountants Lanark ML11</div>
+      <div class="area-box">Accountants Kilmarnock KA1</div>
+      <div class="area-box">Accountants Falkirk FK2</div>
+      <div class="area-box">Accountants Helensburgh G84</div>
+    </div>
+
+
+    <!-- ================================
+         BULLET POINTS
+    ================================ -->
+    <section style="margin-top: 2rem; font-size: 1.1rem;">
+      <ul style="margin-left: 1.2rem; line-height: 1.7;">
+        <li>Fixed, competitive fees designed to save you money while delivering exceptional value</li>
+        <li>We visit your premises to review accounts, discuss performance, and plan ahead</li>
+        <li>Unlimited phone support on day-to-day accounting, tax and employment matters</li>
+        <li>Automatic tax planning included when we complete your accounts or self assessment</li>
+        <li>Dedicated consultant who explains accounts in clear, simple language — we also collect & return all documents</li>
+        <li>Accounts prepared and completed within one month</li>
+      </ul>
+    </section>
+
+
+   
+    </div>
+
+
+    <!-- ================================
+         SERVICES CAROUSEL
+    ================================ -->
+    <!-- (same carousel code you already use everywhere) -->
+
+    <style>
+      .services-carousel-section {
+        margin-top: 4rem;
+        text-align: center;
+      }
+      .carousel-heading {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--color-text);
+        margin-bottom: 1rem;
+      }
+      .carousel-container {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        padding: 20px 0;
+        pointer-events: auto;
+      }
+      .carousel-track {
+        display: flex;
+        gap: 20px;
+        animation: scroll 40s linear infinite;
+        will-change: transform;
+        pointer-events: auto;
+      }
+      @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-240px * 9)); }
+      }
+      .service-slide {
+        flex: 0 0 auto;
+        background: var(--color-surface-lighter);
+        padding: 1.5rem;
+        border-radius: 6px;
+        box-shadow: var(--shadow-soft);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--color-border-light);
+        pointer-events: auto;
+      }
+      .service-slide:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-strong);
+        border-color: var(--color-primary);
+      }
+      .service-slide img {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+        margin-bottom: 1rem;
+      }
+      .service-slide h4 {
+        font-size: 1rem;
+        font-weight: 700;
+        margin: 0;
+        text-align: center;
+        line-height: 1.4;
+      }
+      .service-slide a {
+        color: var(--color-primary);
+        text-decoration: none;
+        transition: color 0.2s ease;
+        pointer-events: auto;
+      }
+      .service-slide a:hover {
+        color: var(--color-primary-hover);
+        text-decoration: underline;
+      }
+    </style>
+
+    <section class="services-carousel-section">
+      <h2 class="carousel-heading">Explore Our Services</h2>
+      <div class="section-divider"></div>
+
+      <div class="carousel-container">
+        <div class="carousel-track">
+
+          <div class="service-slide">
+            <a href="/services/accounting/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/accounts-icon.png">
+              <h4>Accounting Services</h4>
+            </a>
+          </div>
+
+          <div class="service-slide">
+            <a href="/services/bookkeeping/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/bookkeeping-icon.png">
+              <h4>Bookkeeping Services</h4>
+            </a>
+          </div>
+
+          <div class="service-slide">
+            <a href="/services/management-accounts/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/mngt-accounts-icon.png">
+              <h4>Management Accounts</h4>
+            </a>
+          </div>
+
+          <div class="service-slide">
+            <a href="/services/payroll/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/payroll-services-icon.png">
+              <h4>Payroll Services</h4>
+            </a>
+          </div>
+
+          <div class="service-slide">
+            <a href="/services/property-accounts/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/property-accounts-icon.png">
+              <h4>Property Accounts</h4>
+            </a>
+          </div>
+
+          <div class="service-slide">
+            <a href="/services/self-assessment-tax-returns/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/self-assessment-tax-returns-icon.png">
+              <h4>Self Assessment</h4>
+            </a>
+          </div>
+
+          <div class="service-slide">
+            <a href="/services/business-setup/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/starting-new-business-icon.png">
+              <h4>Starting New Business</h4>
+            </a>
+          </div>
+
+          <div class="service-slide">
+            <a href="/services/tax-investigation/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/tax-investigation-icon.png">
+              <h4>Tax Investigation</h4>
+            </a>
+          </div>
+
+          <div class="service-slide">
+            <a href="/services/vat/">
+              <img src="https://marsalaccountants.co.uk/wp-content/uploads/2025/08/value-added-icon.png">
+              <h4>VAT Services</h4>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================
+         CONTACT US
+    ================================ -->
+    <section style="margin-top: 4rem;">
+      <ContactUs />
+    </section>
+
+  </main>
+</Layout>
