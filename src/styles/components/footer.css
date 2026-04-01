@@ -3,19 +3,14 @@
    ========================= */
 
 .marsal-footer {
-    --footer-bg: #0f1b18;
-    --footer-bottom-bg: #08110d;
-    --footer-text: #e9f4ef;
-    --footer-heading: #ffffff;
-    --footer-link: #cfe6db;
-    --footer-link-hover: #ffffff;
-    --footer-border: rgba(255, 255, 255, 0.08);
-    --footer-divider: rgba(255, 255, 255, 0.3);
-
     background: var(--footer-bg);
     color: var(--footer-text);
-    padding-top: 60px;
-    font-family: var(--font-family-primary);
+    padding-top: var(--space-2xl);
+    font-family: var(--font-sans);
+}
+
+.marsal-footer .footer-divider {
+    background: var(--color-primary);
 }
 
 /* LAYOUT */
@@ -40,7 +35,7 @@
     height: 3px;
     background: var(--color-primary);
     margin-bottom: 18px;
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
 }
 
 /* LINKS */
@@ -80,8 +75,9 @@
 
 /* MAP */
 .footer-map iframe {
-    border-radius: 14px;
+    border-radius: var(--radius-clay);
     overflow: hidden;
+    box-shadow: var(--clay-shadow);
 }
 
 /* BOTTOM */

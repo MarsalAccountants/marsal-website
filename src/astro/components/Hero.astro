@@ -11,84 +11,87 @@ import "../../styles/components/hero.css";
       <h1>Marsal Accountants — Trusted Accountants in Paisley</h1>
 
       <p>
-        Professional Accountancy Services in Paisley, Renfrewshire & Glasgow.  
-        From start‑up to scale, we support your business at every stage.
+        Professional accountancy from start‑up to scale. Fixed fees, unlimited advice, dedicated support.
       </p>
 
-      <!-- Desktop CTA (shown only on desktop) -->
+      <p>
+        We speak business language — and yours. Reliable, expert services for individuals and growing businesses in Paisley & Glasgow.
+      </p>
+
+      <!-- Desktop CTAs -->
       <div class="desktop-cta">
-        <a href="/contact/" class="btn primary">Free Consultation</a>
-        <a href="/services/" class="btn secondary">Our Services</a>
+        <a href="/contact/" class="btn primary">Free consultation</a>
+        <a href="/services/" class="btn secondary">Our services</a>
       </div>
     </div>
 
-    <!-- Rotating Glass Cards -->
-    <div class="glass-rotator">
+    <!-- Rotating clay cards -->
+    <div class="clay-rotator">
 
       <!-- CARD 1 -->
-      <div class="glass-card active">
+      <div class="clay-card active">
         <h3>A Fixed Fees</h3>
         <p>
-          A competitive fixed and transparent fee — backed by our Marsal Guarantee — ensures you always save with 
+          A competitive fixed and transparent fee — backed by our Marsal Guarantee — ensures you always save with
           <span class="mg">competitive pricing</span>.
         </p>
       </div>
 
       <!-- CARD 2 -->
-      <div class="glass-card">
+      <div class="clay-card">
         <h3>Unlimited Advice</h3>
         <p>
-          Unlimited phone support on day‑to‑day 
-          <span class="mg">accounting</span>, 
-          <span class="mg">tax</span> and 
+          Unlimited phone support on day‑to‑day
+          <span class="mg">accounting</span>,
+          <span class="mg">tax</span> and
           <span class="mg">employment</span> matters.
         </p>
       </div>
 
       <!-- CARD 3 -->
-      <div class="glass-card">
+      <div class="clay-card">
         <h3>Dedicated Consultant</h3>
         <p>
-          Every client is paired with their own 
+          Every client is paired with their own
           <span class="mg">Dedicated Consultant</span> for consistent, personalised support.
         </p>
       </div>
 
       <!-- CARD 4 -->
-      <div class="glass-card">
+      <div class="clay-card">
         <h3>Document Handling</h3>
         <p>
-          We arrange the <span class="mg">delivery</span> and <span class="mg">collection</span> of your documents —  
+          We arrange the <span class="mg">delivery</span> and <span class="mg">collection</span> of your documents —
           and complete your accounts within <span class="mg">4 weeks</span>.
         </p>
       </div>
 
       <!-- CARD 5 -->
-      <div class="glass-card">
+      <div class="clay-card">
         <h3>We Speak Business</h3>
         <p>
-          We speak <span class="mg">business language</span> — and yours.  
-          We prepare your accounts in business language and 
+          We speak <span class="mg">business language</span> — and yours.
+          We prepare your accounts in business language and
           <span class="mg">explain them clearly</span> in yours.
         </p>
       </div>
 
       <!-- CARD 6 -->
-      <div class="glass-card">
+      <div class="clay-card">
         <h3>Tax Planning</h3>
         <p>
-          We complete your tax planning as soon as your 
-          <span class="mg">accounts</span> or 
+          We complete your tax planning as soon as your
+          <span class="mg">accounts</span> or
           <span class="mg">Self‑Assessment</span> return is finalised.
         </p>
       </div>
 
     </div>
 
-    <!-- Mobile CTA (shown only on mobile & tablet) -->
+    <!-- Mobile CTA -->
     <div class="mobile-cta">
-      <a href="/contact/" class="btn primary">Free Consultation</a>
-      <a href="/services/" class="btn secondary">Our Services</a>
+      <a href="/contact/" class="btn primary">Free consultation</a>
+      <a href="/services/" class="btn secondary">Our services</a>
     </div>
 
   </div>
@@ -99,12 +102,12 @@ import "../../styles/components/hero.css";
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     let index = 0;
-    const cards = document.querySelectorAll(".glass-card");
+    const cards = document.querySelectorAll(".clay-card");
     const totalCards = cards.length;
 
     function rotateCards() {
       if (cards.length === 0) return;
-      
+
       cards[index].classList.remove("active");
       index = (index + 1) % totalCards;
       cards[index].classList.add("active");
@@ -115,7 +118,7 @@ import "../../styles/components/hero.css";
       setTimeout(() => {
         rotateCards();
         const rotationInterval = setInterval(rotateCards, 4000);
-        
+
         document.addEventListener('visibilitychange', function() {
           if (document.hidden) {
             clearInterval(rotationInterval);

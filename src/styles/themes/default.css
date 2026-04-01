@@ -1,9 +1,8 @@
 @layer theme {
   [data-theme="default"],
   [data-theme="default"] :where(:root) {
-    --color-primary: #2ecc71;
-    --color-primary-hover: #27ae60;
-    --color-primary-soft: rgba(46, 204, 113, 0.12);
-    /* keep all other brand‑specific vars here */
+    --color-primary: var(--primary-main, #2E8B3E);
+    --color-primary-hover: var(--primary-shadow, #236C30);
+    --color-primary-soft: var(--primary-tint, #DFF5E4);
   }
 }

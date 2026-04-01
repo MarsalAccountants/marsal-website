@@ -1,7 +1,7 @@
 @layer theme {
   [data-theme="resources"] {
-    --color-primary: #2ecc71;
-    --color-primary-hover: #27ae60;
-    --color-primary-soft: rgba(46, 204, 113, 0.12);
+    --color-primary: var(--primary-main, #2E8B3E);
+    --color-primary-hover: var(--primary-shadow, #236C30);
+    --color-primary-soft: var(--primary-tint, #DFF5E4);
   }
 }

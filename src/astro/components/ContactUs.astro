@@ -2,24 +2,24 @@
 /* Fully self-contained component */
 ---
 
-<section class="contact-section">
+<section class="contact-section home-section">
   <style>
     .contact-section {
-      padding: 4rem 0;
-      background: var(--color-surface);
+      padding: var(--space-2xl) 0;
+      background: transparent;
       display: flex;
       justify-content: center;
     }
 
     .contact-box {
-      background: var(--color-surface-card);
-      border: 1px solid rgba(0, 0, 0, 0.15);
-      border-radius: 20px;
+      background: var(--clay-gradient);
+      border: none;
+      border-radius: var(--radius-clay);
       padding: 3rem 2rem;
       max-width: 750px;
       width: 100%;
       text-align: center;
-      box-shadow: var(--shadow-sm);
+      box-shadow: var(--clay-shadow);
     }
 
     .contact-heading {
@@ -45,21 +45,22 @@
 
     .contact-item {
       flex: 1;
-      background: var(--color-surface);
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      border-radius: 12px;
+      background: var(--clay-gradient);
+      border: none;
+      border-radius: var(--radius-clay);
       padding: 1.2rem;
       text-decoration: none;
       color: var(--color-text);
       display: flex;
       flex-direction: column;
       align-items: center;
+      box-shadow: var(--clay-shadow);
       transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
     .contact-item:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-md);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: var(--clay-shadow-hover);
     }
 
     .contact-icon {

@@ -3,28 +3,80 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../../styles/main.css";
 
+const SITE = import.meta.env.SITE || "https://www.marsalaccountants.co.uk";
+
 export interface Props {
   theme?: "default" | "resources" | "services" | "dark";
+  title?: string;
+  description?: string;
+  /** Override canonical URL (optional). Defaults to current path. */
+  canonicalURL?: string;
+  /** OG image URL (optional). Defaults to site logo. */
+  image?: string;
 }
 
-const { theme = "default" } = Astro.props;
+const { theme = "default", title, description, canonicalURL, image } = Astro.props;
+
+const pageTitle = title ?? "Accountants in Paisley | Marsal Accountants";
+const pageDescription = description ?? "Professional accountancy services in Paisley, Glasgow and Central Scotland. Tax returns, bookkeeping, payroll, VAT and business advice. Marsal Accountants.";
+const canonical = canonicalURL ? new URL(canonicalURL, SITE) : new URL(Astro.url.pathname, SITE);
+const ogImage = image ? new URL(image, SITE).href : new URL("/icons/MS icon.png", SITE).href;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AccountingService",
+  "name": "Marsal Accountants",
+  "url": SITE,
+  "telephone": "+447468641272",
+  "email": "info@marsalaccountants.co.uk",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Office 1.4, 1 Macdowall Street",
+    "addressLocality": "Paisley",
+    "addressRegion": "Scotland",
+    "postalCode": "PA3 2NB",
+    "addressCountry": "GB"
+  },
+  "areaServed": [
+    { "@type": "Place", "name": "Paisley" },
+    { "@type": "Place", "name": "Glasgow" },
+    { "@type": "Place", "name": "Central Scotland" }
+  ],
+  "description": "Professional accountants in Paisley serving Glasgow and Central Scotland. Tax returns, bookkeeping, payroll, VAT and business accounting."
+};
 ---
 
-<html lang="en">
+<html lang="en-GB">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Marsal Accountants</title>
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={canonical.href} />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={canonical.href} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="en_GB" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={ogImage} />
+    <!-- JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
     <!-- Font Awesome for icons (phone, email, etc.) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   </head>
 
-  <body data-theme={theme} style="margin: 0;">
+  <body data-theme={theme} class="mdl-site-body">
     <Header />
 
     <slot name="hero" />
 
-    <main style="max-width: 1200px; margin: 2rem auto; padding: 0 1rem;">
+    <main class="mdl-site-main">
       <slot />
     </main>
 
@@ -34,3 +86,16 @@ const { theme = "default" } = Astro.props;
     <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>
+
+<style>
+  .mdl-site-body {
+    margin: 0;
+  }
+
+  .mdl-site-main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 var(--page-padding-x);
+    box-sizing: border-box;
+  }
+</style>

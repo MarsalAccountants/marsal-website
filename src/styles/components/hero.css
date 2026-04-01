@@ -1,45 +1,36 @@
 /* =========================================================
-   HERO SECTION — FULL THEME SUPPORT (LIGHT + DARK)
+   HERO SECTION — background image + overlay, clay CTAs
+   Full theme support (light/dark). Claymorphism.
 ========================================================= */
 
-/* =========================
-   LIGHT MODE HERO
-========================= */
-:root[data-theme="light"] .hero {
+/* ----- Hero: background image + overlay ----- */
+.hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 110px 7%;
-  background:
-    linear-gradient(rgba(255, 255, 255, 0.75), rgba(245, 247, 250, 0.75)),
+  padding: 100px var(--space-md);
+  background: var(--trust-main);
+  background-image:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.6) 100%),
     url("https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1600&q=80&h=1000");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: #1a1a1a;
-  font-family: "Open Sans", sans-serif;
+  color: var(--text-strong);
+  font-family: var(--font-sans);
   overflow: hidden;
 }
 
-/* =========================
-   DARK MODE HERO
-========================= */
-:root[data-theme="dark"] .hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 110px 7%;
-  background:
-    linear-gradient(rgba(13, 17, 23, 0.85), rgba(13, 17, 23, 0.85)),
+[data-theme="dark"] .hero {
+  background: var(--background-base);
+  background-image:
+    linear-gradient(180deg, rgba(28, 28, 30, 0.85) 0%, rgba(28, 28, 30, 0.75) 100%),
     url("https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1600&q=80&h=1000");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: #e6edf3;
-  font-family: "Open Sans", sans-serif;
-  overflow: hidden;
+  color: var(--text-body);
 }
 
 /* =========================================================
@@ -51,11 +42,10 @@
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: var(--space-xl);
   align-items: center;
 }
 
-/* Left Content Styling */
 .hero-left {
   display: flex;
   flex-direction: column;
@@ -63,95 +53,83 @@
 }
 
 .hero-left h1 {
-  font-size: 3.5rem;
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: var(--space-md);
   line-height: 1.2;
+  color: var(--text-strong);
 }
 
 .hero-left > p {
-  font-size: 1.25rem;
+  font-size: 1.0625rem;
   line-height: 1.6;
-  margin-bottom: 30px;
-  opacity: 0.9;
+  margin-bottom: var(--space-lg);
+  color: var(--text-body);
 }
 
-/* Desktop CTA Container */
 .hero-left .desktop-cta {
   display: flex;
-  gap: 15px;
-  margin-top: 20px;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
 }
 
 /* =========================================================
-   ROTATING CARD — PREMIUM ANIMATION
+   ROTATING CARD — clay
 ========================================================= */
 
-.glass-rotator {
+.clay-rotator {
   position: relative;
   width: 100%;
-  height: 380px;
+  height: 360px;
   overflow: hidden;
 }
 
-/* LIGHT MODE GLASS CARD */
-:root[data-theme="light"] .glass-card {
-  background: rgba(255, 255, 255, 0.55);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  color: #1a1a1a;
-}
-
-/* DARK MODE GLASS CARD */
-:root[data-theme="dark"] .glass-card {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #e6edf3;
-}
-
-/* Base card state */
-.glass-card {
+.hero .clay-rotator .clay-card {
   position: absolute;
   top: 0;
   right: -120%;
   width: 100%;
   opacity: 0;
-  transform: translateX(40px) scale(0.96);
+  transform: translateX(24px) scale(0.98);
   transition:
-    opacity 0.8s ease,
-    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-    right 2s cubic-bezier(0.16, 1, 0.3, 1);
-  padding: 40px;
-  border-radius: 20px;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    opacity 0.6s var(--ease-smooth),
+    transform 0.6s var(--ease-smooth),
+    right 1.5s var(--ease-smooth),
+    box-shadow var(--ease-default);
+  padding: var(--space-xl);
+  border-radius: var(--radius-clay);
+  background: var(--clay-gradient);
+  border: none;
+  box-shadow: var(--clay-shadow);
+  color: var(--text-body);
 }
 
-/* Active card */
-.glass-card.active {
+.hero .clay-rotator .clay-card:hover {
+  box-shadow: var(--clay-shadow-hover);
+}
+
+.hero .clay-rotator .clay-card.active {
   right: 0;
   opacity: 1;
   transform: translateX(0) scale(1);
 }
 
-/* Typography inside cards */
-.glass-card h3 {
+.hero .clay-rotator .clay-card h3 {
   font-weight: 700;
-  font-size: 2.5rem;
-  margin-bottom: 16px;
+  font-size: 1.5rem;
+  margin-bottom: var(--space-sm);
+  color: var(--text-strong);
 }
 
-.glass-card p {
-  line-height: 1.7;
-  font-size: 1.05rem;
-  margin-top: 12px;
+.hero .clay-rotator .clay-card p {
+  line-height: 1.6;
+  font-size: 1rem;
+  margin-top: 0;
+  color: var(--text-secondary);
 }
 
-.glass-card p + p {
-  margin-top: 10px;
-}
-
-/* Marsal Green Highlight */
-.mg {
+.hero .clay-rotator .mg {
   color: var(--color-primary);
   font-weight: 600;
 }
@@ -160,256 +138,131 @@
    BUTTONS
 ========================================================= */
 
-.btn {
-  padding: 14px 28px;
-  border-radius: 6px;
+.hero .btn {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-clay);
   font-weight: 600;
   text-decoration: none;
-  display: inline-block;
-  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow var(--ease-default), transform var(--ease-default), background var(--ease-default);
   text-align: center;
   border: none;
   cursor: pointer;
   font-size: 1rem;
+  font-family: var(--font-sans);
 }
 
-.btn.primary {
+.hero .btn.primary {
   background: var(--color-primary);
-  color: white;
+  color: var(--color-on-primary);
+  box-shadow: var(--clay-shadow);
 }
 
-.btn.primary:hover {
+.hero .btn.primary:hover {
   background: var(--color-primary-hover);
-  transform: translateY(-2px);
+  color: var(--color-on-primary);
+  box-shadow: var(--clay-shadow-hover);
+  transform: scale(1.02);
 }
 
-.btn.secondary {
-  border: 2px solid var(--color-primary);
+.hero .btn.primary:active {
+  box-shadow: var(--clay-inset);
+  transform: scale(0.98);
+}
+
+.hero .btn.secondary {
+  background: var(--clay-gradient);
   color: var(--color-primary);
-  background: transparent;
+  box-shadow: var(--clay-shadow);
 }
 
-.btn.secondary:hover {
-  background: var(--color-primary);
-  color: white;
-  transform: translateY(-2px);
+.hero .btn.secondary:hover {
+  box-shadow: var(--clay-shadow-hover);
+  transform: scale(1.02);
+}
+
+.hero .btn.secondary:active {
+  box-shadow: var(--clay-inset);
+  transform: scale(0.98);
 }
 
 /* =========================================================
-   MOBILE RESPONSIVE (Under 900px)
+   RESPONSIVE
 ========================================================= */
 
 @media (max-width: 900px) {
-
-  /* LIGHT MODE MOBILE */
-  :root[data-theme="light"] .hero {
-    background:
-      linear-gradient(rgba(255, 255, 255, 0.85), rgba(245, 247, 250, 0.85)),
-      url("https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1200&q=80&h=1600");
-    background-size: cover;
-    background-position: center;
-  }
-
-  /* DARK MODE MOBILE */
-  :root[data-theme="dark"] .hero {
-    background:
-      linear-gradient(rgba(13, 17, 23, 0.9), rgba(13, 17, 23, 0.9)),
-      url("https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1200&q=80&h=1600");
-    background-size: cover;
-    background-position: center;
-  }
-
   .hero {
-    min-height: 100vh;
-    padding: 10px 5%;
-    display: block;
+    padding: 80px var(--space-md);
   }
 
   .hero-container {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
-    gap: 10px;
+    gap: var(--space-lg);
     text-align: center;
-    height: auto;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .hero-left .desktop-cta {
-    display: none;
   }
 
   .hero-left {
-    grid-row: 1;
-    order: 1;
     align-items: center;
     text-align: center;
-    margin-bottom: 10px;
   }
 
   .hero-left h1 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-  }
-
-  .hero-left > p {
-    font-size: 1.1rem;
-    margin-bottom: 25px;
-  }
-
-  .glass-rotator {
-    grid-row: 2;
-    order: 2;
-    height: 300px;
-    margin: 20px 0;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .glass-card {
-    padding: 30px;
-    text-align: left;
-  }
-
-  .glass-card h3 {
-    font-size: 2rem;
-  }
-
-  .mobile-cta {
-    grid-row: 3;
-    order: 3;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
-    margin-top: 20px;
-  }
-
-  .mobile-cta .btn {
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-  }
-}
-
-/* =========================================================
-   TABLET OPTIMIZATION (600px - 900px)
-========================================================= */
-
-@media (max-width: 768px) and (min-width: 600px) {
-  .hero {
-    padding: 80px 7%;
-  }
-
-  .hero-left h1 {
-    font-size: 2.8rem;
-  }
-
-  .glass-rotator {
-    height: 320px;
-  }
-
-  .glass-card {
-    padding: 35px;
-  }
-
-  .glass-card h3 {
-    font-size: 2.2rem;
-  }
-
-  .hero-left .desktop-cta {
-    display: none;
-  }
-  
-  .mobile-cta {
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .mobile-cta .btn {
-    width: auto;
-    min-width: 200px;
-  }
-}
-
-/* =========================================================
-   SMALL MOBILE (Under 600px)
-========================================================= */
-
-@media (max-width: 600px) {
-  .hero {
-    padding: 40px 5%;
-  }
-
-  .hero-left h1 {
-    font-size: 2rem;
+    font-size: 2.25rem;
   }
 
   .hero-left > p {
     font-size: 1rem;
   }
 
-  .glass-rotator {
-    height: 280px;
+  .hero-left .desktop-cta {
+    display: none;
   }
 
-  .glass-card {
-    padding: 25px;
+  .clay-rotator {
+    height: 300px;
   }
 
-  .glass-card h3 {
-    font-size: 1.8rem;
+  .hero .clay-rotator .clay-card {
+    padding: var(--space-lg);
   }
 
-  .glass-card p {
-    font-size: 0.95rem;
-  }
-
-  .btn {
-    padding: 12px 24px;
-    font-size: 0.95rem;
-  }
-}
-
-/* =========================================================
-   VERY SMALL MOBILE (Under 400px)
-========================================================= */
-
-@media (max-width: 400px) {
-  .hero {
-    padding: 30px 4%;
-  }
-
-  .glass-rotator {
-    height: 250px;
-  }
-
-  .glass-card {
-    padding: 20px;
-  }
-
-  .glass-card h3 {
-    font-size: 1.6rem;
+  .hero .clay-rotator .clay-card h3 {
+    font-size: 1.35rem;
   }
 
   .mobile-cta {
-    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .mobile-cta .btn {
+    width: 100%;
   }
 }
-
-/* =========================================================
-   DESKTOP ONLY (Above 900px)
-========================================================= */
 
 @media (min-width: 901px) {
   .mobile-cta {
     display: none;
   }
-  
-  .hero-left .desktop-cta {
-    display: flex;
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 60px var(--space-sm);
+  }
+
+  .hero-left h1 {
+    font-size: 1.875rem;
+  }
+
+  .clay-rotator {
+    height: 280px;
   }
 }

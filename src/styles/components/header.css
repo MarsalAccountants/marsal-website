@@ -13,24 +13,27 @@
 
 body {
   margin: 0;
-  padding-top: 78px;
-  background: #0d1117;
-  color: #e6edf3;
+  padding-top: 117px;
+  background: var(--color-surface);
+  color: var(--color-text);
 }
 
 /* =========================
-   SCOPED THEME VARIABLES 
+   SCOPED THEME VARIABLES (aligned with main.css / cloud)
 ========================= */
 .theme-header {
-  --color-surface: #0d1117;
-  --color-surface-light: #161b22;
-  --color-surface-hover: #1f2630;
-  --color-text: #e6edf3;
-  --color-text-secondary: #9ba3af;
-  --color-border-light: #30363d;
+  --color-surface-hover: var(--color-surface-lighter);
+}
 
-  --color-primary: #2ecc71;
-  --color-primary-hover: #27ae60;
+/* Header: dark green (aligned with footer) */
+.site-header {
+  --header-bg: var(--footer-bg, #0f1b18);
+  --header-bg-bottom: var(--footer-bottom-bg, #0a1410);
+  --header-text: var(--footer-text);
+  --header-heading: var(--footer-heading);
+  --header-link: var(--footer-link);
+  --header-link-hover: var(--footer-link-hover);
+  --header-border: var(--footer-border);
 }
 
 /* =========================
@@ -38,22 +41,40 @@ body {
 ========================= */
 .site-header {
   width: 100%;
-  background: var(--color-surface);
+  background: transparent;
   color: var(--color-text);
 }
 
+/* Capsule: one fixed wrapper so header reads as a single pill */
+.header-capsule {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  width: calc(100% - 24px);
+  border-radius: 1.25rem;
+  box-shadow: var(--clay-shadow);
+  overflow: visible;
+  z-index: 1001;
+  background: var(--header-bg);
+}
+
 /* =========================
-   TOP CONTACT BAR
+   TOP CONTACT BAR (cap of capsule)
 ========================= */
 .top-contact-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: var(--color-surface-light);
-  border-bottom: 1px solid var(--color-border-light);
+  border-radius: 1.25rem 1.25rem 0 0;
+  background: var(--header-bg);
+  border-bottom: none;
+  box-shadow: none;
   padding: 6px 0;
-  z-index: 1001;
+}
+
+.header-capsule .top-contact-bar {
+  position: relative;
+  top: auto;
+  left: auto;
+  width: 100%;
 }
 
 .contact-container {
@@ -70,9 +91,13 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--color-text);
+  color: var(--header-link);
   font-size: 1rem;
   text-decoration: none;
+}
+
+.contact-item:hover {
+  color: var(--header-link-hover);
 }
 
 .contact-item i {
@@ -81,12 +106,12 @@ body {
 }
 
 /* =========================
-   MAIN NAVIGATION
+   MAIN NAVIGATION (base of capsule)
 ========================= */
 .nav-container {
-  position: fixed;
-  top: 30px;
-  left: 0;
+  position: relative;
+  top: auto;
+  left: auto;
 
   width: 100%;
   height: 75px;
@@ -96,10 +121,12 @@ body {
   align-items: center;
   justify-content: space-between;
 
-  background: var(--color-surface-light);
-  border-bottom: 1px solid var(--color-border-light);
+  background: var(--header-bg);
+  border-bottom: none;
+  border-radius: 0 0 1.25rem 1.25rem;
+  box-shadow: none;
 
-  z-index: 1000;
+  z-index: 0;
 }
 
 /* =========================
@@ -108,7 +135,7 @@ body {
 .logo-login-group {
   display: flex;
   align-items: center;
-  gap: 6px; /* adjust spacing if needed */
+  gap: var(--space-sm); /* 8px — industry-standard spacing between controls */
 }
 
 /* =========================
@@ -120,7 +147,7 @@ body {
   text-decoration: none;
 
   padding: 5px;
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   background: transparent;
 
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -128,8 +155,8 @@ body {
 
 .logo:hover {
   transform: translateY(-2px);
-  background: #1a1a24;
-  box-shadow: 0 0 20px rgba(77, 166, 255, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 20px var(--color-primary-soft);
 }
 
 .logo-icon {
@@ -137,33 +164,52 @@ body {
   height: 48px;
   object-fit: contain;
 
-  filter: drop-shadow(0 2px 8px rgba(77, 166, 255, 0.4));
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .logo:hover .logo-icon {
   transform: scale(1.05);
-  filter: drop-shadow(0 4px 16px rgba(77, 166, 255, 0.6));
+  filter: drop-shadow(0 4px 16px var(--color-primary-soft));
 }
 
 /* =========================
-   LOGIN ICON
+   LOGIN ICON (matches theme-toggle look — clay + MG green)
 ========================= */
 .login-icon {
   display: flex;
   align-items: center;
   justify-content: center;
 
-  color: var(--color-primary);
-  font-size: 2rem;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  padding: 12px;
+  box-sizing: border-box;
 
+  background: var(--clay-gradient);
+  border: none;
+  border-radius: var(--radius-clay);
+  box-shadow: var(--clay-shadow);
+
+  color: var(--color-primary);
+  font-size: 1.5rem; /* 24px icon in 48px box — ~50% ratio */
+  text-decoration: none;
+
+  margin-left: var(--space-md);
   transition: all 0.3s ease;
-  margin-left: 30px !important; 
 }
 
 .login-icon:hover {
   color: var(--color-primary-hover);
-  transform: scale(1.1);
+  transform: scale(1.02);
+  box-shadow: var(--clay-shadow-hover);
+}
+
+.login-icon:active {
+  box-shadow: var(--clay-inset);
+  transform: scale(0.98);
 }
 
 /* =========================
@@ -184,7 +230,7 @@ body {
 .dropdown-toggle {
   position: relative;
   text-decoration: none;
-  color: var(--color-text);
+  color: var(--header-link);
 
   font-size: 0.9rem;
   font-weight: 600;
@@ -194,7 +240,7 @@ body {
   cursor: pointer;
 
   padding: 8px 10px;
-  border-radius: 8px;
+  border-radius: var(--radius-clay);
 
   display: flex;
   align-items: center;
@@ -208,30 +254,26 @@ body {
 
 .nav-link:hover,
 .dropdown-toggle:hover {
-  color: #ffffff;
-  background: #1a1a24;
+  color: var(--header-link-hover);
+  background: var(--clay-gradient);
   transform: translateY(-2px);
-
-  box-shadow:
-    0 0 16px rgba(77, 166, 255, 0.25),
-    0 4px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--clay-shadow-hover);
 }
 
 .nav-link.active,
 .dropdown-toggle.active {
-  color: #ffffff;
-  background: rgba(77, 166, 255, 0.15);
-  border: 1px solid rgba(77, 166, 255, 0.4);
-
-  box-shadow: 0 0 14px rgba(77, 166, 255, 0.35);
+  color: var(--header-heading);
+  background: var(--color-primary-soft);
+  border: 1px solid var(--color-primary);
+  box-shadow: var(--clay-shadow);
   font-weight: 700;
 }
 
 .nav-link.active:hover,
 .dropdown-toggle.active:hover {
-  box-shadow:
-    0 0 22px rgba(77, 166, 255, 0.5),
-    0 6px 18px rgba(0, 0, 0, 0.5);
+  color: var(--header-link-hover);
+  background: var(--color-primary-soft);
+  box-shadow: 0 0 22px var(--color-primary-soft), var(--elevation-3);
 }
 
 /* =========================
@@ -246,9 +288,9 @@ body {
   top: 100%;
   left: 0;
 
-  background: var(--color-surface-light);
-  border: 1px solid var(--color-border-light);
-  border-radius: 6px;
+  background: var(--clay-gradient);
+  border: none;
+  border-radius: var(--radius-clay);
 
   padding: 10px 0;
   list-style: none;
@@ -258,7 +300,7 @@ body {
   display: none;
   flex-direction: column;
 
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  box-shadow: var(--clay-shadow-hover);
 }
 
 .dropdown.open .dropdown-menu {
@@ -275,7 +317,8 @@ body {
 }
 
 .dropdown-menu li a:hover {
-  background: var(--color-surface-hover);
+  background: var(--color-surface-lighter);
+  color: var(--text-strong);
 }
 
 /* =========================
@@ -286,7 +329,7 @@ body {
   border: none;
   font-size: 1.6rem;
   cursor: pointer;
-  color: var(--color-text);
+  color: var(--color-primary);
   display: none;
 }
 
@@ -295,8 +338,8 @@ body {
 ========================= */
 .mobile-nav-container {
   display: none;
-  background: var(--color-surface-light);
-  border-bottom: 1px solid var(--color-border-light);
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--header-border);
   padding: 20px;
 }
 
@@ -311,7 +354,7 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--color-text);
+  color: var(--header-link);
   text-decoration: none;
 }
 
@@ -328,7 +371,7 @@ body {
 .mobile-dropdown-toggle {
   background: none;
   border: none;
-  color: var(--color-text);
+  color: var(--header-link);
   font-size: 1rem;
   text-align: left;
   width: 100%;
@@ -340,7 +383,7 @@ body {
   display: none;
   flex-direction: column;
   padding-left: 10px;
-  border-left: 2px solid var(--color-border-light);
+  border-left: 2px solid var(--header-border);
   margin-bottom: 10px;
 }
 
@@ -350,15 +393,27 @@ body {
 
 .mobile-dropdown-menu li a {
   padding: 6px 0;
-  color: var(--color-text-secondary);
+  color: var(--header-link);
   text-decoration: none;
   font-size: 0.9rem;
+}
+
+.mobile-dropdown-menu li a:hover {
+  color: var(--header-link-hover);
 }
 
 /* =========================
    RESPONSIVE FIX — FINAL
 ========================= */
 @media (max-width: 900px) {
+  .header-capsule {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 0 0 1.25rem 1.25rem;
+  }
+
   .top-contact-bar {
     display: none !important;
     visibility: hidden !important;
@@ -373,7 +428,9 @@ body {
 
   .nav-container {
     top: 0 !important;
+    height: 48px !important;
     padding: 0 20px !important;
+    border-radius: 0 0 1.25rem 1.25rem;
   }
 
   .desktop-nav {
@@ -390,8 +447,10 @@ body {
     top: 48px;
     left: 0;
     width: 100%;
-    background: var(--color-surface-light);
-    border-bottom: 1px solid var(--color-border-light);
+    background: var(--header-bg);
+    border-bottom: none;
+    border-radius: 0 0 var(--radius-clay) var(--radius-clay);
+    box-shadow: var(--clay-shadow);
     padding: 20px;
     z-index: 999;
   }
@@ -401,11 +460,32 @@ body {
   }
 
   .logo-login-group {
-    gap: 10px;
+    gap: var(--space-sm);
   }
 
+  /* Single size for all mobile header icon buttons: 22px circle, 1.5rem icon */
+  .logo-login-group .login-icon,
+  .logo-login-group .theme-toggle,
+  .nav-container .mobile-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    min-height: 22px;
+    padding: 5px;
+    font-size: 1.5rem;
+    border-radius: calc(var(--radius-clay) * 0.81);
+    box-sizing: border-box;
+  }
   .login-icon {
-    font-size: 1.8rem;
+    margin-left: var(--space-sm);
+  }
+  .logo-login-group .login-icon i,
+  .logo-login-group .theme-toggle i,
+  .nav-container .mobile-toggle i {
+    font-size: 1em;
   }
 }
 /* =========================
@@ -416,26 +496,35 @@ body {
   align-items: center;
   justify-content: center;
 
-  background: none;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  padding: 12px;
+  box-sizing: border-box;
+
+  background: var(--clay-gradient);
   border: none;
   cursor: pointer;
+  border-radius: var(--radius-clay);
+  box-shadow: var(--clay-shadow);
 
-  font-size: 1.9rem;
+  font-size: 1.5rem; /* 24px icon in 48px box */
   color: var(--color-primary);
 
-  margin-left: 18px;
+  margin-left: var(--space-md);
   transition: all 0.3s ease;
 }
 
 .theme-toggle:hover {
   color: var(--color-primary-hover);
-  transform: scale(1.12);
+  transform: scale(1.02);
+  box-shadow: var(--clay-shadow-hover);
 }
 
-/* Mobile adjustments */
-@media (max-width: 900px) {
-  .theme-toggle {
-    font-size: 1.7rem;
-    margin-left: 10px;
-  }
+.theme-toggle:active {
+  box-shadow: var(--clay-inset);
+  transform: scale(0.98);
 }
+
+/* (Mobile theme-toggle sizing moved into main mobile block above) */

@@ -9,8 +9,8 @@ const contactInfo = {
 ---
 
 <header class="site-header">
-
-  <!-- Top Contact Bar -->
+  <div class="header-capsule">
+  <!-- Top Contact Bar (cap) -->
   <div class="top-contact-bar">
     <div class="contact-container">
 
@@ -48,7 +48,7 @@ const contactInfo = {
       </a>
 
       <!-- Login Icon -->
-      <a href={"http://localhost:5173/sign-in"} 
+      <a href={"http://localhost:5173/login"} 
    class="login-icon" 
    title="Login / Admin" 
    rel="external" 
@@ -108,11 +108,12 @@ const contactInfo = {
     </ul>
 
     <!-- Mobile Menu Toggle -->
-    <button class="mobile-toggle" id="mobileToggle">
-      <i class="fas fa-bars"></i>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Open menu">
+      <i class="fas fa-bars" id="mobileToggleIcon" aria-hidden></i>
     </button>
 
   </nav>
+  </div><!-- .header-capsule -->
 
   <!-- Mobile Navigation -->
   <div class="mobile-nav-container" id="mobileNav">
@@ -181,11 +182,17 @@ const contactInfo = {
 <script>
   const themeToggle = document.getElementById("themeToggle");
   const root = document.documentElement;
+  const body = document.body;
 
-  // Load saved theme
+  function applyTheme(theme) {
+    root.setAttribute("data-theme", theme);
+    body.setAttribute("data-theme", theme);
+  }
+
+  // Load saved theme (sync both html and body so dark/light applies to full page)
   const savedTheme = localStorage.getItem("theme");
-  if (savedTheme) {
-    root.setAttribute("data-theme", savedTheme);
+  if (savedTheme === "light" || savedTheme === "dark") {
+    applyTheme(savedTheme);
     updateIcon(savedTheme);
   }
 
@@ -193,7 +200,7 @@ const contactInfo = {
     const current = root.getAttribute("data-theme") || "light";
     const next = current === "light" ? "dark" : "light";
 
-    root.setAttribute("data-theme", next);
+    applyTheme(next);
     localStorage.setItem("theme", next);
     updateIcon(next);
   });
@@ -209,12 +216,25 @@ const contactInfo = {
     }
   }
 
-  // Mobile menu logic
+  // Mobile menu logic — toggle icon hamburger ↔ X when open
   const toggle = document.getElementById("mobileToggle");
   const mobileNav = document.getElementById("mobileNav");
+  const toggleIcon = document.getElementById("mobileToggleIcon");
+
+  function updateMobileToggleIcon() {
+    const isOpen = mobileNav?.classList.contains("open");
+    if (toggleIcon) {
+      toggleIcon.classList.toggle("fa-bars", !isOpen);
+      toggleIcon.classList.toggle("fa-times", isOpen);
+    }
+    if (toggle) {
+      toggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+    }
+  }
 
   toggle?.addEventListener("click", () => {
     mobileNav.classList.toggle("open");
+    updateMobileToggleIcon();
   });
 
   document.querySelectorAll(".dropdown-toggle").forEach(link => {

@@ -59,22 +59,21 @@
 }
 
 /* ===============================
-   RIGHT COLUMN — MAP (RECTANGULAR, ROUNDED & GLASS)
+   RIGHT COLUMN — MAP (CLAY CONTAINER)
 =============================== */
 
 .map-wrapper {
   position: relative;
   width: 100%;
   max-width: 800px; 
-  aspect-ratio: 21 / 9; /* Wider rectangle */
-  border-radius: 20px;
+  aspect-ratio: 21 / 9;
+  border-radius: var(--radius-clay);
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.15);
-  background: rgba(255,255,255,0.03);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-  backdrop-filter: blur(10px);
+  border: none;
+  background: var(--clay-gradient);
+  box-shadow: var(--clay-shadow);
   transition: all 0.3s ease;
-  margin-left: 0; /* align left */
+  margin-left: 0;
 }
 
 .map-wrapper iframe {
@@ -114,6 +113,6 @@
 
   .map-wrapper {
     aspect-ratio: 16 / 9;
-    border-radius: 16px;
+    border-radius: var(--radius-clay);
   }
 }

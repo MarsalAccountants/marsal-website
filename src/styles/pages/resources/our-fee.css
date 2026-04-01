@@ -1,213 +1,482 @@
 /* ============================================
-   Our Fees page – custom styles
-   Location: src/styles/pages/resources/our-fee.css
+   Our Fees page – creative, professional design
+   Claymorphism + clear hierarchy + polish
    ============================================ */
 
+/* ----- Wrapper ----- */
 .pricing-fees-wrapper {
-  /* Spacing & container refinements */
-  margin-bottom: 40px;
+  padding: 0 0 var(--space-2xl);
+  max-width: 100%;
 }
 
-/* ----- Dividers (using theme primary color) ----- */
-.pricing-fees-wrapper .divider-content {
-  width: 60px;
-  height: 3px;
+.pricing-fees-wrapper .row {
+  display: block;
+}
+
+.pricing-fees-wrapper .col-sm-12 {
+  width: 100%;
+}
+
+/* ========== PAGE HERO ========== */
+.fees-hero {
+  text-align: center;
+  padding: 3rem 0 2.5rem;
+  position: relative;
+  background: linear-gradient(180deg, rgba(46, 139, 62, 0.06) 0%, transparent 55%);
+  border-radius: var(--clay-radius-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.fees-hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--color-primary);
+  margin: 0 0 var(--space-sm) 0;
+  line-height: 1.2;
+}
+
+.fees-hero-subtitle {
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
+  color: var(--color-text-secondary);
+  max-width: 520px;
+  margin: 0 auto var(--space-md);
+  line-height: 1.55;
+}
+
+.fees-hero .divider-content {
+  width: 64px;
+  height: 4px;
+  border-radius: 999px;
   background: var(--color-primary);
-  margin: 15px 0 20px;
+  margin: 0 auto;
 }
 
-.pricing-fees-wrapper .divider-content-small {
-  width: 40px;
-  height: 2px;
+/* Legacy h2 (if any) – match project section titles */
+.pricing-fees-wrapper h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+/* ========== ACCORDION ========== */
+.pricing-fees-wrapper .panel-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+  counter-reset: accordion-num;
+}
+
+.pricing-fees-wrapper .panel {
+  margin: 0;
+  counter-increment: accordion-num;
+  background: var(--clay-gradient);
+  border-radius: var(--clay-radius-lg);
+  border: none;
+  box-shadow: var(--clay-shadow);
+  overflow: hidden;
+  transition: box-shadow var(--ease-smooth), transform var(--ease-default);
+}
+
+.pricing-fees-wrapper .panel:hover {
+  box-shadow: var(--clay-shadow-hover);
+}
+
+.pricing-fees-wrapper .panel-heading {
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.pricing-fees-wrapper .panel-title {
+  margin: 0;
+}
+
+/* Accordion trigger: number + label + chevron */
+.pricing-fees-wrapper .panel-title a {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: 1.125rem 1.5rem;
+  background: var(--clay-gradient);
+  border: none;
+  border-left: 4px solid transparent;
+  border-radius: 0;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+  color: var(--text-strong);
+  text-decoration: none;
+  transition: border-color var(--ease-default), background var(--ease-default), box-shadow var(--ease-default);
+  position: relative;
+}
+
+.pricing-fees-wrapper .panel-title a::before {
+  content: counter(accordion-num);
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+  border-radius: 50%;
+}
+
+.pricing-fees-wrapper .panel-title a::after {
+  content: "";
+  flex-shrink: 0;
+  width: 0;
+  height: 0;
+  margin-left: auto;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid var(--text-secondary);
+  transition: transform var(--ease-smooth);
+}
+
+.pricing-fees-wrapper .panel-title a:hover {
+  background: var(--surface-secondary);
+  color: var(--text-strong);
+}
+
+.pricing-fees-wrapper .panel-title a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Open state */
+.pricing-fees-wrapper .panel-title a[aria-expanded="true"] {
+  background: var(--surface-secondary);
+  border-left-color: var(--color-primary);
+  box-shadow: none;
+}
+
+.pricing-fees-wrapper .panel-title a[aria-expanded="true"]::after {
+  transform: rotate(180deg);
+  border-top-color: var(--color-primary);
+}
+
+/* Collapse body */
+.pricing-fees-wrapper .panel-collapse {
+  display: none;
+  overflow: hidden;
+}
+
+.pricing-fees-wrapper .panel-collapse.show {
+  display: block;
+}
+
+.pricing-fees-wrapper .panel-body {
+  padding: 1.75rem 1.5rem;
+  background: var(--clay-bg);
+  color: var(--color-text);
+  border-top: 1px solid var(--color-border-light);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* Body typography – breathing room */
+.pricing-fees-wrapper .panel-body h4,
+.pricing-fees-wrapper .panel-body h5 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--text-strong);
+  margin: 0 0 var(--space-sm);
+  line-height: 1.4;
+}
+
+.pricing-fees-wrapper .panel-body h4 {
+  font-size: 1.125rem;
+  margin-top: 1.5rem;
+}
+
+.pricing-fees-wrapper .panel-body h4:first-child,
+.pricing-fees-wrapper .panel-body h5:first-child {
+  margin-top: 0;
+}
+
+.pricing-fees-wrapper .panel-body h5 {
+  font-size: 1rem;
+  color: var(--color-trust, var(--text-strong));
+}
+
+.pricing-fees-wrapper .panel-body p {
+  margin: 0 0 0.75rem;
+  line-height: 1.65;
+  color: var(--color-text);
+}
+
+/* Inquiry CTA – button style */
+.pricing-fees-wrapper .panel-body h5 a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1.25rem;
   background: var(--color-primary);
-  margin: 10px 0 15px;
+  color: var(--color-on-primary);
+  border-radius: var(--radius-clay);
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: var(--clay-shadow);
+  transition: background var(--ease-default), box-shadow var(--ease-default), transform var(--ease-default);
 }
 
-/* ----- Content bullet lists ----- */
+.pricing-fees-wrapper .panel-body h5 a:hover {
+  background: var(--color-primary-hover);
+  color: var(--color-on-primary);
+  box-shadow: var(--clay-shadow-hover);
+  transform: translateY(-1px);
+}
+
+.pricing-fees-wrapper .panel-body a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Bullet list – green left border */
 .pricing-fees-wrapper .content-bullet {
   list-style: none;
   padding-left: 0;
+  margin: 1rem 0;
+  border-left: 3px solid var(--color-primary);
+  padding-left: 1.25rem;
 }
 
 .pricing-fees-wrapper .content-bullet li {
   position: relative;
-  padding-left: 20px;
-  margin-bottom: 8px;
+  padding-left: 0;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  color: var(--color-text);
 }
 
 .pricing-fees-wrapper .content-bullet li::before {
-  content: "•";
-  color: var(--color-primary);
-  font-weight: bold;
-  position: absolute;
-  left: 0;
+  content: "";
+  display: none;
 }
 
-/* ============================================
-   Apple‑style banners for accordion headings
-   ============================================ */
-.pricing-fees-wrapper .panel-title {
-  margin: 0;                /* remove default heading margin */
+.divider-content-small {
+  width: 40px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--color-primary);
+  margin: 0.75rem 0 1rem;
 }
 
-.pricing-fees-wrapper .panel-title a {
-  display: block;           /* make the whole area clickable */
-  background: linear-gradient(
-    to right,
-    var(--color-surface-lighter),
-    var(--color-surface)
-  );
-  padding: 18px 30px;
-  max-width: 800px;;
-  border-radius: 14px;    
-  font-weight: 600;
-  font-size: 1.3rem;      
-  letter-spacing: -0.02em;
-  color: var(--color-text); /* ensure text contrast */
-  text-decoration: none;
-  box-shadow: 0 4px 12px -8px rgba(0, 0, 0, 0.2);
-  border-bottom: 2px solid var(--color-primary-light, rgba(0,113,227,0.3));
-  transition: all 0.25s ease;
+/* ========== TABLES (claymorphism: chart in a clay card) ========== */
+.pricing-fees-wrapper .table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  margin: 1.25rem 0;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--clay-radius);
+  overflow: hidden;
+  background: var(--clay-bg);
+  box-shadow: var(--clay-inset);
 }
 
-/* Lift effect on hover (very Apple) */
-.pricing-fees-wrapper .panel-title a:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.3);
-  border-bottom-color: var(--color-primary);
-  text-decoration: none;    /* remove underline if any */
+.pricing-fees-wrapper .table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
 }
 
-/* Optional: active / open state indicator */
-.pricing-fees-wrapper .panel-title a[aria-expanded="true"] {
-  background: linear-gradient(
-    to right,
-    var(--color-surface),
-    var(--color-surface-lighter)
-  );
-  border-bottom-color: var(--color-primary);
-}
-
-/* ----- Spacing between accordion panels ----- */
-.pricing-fees-wrapper .panel {
-  margin-bottom: 12px;  /* Adjust to your liking */
-}
-
-/* ----- Accordion panel body (unchanged) ----- */
-.pricing-fees-wrapper .panel-body {
-  background-color: var(--color-surface-lighter);
-  padding: 25px;
-}
-
-/* ----- Table enhancements (readability, using theme colors) ----- */
 .pricing-fees-wrapper .table-bordered {
+  border: none;
+}
+
+/* Header: primary bar (matches rest of project table headers) */
+.pricing-fees-wrapper .table-bordered thead tr {
+  background: var(--color-primary);
+  box-shadow: var(--clay-shadow);
+}
+
+.pricing-fees-wrapper .table-bordered thead th {
+  padding: 14px 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: left;
+  letter-spacing: 0.02em;
+  border: none;
+  color: var(--color-on-primary);
+  font-family: var(--font-heading);
+}
+
+.pricing-fees-wrapper .table-bordered thead th:last-child,
+.pricing-fees-wrapper .table-bordered td.price-col {
+  text-align: right;
+}
+
+/* Each row: one service/band; alternating clay-style surfaces */
+.pricing-fees-wrapper .table-bordered tbody td {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--color-border-light);
+  color: var(--color-text);
+}
+
+.pricing-fees-wrapper .table-bordered tbody tr:nth-of-type(odd) {
+  background: var(--surface-secondary);
+}
+
+.pricing-fees-wrapper .table-bordered tbody tr:nth-of-type(even) {
+  background: var(--color-surface);
+}
+
+.pricing-fees-wrapper .table-bordered tbody tr:hover {
+  background: var(--color-primary-soft);
+}
+
+.pricing-fees-wrapper .table-bordered tbody td:last-child {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+/* Last row (e.g. Negotiable) */
+.pricing-fees-wrapper .table-bordered tbody tr:last-child td {
+  background: var(--color-surface-light);
+  font-weight: 500;
+  font-style: italic;
+  color: var(--color-text-secondary);
+}
+
+/* ========== CAROUSEL SECTION ========== */
+.services-carousel-section {
+  margin-top: var(--space-2xl);
+  padding: var(--space-xl) var(--space-md);
+  text-align: center;
+  background: linear-gradient(180deg, var(--color-surface-light) 0%, var(--color-surface) 100%);
+  border-radius: var(--clay-radius-lg);
   border: 1px solid var(--color-border-light);
 }
 
-.pricing-fees-wrapper .table-bordered > thead > tr > th {
-  background-color: var(--color-primary);
-  color: white;
-  border-color: var(--color-primary-hover);
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 0.9em;
-  letter-spacing: 0.03em;
-}
-
-.pricing-fees-wrapper .table-bordered > tbody > tr > td {
-  padding: 12px 8px;
-}
-
-/* Zebra striping for better legibility – using theme-appropriate light/dark */
-.pricing-fees-wrapper .table-bordered > tbody > tr:nth-of-type(odd) {
-  background-color: var(--color-surface-light);
-}
-
-.pricing-fees-wrapper .table-bordered > tbody > tr:nth-of-type(even) {
-  background-color: var(--color-surface);
-}
-
-/* =========================
-   SERVICES CAROUSEL (unchanged)
-========================= */
-.services-carousel-section {
-    margin-top: 4rem;
-    text-align: center;
-}
-
 .carousel-heading {
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--color-text);
-    margin-bottom: 1rem;
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-primary);
+  margin: 0 0 var(--space-md);
+}
+
+.section-divider {
+  width: 48px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--color-primary);
+  margin: 0 auto var(--space-xl);
 }
 
 .carousel-container {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    padding: 20px 0;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: var(--space-md) 0;
 }
 
 .carousel-track {
-    display: flex;
-    gap: 20px;
-    animation: scroll 40s linear infinite;
-    will-change: transform;
+  display: flex;
+  gap: var(--space-lg);
+  animation: scroll 40s linear infinite;
+  will-change: transform;
 }
 
 @keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(-240px * 9));
-    }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-220px * 9)); }
 }
 
 .service-slide {
-    flex: 0 0 auto;
-    background: var(--color-surface-lighter);
-    padding: 1.5rem;
-    border-radius: 6px;
-    box-shadow: var(--shadow-soft);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--color-border-light);
+  flex: 0 0 auto;
+  width: 200px;
+  padding: 1.5rem;
+  background: var(--clay-gradient);
+  border-radius: var(--clay-radius);
+  border: none;
+  box-shadow: var(--clay-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--ease-smooth), box-shadow var(--ease-smooth);
 }
 
 .service-slide:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-strong);
-    border-color: var(--color-primary);
+  transform: translateY(-6px);
+  box-shadow: var(--clay-shadow-hover);
 }
 
 .service-slide img {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-    margin-bottom: 1rem;
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  margin-bottom: var(--space-md);
 }
 
 .service-slide h4 {
-    font-size: 1rem;
-    font-weight: 700;
-    margin: 0;
-    text-align: center;
-    line-height: 1.4;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+  line-height: 1.4;
+  color: var(--color-text);
 }
 
 .service-slide a {
-    color: var(--color-primary);
-    text-decoration: none;
-    transition: color 0.2s ease;
+  color: var(--color-primary);
+  text-decoration: none;
 }
 
 .service-slide a:hover {
-    color: var(--color-primary-hover);
-    text-decoration: underline;
+  color: var(--color-primary-hover);
+  text-decoration: underline;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .fees-hero {
+    padding: 2rem 1rem 1.5rem;
+  }
+
+  .pricing-fees-wrapper .panel-title a {
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+  }
+
+  .pricing-fees-wrapper .panel-title a::before {
+    width: 1.75rem;
+    height: 1.75rem;
+    line-height: 1.75rem;
+    font-size: 0.8125rem;
+  }
+
+  .pricing-fees-wrapper .panel-body {
+    padding: 1.25rem 1rem;
+  }
+
+  .pricing-fees-wrapper .table-bordered thead th,
+  .pricing-fees-wrapper .table-bordered tbody td {
+    padding: 10px 12px;
+    font-size: 0.875rem;
+  }
+
+  .services-carousel-section {
+    padding: var(--space-lg) var(--space-sm);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pricing-fees-wrapper .panel-title a::after,
+  .carousel-track {
+    transition: none;
+  }
+  .carousel-track {
+    animation: none;
+  }
 }

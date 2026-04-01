@@ -11,30 +11,26 @@ import PricingAccounts from "../components/PricingAccounts.astro";
 import ContactUs from "../components/ContactUs.astro";
 ---
 
-<BaseLayout>
+<BaseLayout
+  title="Accountants in Paisley | Marsal Accountants"
+  description="Professional accountants in Paisley, Glasgow and Central Scotland. Tax returns, bookkeeping, payroll, VAT and business advice. Free consultation."
+>
 
   <!-- HERO appears directly under the header -->
   <Hero slot="hero" />
 
-  <!-- WELCOME TEXT appears right under the hero -->
   <WelcomeText />
 
- <!-- SERVICES SECTION appears under welcome text -->
   <ServiceCard />
 
- <!-- INSIGHTS SECTION appears under welcome text -->
   <Insights />
 
-<!-- ABOUT SECTION appears under welcome text -->
   <About />
-  <!-- REVIEWS SECTION appears under welcome text -->
-  <Reviews
-   />
 
- <!-- Pricing Accounts SECTION appears under welcome text -->
+  <Reviews />
+
   <PricingAccounts />
 
-  <!-- CONTACTUS SECTION appears under welcome text -->
   <ContactUs />
 
 </BaseLayout>

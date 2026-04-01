@@ -10,12 +10,14 @@ import ContactUs from "../../components/ContactUs.astro";
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          <!-- Page heading -->
-          <h2>Our Fees</h2>
-          <div class="divider-content"></div>
-          <br />
+          <!-- Page hero -->
+          <header class="fees-hero">
+            <h1 class="fees-hero-title">Our Fees</h1>
+            <p class="fees-hero-subtitle">Transparent, fixed pricing for accounts, tax, VAT, payroll and more. No surprises.</p>
+            <div class="divider-content"></div>
+          </header>
 
-          <!-- Bootstrap accordion – full pricing tables -->
+          <!-- Accordion – full pricing tables -->
           <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
             
             <!-- 1. ACCOUNTS & TAX RETURNS -->
@@ -526,52 +528,49 @@ import ContactUs from "../../components/ContactUs.astro";
   <!-- Contact Us component 
   <ContactUs />
 
-  <!-- ACCORDION FIX -->
+  <!-- Accordion: toggle panels and aria-expanded for styling -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const accordion = document.getElementById("accordion");
       if (!accordion) return;
 
       const links = accordion.querySelectorAll("a[data-toggle='collapse']");
+      const allPanels = accordion.querySelectorAll(".panel-collapse");
+
+      function closeAll() {
+        allPanels.forEach((panel) => {
+          panel.classList.remove("show");
+          (panel as HTMLElement).style.display = "none";
+        });
+        links.forEach((link) => link.setAttribute("aria-expanded", "false"));
+      }
 
       links.forEach((link) => {
         link.addEventListener("click", (e) => {
           e.preventDefault();
-
           const targetId = link.getAttribute("href");
           if (!targetId) return;
-
           const target = document.querySelector(targetId);
           if (!target) return;
 
-          // Close all panels
-          const allPanels = accordion.querySelectorAll(".panel-collapse");
-          allPanels.forEach((panel) => {
-            if (panel !== target) {
-              panel.classList.remove("show");
-              panel.style.display = "none";
-            }
-          });
-
-          // Toggle current panel
           const isOpen = target.classList.contains("show");
-
-          if (isOpen) {
-            target.classList.remove("show");
-            target.style.display = "none";
-          } else {
+          closeAll();
+          if (!isOpen) {
             target.classList.add("show");
-            target.style.display = "block";
+            (target as HTMLElement).style.display = "block";
+            link.setAttribute("aria-expanded", "true");
           }
         });
       });
 
-      // Start with all closed
-      const panels = accordion.querySelectorAll(".panel-collapse");
-      panels.forEach((panel) => {
-        panel.classList.remove("show");
-        panel.style.display = "none";
-      });
+      closeAll();
+      const first = document.querySelector("#collapseOne");
+      const firstLink = accordion.querySelector("a[href='#collapseOne']");
+      if (first && firstLink) {
+        first.classList.add("show");
+        (first as HTMLElement).style.display = "block";
+        firstLink.setAttribute("aria-expanded", "true");
+      }
     });
   </script>
 
