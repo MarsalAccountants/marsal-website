@@ -1,3 +1,9 @@
+# Marsal Accountants — marketing website (Astro)
+
+**Production deploy:** after `git pull` on the server, run `npm ci` and `npm run build`, and point nginx at `dist/`. See **[DEPLOY.md](./DEPLOY.md)** for DigitalOcean / nginx details and troubleshooting when live pages or images show the homepage.
+
+---
+
 # Astro Starter Kit: Minimal
 
 ```sh
