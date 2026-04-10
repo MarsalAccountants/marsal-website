@@ -28,7 +28,7 @@ const theme = "resources";
 
       <div class="calculator-grid">
         <!-- INPUT CARD -->
-        <div class="calculator-card">
+        <div class="calculator-card" id="payeInputCard">
           <div class="card-header">
             <h2 class="card-title">
               <i class="fas fa-edit"></i> Enter Your Details
@@ -489,13 +489,14 @@ const theme = "resources";
     }
   </style>
 
-  <!-- PAYE CALCULATOR SCRIPT (unchanged) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <script is:inline>
     // PAYE Calculator Logic
     const Marsal = {
         initializeCalculator: function() {
-            console.log('PAYE Calculator Initialized');
-            
+            if (window.__marsalPayeInitialized) return;
+            window.__marsalPayeInitialized = true;
+
             // Initialize accordion
             const accordionBtn = document.getElementById('additionalOptionsBtn');
             if (accordionBtn) {
@@ -540,16 +541,8 @@ const theme = "resources";
         
         toggleAccordion: function(event) {
             const btn = event.currentTarget;
-            const content = btn.nextElementSibling;
-            const icon = btn.querySelector('.accordion-icon');
-            
-            if (content.style.display === 'block') {
-                content.style.display = 'none';
-                icon.textContent = '+';
-            } else {
-                content.style.display = 'block';
-                icon.textContent = '-';
-            }
+            const item = btn.closest('.accordion-item');
+            if (item) item.classList.toggle('open');
         },
         
         togglePension: function() {
@@ -703,7 +696,6 @@ const theme = "resources";
                 spinner.classList.remove('active');
                 btn.disabled = false;
                 
-                // Initialize chart
                 Marsal.initializeChart({
                     tax: totalTax,
                     ni: niContribution,
@@ -716,13 +708,15 @@ const theme = "resources";
         },
         
         initializeChart: function(data) {
-            const ctx = document.getElementById('taxChart').getContext('2d');
-            
-            // Destroy existing chart if it exists
+            if (typeof Chart === 'undefined') return;
+            const canvas = document.getElementById('taxChart');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+
             if (window.payeChart) {
                 window.payeChart.destroy();
             }
-            
+
             window.payeChart = new Chart(ctx, {
                 type: 'pie',
                 data: {
@@ -741,6 +735,7 @@ const theme = "resources";
                 },
                 options: {
                     responsive: true,
+                    animation: false,
                     plugins: {
                         legend: {
                             position: 'bottom',
@@ -751,7 +746,7 @@ const theme = "resources";
                                     const label = context.label || '';
                                     const value = context.raw || 0;
                                     const total = context.dataset.data.reduce((a, b) => a + b, 0);
-                                    const percentage = Math.round((value / total) * 100);
+                                    const percentage = total ? Math.round((value / total) * 100) : 0;
                                     return `${label}: £${value.toFixed(2)} (${percentage}%)`;
                                 }
                             }
@@ -763,17 +758,23 @@ const theme = "resources";
         
         printResults: function() {
             const resultsCard = document.getElementById('payeResults');
-            const originalDisplay = resultsCard.style.display;
-            
-            // Show results card for printing
-            resultsCard.style.display = 'block';
-            resultsCard.classList.add('show-results');
-            
-            // Print
-            window.print();
-            
-            // Restore original state
-            resultsCard.style.display = originalDisplay;
+            if (!resultsCard || !resultsCard.classList.contains('show-results')) return;
+
+            document.body.classList.add('paye-print-results');
+
+            const cleanup = function() {
+                document.body.classList.remove('paye-print-results');
+                window.removeEventListener('afterprint', cleanup);
+                clearTimeout(fallbackTimer);
+            };
+            const fallbackTimer = setTimeout(cleanup, 5000);
+            window.addEventListener('afterprint', cleanup);
+
+            requestAnimationFrame(function() {
+                requestAnimationFrame(function() {
+                    window.print();
+                });
+            });
         },
         
         resetCalculator: function() {
@@ -796,11 +797,8 @@ const theme = "resources";
             // Reset to monthly frequency
             document.getElementById('monthly').checked = true;
             
-            // Close accordion
-            const accordionContent = document.querySelector('.accordion-content');
-            if (accordionContent) {
-                accordionContent.style.display = 'none';
-            }
+            const accordionItem = document.querySelector('.accordion .accordion-item');
+            if (accordionItem) accordionItem.classList.remove('open');
             
             // Focus on salary input
             document.getElementById('gross').focus();
@@ -853,16 +851,8 @@ const theme = "resources";
         }
     };
     
-    // Initialize calculator when page loads
     document.addEventListener('DOMContentLoaded', function() {
         Marsal.initializeCalculator();
-    });
-    
-    // Initialize on window load as well
-    window.addEventListener('load', function() {
-        setTimeout(function() {
-            Marsal.initializeCalculator();
-        }, 500);
     });
   </script>
 </Layout>
