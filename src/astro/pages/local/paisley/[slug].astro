@@ -1,0 +1,160 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ContactUs from "../../../components/ContactUs.astro";
+import paisleyPages from "../../../data/paisley-pages.json";
+
+const SITE = import.meta.env.SITE || "https://www.marsalaccountants.co.uk";
+
+export async function getStaticPaths() {
+  return paisleyPages.map((p: { slug: string }) => ({
+    params: { slug: p.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const page = paisleyPages.find((p: { slug: string }) => p.slug === slug)!;
+
+const canonicalURL = new URL(`/local/paisley/${slug}/`, SITE).href;
+const jsonLdExtra = page.jsonLd as Record<string, unknown>[];
+---
+
+<BaseLayout
+  title={page.title}
+  description={page.description}
+  canonicalURL={canonicalURL}
+  theme="services"
+  jsonLdExtra={jsonLdExtra}
+>
+  <main class="paisley-local-page">
+    <div class="paisley-local-inner">
+      <nav class="paisley-breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true"> / </span>
+        <a href="/local/paisley/">Paisley</a>
+        <span aria-hidden="true"> / </span>
+        <span>{page.h1}</span>
+      </nav>
+
+      <h1>{page.h1}</h1>
+      <p class="paisley-lead">{page.description}</p>
+
+      {page.sections.map((s: { h2: string; body: string }) => (
+        <section class="paisley-section">
+          <h2>{s.h2}</h2>
+          <p>{s.body}</p>
+        </section>
+      ))}
+
+      <section class="paisley-faq" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">Frequently asked questions</h2>
+        <dl class="paisley-faq-list">
+          {page.faqs.map((f: { question: string; answer: string }) => (
+            <div class="faq-pair">
+              <dt>{f.question}</dt>
+              <dd>{f.answer}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
+      <section class="paisley-related" aria-labelledby="related-heading">
+        <h2 id="related-heading">Related services</h2>
+        <ul class="paisley-related-list">
+          {page.internalLinks.map((l: { href: string; label: string }) => (
+            <li>
+              <a href={l.href}>{l.label}</a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </div>
+
+    <ContactUs />
+  </main>
+</BaseLayout>
+
+<style>
+  .paisley-local-page {
+    padding: 2rem 0 4rem;
+    background: var(--color-surface);
+  }
+  .paisley-local-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 var(--page-padding-x, 1rem);
+  }
+  .paisley-breadcrumb {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+  }
+  .paisley-breadcrumb a {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+  .paisley-breadcrumb a:hover {
+    text-decoration: underline;
+  }
+  .paisley-local-inner h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+  .paisley-lead {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin-bottom: 2rem;
+  }
+  .paisley-section {
+    margin-bottom: 2rem;
+  }
+  .paisley-section h2 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+  }
+  .paisley-section p {
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+  }
+  .paisley-faq {
+    margin: 2.5rem 0;
+    padding: 1.5rem;
+    background: var(--color-surface-card);
+    border-radius: 12px;
+    border: 1px solid var(--color-border-light);
+  }
+  .paisley-faq h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .paisley-faq-list dt {
+    font-weight: 600;
+    margin-top: 1rem;
+    color: var(--color-text);
+  }
+  .paisley-faq-list dd {
+    margin: 0.35rem 0 0 0;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+  .paisley-related-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .paisley-related-list li {
+    margin-bottom: 0.5rem;
+  }
+  .paisley-related-list a {
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .paisley-related-list a:hover {
+    text-decoration: underline;
+  }
+</style>

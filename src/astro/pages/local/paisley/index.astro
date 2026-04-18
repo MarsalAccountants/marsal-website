@@ -1,0 +1,75 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import paisleyPages from "../../../data/paisley-pages.json";
+
+const title = "Local accounting topics in Paisley | Marsal Accountants";
+const description =
+  "HMRC-aligned guidance for businesses in Paisley. VAT, tax, and compliance topics from Marsal Accountants.";
+---
+
+<BaseLayout title={title} description={description} theme="services">
+  <main class="paisley-index">
+    <div class="paisley-index-inner">
+      <h1>Accounting insights for Paisley</h1>
+      <p class="paisley-index-lead">
+        Practical pages for local businesses. For tailored advice, contact our team.
+      </p>
+      <ul class="paisley-index-list">
+        {paisleyPages.map((p: { slug: string; title: string; description: string }) => (
+          <li>
+            <a href={`/local/paisley/${p.slug}/`}>{p.title}</a>
+            <p>{p.description}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .paisley-index {
+    padding: 2rem 0 4rem;
+    background: var(--color-surface);
+  }
+  .paisley-index-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 var(--page-padding-x, 1rem);
+  }
+  .paisley-index-inner h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+  .paisley-index-lead {
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  .paisley-index-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .paisley-index-list li {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--color-border-light);
+  }
+  .paisley-index-list a {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+  .paisley-index-list a:hover {
+    text-decoration: underline;
+  }
+  .paisley-index-list p {
+    margin: 0.5rem 0 0;
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+</style>

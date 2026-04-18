@@ -1,0 +1,407 @@
+[
+  {
+    "slug": "making-tax-digital-vat-paisley",
+    "title": "Making Tax Digital VAT in Paisley | Marsal Accountants",
+    "description": "Practical, HMRC-aligned guidance on making tax digital vat for businesses in Paisley. Professional support from Marsal Accountants.",
+    "h1": "Making Tax Digital VAT in Paisley",
+    "sections": [
+      {
+        "h2": "Support for businesses in Paisley",
+        "body": "We help sole traders, partnerships, and limited companies stay compliant while keeping decisions clear and proportionate. accountants near me in Paisley"
+      },
+      {
+        "h2": "What we can help with",
+        "body": "Our team focuses on accurate records, sensible timelines, and plain-English explanations — so you understand your obligations before deadlines arrive."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Do you support making tax digital vat for businesses in Paisley?",
+        "answer": "Yes. We work with clients across Paisley and provide structured support that aligns with HMRC requirements."
+      },
+      {
+        "question": "How do we get started?",
+        "answer": "Contact us for a short consultation. We will confirm your circumstances, outline the next steps, and agree a clear scope of work."
+      },
+      {
+        "question": "Is advice tailored to my sector?",
+        "answer": "Where sector-specific rules apply, we focus on the details that affect your reporting and compliance — without unnecessary jargon."
+      }
+    ],
+    "internalLinks": [
+      {
+        "href": "/services/vat/",
+        "label": "VAT Services"
+      },
+      {
+        "href": "/services/corporation-tax-return-services/",
+        "label": "Corporation Tax"
+      },
+      {
+        "href": "/services/self-assessment-tax-returns/",
+        "label": "Self Assessment"
+      },
+      {
+        "href": "/services/accounting/",
+        "label": "Accounting Services"
+      },
+      {
+        "href": "/services/bookkeeping/",
+        "label": "Bookkeeping Services"
+      },
+      {
+        "href": "/services/payroll/",
+        "label": "Payroll Services"
+      }
+    ],
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@type": "AccountingService",
+        "name": "Making Tax Digital VAT | Marsal Accountants",
+        "description": "Practical, HMRC-aligned guidance on making tax digital vat for businesses in Paisley. Professional support from Marsal Accountants.",
+        "url": "https://www.marsalaccountants.co.uk/local/paisley/making-tax-digital-vat-paisley/",
+        "telephone": "+447468641272",
+        "email": "info@marsalaccountants.co.uk",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Office 1.4, 1 Macdowall Street",
+          "addressLocality": "Paisley",
+          "addressRegion": "Scotland",
+          "postalCode": "PA3 2NB",
+          "addressCountry": "GB"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Paisley"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do you support making tax digital vat for businesses in Paisley?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We work with clients across Paisley and provide structured support that aligns with HMRC requirements."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do we get started?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Contact us for a short consultation. We will confirm your circumstances, outline the next steps, and agree a clear scope of work."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is advice tailored to my sector?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Where sector-specific rules apply, we focus on the details that affect your reporting and compliance — without unnecessary jargon."
+            }
+          }
+        ],
+        "url": "https://www.marsalaccountants.co.uk/local/paisley/making-tax-digital-vat-paisley/"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.marsalaccountants.co.uk/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Local",
+            "item": "https://www.marsalaccountants.co.uk/local/paisley/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Making Tax Digital VAT",
+            "item": "https://www.marsalaccountants.co.uk/local/paisley/making-tax-digital-vat-paisley/"
+          }
+        ]
+      }
+    ],
+    "primaryServiceId": "vat"
+  },
+  {
+    "slug": "vat-registration-paisley",
+    "title": "VAT registration in Paisley | Marsal Accountants",
+    "description": "Practical, HMRC-aligned guidance on vat registration for businesses in Paisley. Professional support from Marsal Accountants.",
+    "h1": "VAT registration in Paisley",
+    "sections": [
+      {
+        "h2": "Support for businesses in Paisley",
+        "body": "We help sole traders, partnerships, and limited companies stay compliant while keeping decisions clear and proportionate. accountants near me in Paisley"
+      },
+      {
+        "h2": "What we can help with",
+        "body": "Our team focuses on accurate records, sensible timelines, and plain-English explanations — so you understand your obligations before deadlines arrive."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Do you support vat registration for businesses in Paisley?",
+        "answer": "Yes. We work with clients across Paisley and provide structured support that aligns with HMRC requirements."
+      },
+      {
+        "question": "How do we get started?",
+        "answer": "Contact us for a short consultation. We will confirm your circumstances, outline the next steps, and agree a clear scope of work."
+      },
+      {
+        "question": "Is advice tailored to my sector?",
+        "answer": "Where sector-specific rules apply, we focus on the details that affect your reporting and compliance — without unnecessary jargon."
+      }
+    ],
+    "internalLinks": [
+      {
+        "href": "/services/vat/",
+        "label": "VAT Services"
+      },
+      {
+        "href": "/services/corporation-tax-return-services/",
+        "label": "Corporation Tax"
+      },
+      {
+        "href": "/services/self-assessment-tax-returns/",
+        "label": "Self Assessment"
+      },
+      {
+        "href": "/services/accounting/",
+        "label": "Accounting Services"
+      },
+      {
+        "href": "/services/bookkeeping/",
+        "label": "Bookkeeping Services"
+      },
+      {
+        "href": "/services/payroll/",
+        "label": "Payroll Services"
+      }
+    ],
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@type": "AccountingService",
+        "name": "VAT registration | Marsal Accountants",
+        "description": "Practical, HMRC-aligned guidance on vat registration for businesses in Paisley. Professional support from Marsal Accountants.",
+        "url": "https://www.marsalaccountants.co.uk/local/paisley/vat-registration-paisley/",
+        "telephone": "+447468641272",
+        "email": "info@marsalaccountants.co.uk",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Office 1.4, 1 Macdowall Street",
+          "addressLocality": "Paisley",
+          "addressRegion": "Scotland",
+          "postalCode": "PA3 2NB",
+          "addressCountry": "GB"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Paisley"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do you support vat registration for businesses in Paisley?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We work with clients across Paisley and provide structured support that aligns with HMRC requirements."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do we get started?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Contact us for a short consultation. We will confirm your circumstances, outline the next steps, and agree a clear scope of work."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is advice tailored to my sector?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Where sector-specific rules apply, we focus on the details that affect your reporting and compliance — without unnecessary jargon."
+            }
+          }
+        ],
+        "url": "https://www.marsalaccountants.co.uk/local/paisley/vat-registration-paisley/"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.marsalaccountants.co.uk/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Local",
+            "item": "https://www.marsalaccountants.co.uk/local/paisley/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "VAT registration",
+            "item": "https://www.marsalaccountants.co.uk/local/paisley/vat-registration-paisley/"
+          }
+        ]
+      }
+    ],
+    "primaryServiceId": "vat"
+  },
+  {
+    "slug": "vat-return-deadlines-paisley",
+    "title": "VAT return deadlines in Paisley | Marsal Accountants",
+    "description": "Practical, HMRC-aligned guidance on vat return deadlines for businesses in Paisley. Professional support from Marsal Accountants.",
+    "h1": "VAT return deadlines in Paisley",
+    "sections": [
+      {
+        "h2": "Support for businesses in Paisley",
+        "body": "We help sole traders, partnerships, and limited companies stay compliant while keeping decisions clear and proportionate. HMRC-aligned VAT advice in Paisley"
+      },
+      {
+        "h2": "What we can help with",
+        "body": "Our team focuses on accurate records, sensible timelines, and plain-English explanations — so you understand your obligations before deadlines arrive."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Do you support vat return deadlines for businesses in Paisley?",
+        "answer": "Yes. We work with clients across Paisley and provide structured support that aligns with HMRC requirements."
+      },
+      {
+        "question": "How do we get started?",
+        "answer": "Contact us for a short consultation. We will confirm your circumstances, outline the next steps, and agree a clear scope of work."
+      },
+      {
+        "question": "Is advice tailored to my sector?",
+        "answer": "Where sector-specific rules apply, we focus on the details that affect your reporting and compliance — without unnecessary jargon."
+      }
+    ],
+    "internalLinks": [
+      {
+        "href": "/services/vat/",
+        "label": "VAT Services"
+      },
+      {
+        "href": "/services/corporation-tax-return-services/",
+        "label": "Corporation Tax"
+      },
+      {
+        "href": "/services/self-assessment-tax-returns/",
+        "label": "Self Assessment"
+      },
+      {
+        "href": "/services/accounting/",
+        "label": "Accounting Services"
+      },
+      {
+        "href": "/services/bookkeeping/",
+        "label": "Bookkeeping Services"
+      },
+      {
+        "href": "/services/payroll/",
+        "label": "Payroll Services"
+      }
+    ],
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@type": "AccountingService",
+        "name": "VAT return deadlines | Marsal Accountants",
+        "description": "Practical, HMRC-aligned guidance on vat return deadlines for businesses in Paisley. Professional support from Marsal Accountants.",
+        "url": "https://www.marsalaccountants.co.uk/local/paisley/vat-return-deadlines-paisley/",
+        "telephone": "+447468641272",
+        "email": "info@marsalaccountants.co.uk",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Office 1.4, 1 Macdowall Street",
+          "addressLocality": "Paisley",
+          "addressRegion": "Scotland",
+          "postalCode": "PA3 2NB",
+          "addressCountry": "GB"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Paisley"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do you support vat return deadlines for businesses in Paisley?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We work with clients across Paisley and provide structured support that aligns with HMRC requirements."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do we get started?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Contact us for a short consultation. We will confirm your circumstances, outline the next steps, and agree a clear scope of work."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is advice tailored to my sector?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Where sector-specific rules apply, we focus on the details that affect your reporting and compliance — without unnecessary jargon."
+            }
+          }
+        ],
+        "url": "https://www.marsalaccountants.co.uk/local/paisley/vat-return-deadlines-paisley/"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.marsalaccountants.co.uk/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Local",
+            "item": "https://www.marsalaccountants.co.uk/local/paisley/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "VAT return deadlines",
+            "item": "https://www.marsalaccountants.co.uk/local/paisley/vat-return-deadlines-paisley/"
+          }
+        ]
+      }
+    ],
+    "primaryServiceId": "vat"
+  }
+]

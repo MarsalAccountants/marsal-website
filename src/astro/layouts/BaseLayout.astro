@@ -13,9 +13,11 @@ export interface Props {
   canonicalURL?: string;
   /** OG image URL (optional). Defaults to site logo. */
   image?: string;
+  /** Additional JSON-LD objects (e.g. BlogPosting, FAQPage) rendered as separate script tags. */
+  jsonLdExtra?: Record<string, unknown>[];
 }
 
-const { theme = "default", title, description, canonicalURL, image } = Astro.props;
+const { theme = "default", title, description, canonicalURL, image, jsonLdExtra } = Astro.props;
 
 const pageTitle = title ?? "Accountants in Paisley | Marsal Accountants";
 const pageDescription = description ?? "Professional accountancy services in Paisley, Glasgow and Central Scotland. Tax returns, bookkeeping, payroll, VAT and business advice. Marsal Accountants.";
@@ -67,6 +69,9 @@ const jsonLd = {
     <meta name="twitter:image" content={ogImage} />
     <!-- JSON-LD -->
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
+    {jsonLdExtra && jsonLdExtra.map((block) => (
+      <script type="application/ld+json" set:html={JSON.stringify(block)}></script>
+    ))}
     <!-- Font Awesome for icons (phone, email, etc.) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Favicon -->

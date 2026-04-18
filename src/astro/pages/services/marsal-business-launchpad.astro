@@ -1,24 +1,24 @@
 ---
-// D:\Marsals\website\src\pages\services\bookkeeping.astro
+// Marsal Business Launchpad — canonical URL: /services/marsal-business-launchpad/
 
 import Layout from "../../layouts/BaseLayout.astro";
 import ContactUs from "../../components/ContactUs.astro";
 
-// Sidebar menu items - Bookkeeping is active
+// Sidebar menu items - Marsal Business Launchpad is active
 const sidebarItems = [
   { text: "Accounting Services", href: "/services/accounting/" },
-  { text: "Bookkeeping Services", href: "/services/bookkeeping/", active: true },
+  { text: "Bookkeeping Services", href: "/services/bookkeeping/" },
   { text: "Management Accounts Services", href: "/services/management-accounts/" },
   { text: "Payroll Services", href: "/services/payroll/" },
   { text: "Property Accounts Services", href: "/services/property-accounts/" },
   { text: "Self Assessment Tax Returns", href: "/services/self-assessment-tax-returns/" },
   { text: "Corporation Tax Return", href: "/services/corporation-tax-return-services/" },
-  { text: "Marsal Business Launchpad", href: "/services/marsal-business-launchpad/" },
+  { text: "Marsal Business Launchpad", href: "/services/marsal-business-launchpad/", active: true },
   { text: "Tax Investigation", href: "/services/tax-investigation/" },
   { text: "Value Added Tax Services", href: "/services/vat/" },
 ];
 
-// Carousel items (same as accounting page)
+// Carousel items (same as other pages)
 const carouselItems = [
   { text: "<strong>QUALITY</strong> SERVICE DELIVERED ON TIME" },
   { text: "<strong>FREE PHONE</strong> HELP LINE ON DAY TO DAY ACCOUNTING, TAX, EMPLOYMENT ISSUES......." },
@@ -31,7 +31,7 @@ const carouselItems = [
 ];
 ---
 
-<Layout title="Bookkeeping Services | Marsal Accountants Paisley">
+<Layout title="Marsal Business Launchpad | Marsal Accountants Paisley">
   <main class="services-detail-page">
     
     <!-- Carousel Section -->
@@ -56,66 +56,52 @@ const carouselItems = [
         
         <!-- Main Content Column -->
         <div class="service-detail-main">
-          <h2 class="service-detail-heading">Bookkeeping Services</h2>
+          <h2 class="service-detail-heading">Marsal Business Launchpad</h2>
           <div class="divider-content"></div>
           
           <div class="service-detail-content">
-            <h3 class="service-subheading">Professional Bookkeeping Services for Your Business</h3>
-            <p><i>Reliable, accurate, and affordable bookkeeping solutions starting at just £12.50 per hour (ex VAT).</i></p>
+            <p>Marsal Business Launchpad gives founders a clear set of startup packages, from registration-only support to a full launch bundle that includes strategy, formation, registrations, website build, hosting, domain, and professional email.</p>
+            <p>These are our published package prices and line items, designed to stay transparent before and after Marsal Business Launchpad - 40 Under 40 launches.</p>
 
-            <h4 class="service-mini-heading">Trusted Experts at Your Service</h4>
+            <h4 class="service-mini-heading">Published Line Item Pricing</h4>
             <div class="divider-content-small"></div>
-            <p>At Marsal Accountants, we take the stress out of managing your business finances. Our qualified and experienced bookkeepers work with businesses of all sizes to handle day-to-day bookkeeping — giving you the freedom and clarity to focus on growth.</p>
-
-            <h4 class="service-mini-heading">What We Offer</h4>
-            <div class="divider-content-small"></div>
-
-            <h5 class="service-small-heading">Flexible Document Handling</h5>
-            <p>We collect your financial documents as often as you need — weekly, fortnightly, or monthly — and ensure they're securely processed and returned promptly, keeping your records current and accurate.</p>
-
-            <h5 class="service-small-heading">Comprehensive Financial Management</h5>
-            <p>We handle all aspects of your bookkeeping with precision, including:</p>
             <ul class="content-bullet">
-              <li>Sales invoicing, debtor management, and debt collection.</li>
-              <li>Processing and verifying purchase invoices, managing creditors.</li>
-              <li>Organising your purchase ledger efficiently.</li>
-              <li>Conducting bank reconciliations to maintain accurate accounts.</li>
+              <li>Initial Business Strategy Consultation – £200</li>
+              <li>Company Incorporation – £100</li>
+              <li>Formation Administration Support – £60</li>
+              <li>Companies House Authentication Code Setup – £20</li>
+              <li>Self-Employment Registration Administration – £40</li>
+              <li>Payroll Scheme Registration – £100</li>
+              <li>VAT Registration – £150</li>
+              <li>12-Month Professional Web Hosting – £120</li>
+              <li>12-Month Domain Name Registration – £20</li>
+              <li>12-Month Professional Business Email Account – £20</li>
+              <li>3-Page Professional Business Website – £700</li>
             </ul>
 
-            <h5 class="service-small-heading">HMRC-Compliant VAT Returns</h5>
-            <p>We manage your VAT returns from preparation to filing, ensuring full compliance and helping you avoid costly penalties.</p>
-
-            <h5 class="service-small-heading">Unlimited Day-to-Day Advice</h5>
-            <p>Our team is always available to provide expert guidance on bookkeeping matters, helping you make informed decisions.</p>
-
-            <h4 class="service-mini-heading">Why Choose Us?</h4>
+            <h4 class="service-mini-heading">Launchpad Packages</h4>
             <div class="divider-content-small"></div>
+            <ul class="content-bullet">
+              <li><strong>Package 1 - Core Registration (£180):</strong> Company Incorporation, Formation Administration Support, Companies House Authentication Code Setup.</li>
+              <li><strong>Package 2 - Advice + Registration (£380):</strong> Initial Business Strategy Consultation plus Package 1.</li>
+              <li><strong>Package 3 - Registration + Website (£1,040):</strong> Package 1 plus Website, Hosting, Domain, and 1 Professional Business Email.</li>
+              <li><strong>Package 4 - Founder Launch (Advice + Reg + Website) (£1,240):</strong> Package 2 plus Website, Hosting, Domain, and 1 Professional Business Email.</li>
+              <li><strong>Package 5 - Growth Compliance Add-On (+£250):</strong> Payroll Scheme Registration and VAT Registration.</li>
+              <li><strong>Package 6 - Sole Trader Starter (£240):</strong> Initial Business Strategy Consultation and Self-Employment Registration Administration.</li>
+              <li><strong>Package 7 - Founding Bundle (40 Under 40 Equivalent) (£1,530):</strong> Full formation support plus digital launch package.</li>
+            </ul>
 
-            <h5 class="service-small-heading">Cost-Effective Solutions</h5>
-            <p>Bookkeeping services starting from just £12.50 per hour (ex VAT), saving you time and resources without compromising quality.</p>
-
-            <h5 class="service-small-heading">Tailored Support for Every Business</h5>
-            <p>From small businesses to large enterprises, we tailor our bookkeeping services to meet your specific needs.</p>
-
-            <h5 class="service-small-heading">Advanced resources and Technology</h5>
-            <p>We use secure, cutting-edge software to streamline record-keeping, giving you instant access to financial data for smarter decision-making.</p>
-
-            <h5 class="service-small-heading">Expertise You Can Trust</h5>
-            <p>With over a decade of experience across various industries, our bookkeepers deliver precision and professionalism in every task.</p>
-
-            <h5 class="service-small-heading">Focus on What Matters Most</h5>
-            <p>Outsource your bookkeeping to us and free up valuable time to grow your business, develop strategies, or simply enjoy life outside of work.</p>
-
-            <h4 class="service-mini-heading">Partner with Marsal Accountants for Stress-Free Bookkeeping</h4>
+            <h4 class="service-mini-heading">40 Under 40 Alignment</h4>
             <div class="divider-content-small"></div>
-            <p>Your business deserves top-tier financial support. Our personalised bookkeeping services are designed to simplify your finances, reduce costs, and give you peace of mind.</p>
+            <p>The Marsal Business Launchpad - 40 Under 40 programme is not yet open. When launched, selected recipients receive the Founding Bundle (or equivalent) free of charge, subject to programme eligibility, draw rules, and terms.</p>
 
-            <h4 class="service-mini-heading">Let's Get Started!</h4>
+            <h4 class="service-mini-heading">Build Your Best-Fit Package</h4>
             <div class="divider-content-small"></div>
-            <p>Take the first step towards efficient bookkeeping today. <a href="/contact/"><strong>Contact us</strong></a> for a no-obligation consultation and see how Marsal Accountants can make a difference to your business.</p>
+            <p>If you only need registration, we can deliver that. If you need strategy, digital launch, registrations, and compliance setup together, we can build a practical full-launch route around your goals.</p>
+            <p><a href="/contact/">Contact us</a> today to choose your package and get started.</p>
 
             <div class="contact-info">
-              <h5>Call us on <a href="tel:07468641272" class="contact-link">074-6864-1272</a> or E-mail us at <a href="mailto:info@marsalaccountants.co.uk" class="contact-link">info@marsalaccountants.co.uk</a></h5>
+              <h4>Call us on <a href="tel:07468641272" class="contact-link">074-6864-1272</a> or email <a href="mailto:info@marsalaccountants.co.uk" class="contact-link">info@marsalaccountants.co.uk</a> to get started.</h4>
             </div>
           </div>
         </div>
@@ -253,13 +239,6 @@ const carouselItems = [
       margin: 2rem 0 0.5rem;
     }
 
-    .service-small-heading {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--color-text);
-      margin: 1.5rem 0 0.5rem;
-    }
-
     .service-detail-content p {
       font-size: 1.05rem;
       line-height: 1.7;
@@ -267,9 +246,24 @@ const carouselItems = [
       margin-bottom: 1.5rem;
     }
 
-    .service-detail-content p i {
-      font-style: italic;
-      color: var(--color-text-secondary);
+    .service-detail-content a {
+      color: var(--color-primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color var(--transition-fast);
+    }
+
+    .service-detail-content a:hover {
+      color: var(--color-primary-dark);
+      text-decoration: underline;
+    }
+
+    /* External link indicator */
+    .service-detail-content a[target="_blank"]::after {
+      content: "↗";
+      font-size: 0.9em;
+      margin-left: 2px;
+      display: inline-block;
     }
 
     /* Divider Styles */
@@ -320,14 +314,14 @@ const carouselItems = [
     .contact-info {
       background: var(--color-primary-light);
       border-radius: 12px;
-      padding: 1.5rem;
-      margin-top: 2rem;
+      padding: 2rem;
+      margin-top: 3rem;
       text-align: center;
     }
 
-    .contact-info h5 {
-      font-size: 1.2rem;
-      font-weight: 600;
+    .contact-info h4 {
+      font-size: 1.3rem;
+      font-weight: 700;
       color: var(--color-text);
       margin: 0;
       display: flex;
@@ -448,10 +442,6 @@ const carouselItems = [
         font-size: 1.2rem;
       }
 
-      .service-small-heading {
-        font-size: 1.1rem;
-      }
-
       .carousel-inner {
         height: 100px;
       }
@@ -464,7 +454,7 @@ const carouselItems = [
         font-size: 1rem;
       }
 
-      .contact-info h5 {
+      .contact-info h4 {
         flex-direction: column;
         gap: 0.5rem;
       }

@@ -10,6 +10,8 @@ const articles = defineCollection({
     readTime: z.string().optional(),
     featured: z.boolean().optional(),
     heroImage: z.string().optional(),
+    /** Service hub for SEO automation (e.g. vat, corporation-tax-return-services). */
+    primaryService: z.string().optional(),
   }),
 });
 
