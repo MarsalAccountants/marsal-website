@@ -17,7 +17,7 @@ export interface Props {
   jsonLdExtra?: Record<string, unknown>[];
 }
 
-const { theme = "default", title, description, canonicalURL, image, jsonLdExtra } = Astro.props;
+const { theme = "dark", title, description, canonicalURL, image, jsonLdExtra } = Astro.props;
 
 const pageTitle = title ?? "Accountants in Paisley | Marsal Accountants";
 const pageDescription = description ?? "Professional accountancy services in Paisley, Glasgow and Central Scotland. Tax returns, bookkeeping, payroll, VAT and business advice. Marsal Accountants.";
@@ -48,7 +48,7 @@ const jsonLd = {
 };
 ---
 
-<html lang="en-GB">
+<html lang="en-GB" data-theme={theme}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

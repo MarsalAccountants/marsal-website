@@ -194,10 +194,18 @@ const contactInfo = {
   if (savedTheme === "light" || savedTheme === "dark") {
     applyTheme(savedTheme);
     updateIcon(savedTheme);
+  } else {
+    const live = body.getAttribute("data-theme") || root.getAttribute("data-theme") || "dark";
+    updateIcon(live === "dark" ? "dark" : "light");
+  }
+
+  function isLightPalette(t) {
+    return t === "light" || t === "default" || t === "resources" || t === "services";
   }
 
   themeToggle?.addEventListener("click", () => {
-    const current = root.getAttribute("data-theme") || "light";
+    const raw = root.getAttribute("data-theme") || body.getAttribute("data-theme") || "dark";
+    const current = isLightPalette(raw) ? "light" : "dark";
     const next = current === "light" ? "dark" : "light";
 
     applyTheme(next);
@@ -206,7 +214,8 @@ const contactInfo = {
   });
 
   function updateIcon(theme) {
-    const icon = themeToggle.querySelector("i");
+    const icon = themeToggle?.querySelector("i");
+    if (!icon) return;
     if (theme === "dark") {
       icon.classList.remove("fa-moon");
       icon.classList.add("fa-sun");
