@@ -14,8 +14,11 @@
 
 .article-hero {
   display: block;
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 420px;
+  object-fit: cover;
+  object-position: center;
   margin: 0 auto 2rem;
   border-radius: 12px;
 }
@@ -97,7 +100,7 @@
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .article-hero {
-    height: 260px;
+    max-height: 260px;
   }
 
   .article-content h1 {

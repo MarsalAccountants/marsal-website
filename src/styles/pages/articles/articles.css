@@ -157,9 +157,12 @@
 
 .post-img {
   width: 100%;
-  aspect-ratio: 1 / 1;          /* square container */
-  object-fit: contain;           /* shows whole image without cropping */
-  background-color: var(--color-surface-card);
+  aspect-ratio: 16 / 9;
+  max-height: 240px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  background-color: var(--color-surface);
 }
 
 .post-content {
