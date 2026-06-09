@@ -136,6 +136,7 @@ body {
   display: flex;
   align-items: center;
   gap: var(--space-sm); /* 8px — industry-standard spacing between controls */
+  flex-shrink: 0; /* keep logo + controls from being crushed by nav links */
 }
 
 /* =========================
@@ -160,8 +161,8 @@ body {
 }
 
 .logo-icon {
-  width: 144px;
-  height: 48px;
+  width: 180px;
+  height: 60px;
   object-fit: contain;
 
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));

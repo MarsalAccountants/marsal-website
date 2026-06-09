@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import MarketRoutingHead from "../../../../shared/market-routing/MarketRoutingHead.astro";
 import "../../styles/main.css";
 
 const SITE = import.meta.env.SITE || "https://www.marsalaccountants.co.uk";
@@ -20,9 +21,9 @@ export interface Props {
 const { theme = "dark", title, description, canonicalURL, image, jsonLdExtra } = Astro.props;
 
 const pageTitle = title ?? "Accountants in Paisley | Marsal Accountants";
-const pageDescription = description ?? "Professional accountancy services in Paisley, Glasgow and Central Scotland. Tax returns, bookkeeping, payroll, VAT and business advice. Marsal Accountants.";
+const pageDescription = description ?? "Accountants in Paisley, Renfrewshire — Marsal Accountants. Year-end accounts, Self Assessment, payroll, bookkeeping, VAT and business advice. Serving Glasgow and Central Scotland.";
 const canonical = canonicalURL ? new URL(canonicalURL, SITE) : new URL(Astro.url.pathname, SITE);
-const ogImage = image ? new URL(image, SITE).href : new URL("/icons/MS icon.png", SITE).href;
+const ogImage = image ? new URL(image, SITE).href : new URL("/icons/MS-icon.png", SITE).href;
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -44,7 +45,7 @@ const jsonLd = {
     { "@type": "Place", "name": "Glasgow" },
     { "@type": "Place", "name": "Central Scotland" }
   ],
-  "description": "Professional accountants in Paisley serving Glasgow and Central Scotland. Tax returns, bookkeeping, payroll, VAT and business accounting."
+  "description": "Accountants in Paisley (PA3 2NB) serving Renfrewshire, Glasgow and Central Scotland. Accounts, tax returns, payroll, bookkeeping, VAT and business support."
 };
 ---
 
@@ -55,6 +56,9 @@ const jsonLd = {
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />
     <link rel="canonical" href={canonical.href} />
+    <link rel="alternate" hreflang="en-gb" href={canonical.href} />
+    <link rel="alternate" hreflang="en-us" href={new URL(Astro.url.pathname, "https://accountants.marsal.work").href} />
+    <link rel="alternate" hreflang="x-default" href={canonical.href} />
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={pageTitle} />
@@ -77,6 +81,7 @@ const jsonLd = {
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/icons/MS-icon.png" />
     <link rel="apple-touch-icon" href="/icons/MS-icon.png" />
+    <MarketRoutingHead currentMarket="uk" />
   </head>
 
   <body data-theme={theme} class="mdl-site-body">
