@@ -51,16 +51,22 @@ import "../../styles/pages/contact.css";
 
           <!-- MAP -->
           <div class="col-sm-6 contact-map">
-            <div class="map-wrapper">
+            <div class="map-wrapper map-wrapper--linked">
               <iframe
                 src={MAP_EMBED_URL}
                 height="450"
                 style="width:100%; border:0;"
-                allowfullscreen
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
                 title="Marsal Accountants office location, Paisley">
               </iframe>
+              <a
+                href={MAP_OPEN_URL}
+                class="map-overlay"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open Marsal Accountants on Google Maps"
+              ></a>
               <p class="map-directions-link">
                 <a href={MAP_OPEN_URL} target="_blank" rel="noopener noreferrer">
                   Get directions on Google Maps

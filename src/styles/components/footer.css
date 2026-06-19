@@ -106,7 +106,20 @@
     box-shadow: var(--clay-shadow);
 }
 
+.footer-map--linked {
+    position: relative;
+}
+
+.footer-map-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    border-radius: var(--radius-clay);
+}
+
 .footer-map-link {
+    position: relative;
+    z-index: 3;
     display: inline-block;
     margin-top: 10px;
     font-size: 0.9rem;

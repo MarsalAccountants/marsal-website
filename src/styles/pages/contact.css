@@ -76,6 +76,13 @@
   margin-left: 0;
 }
 
+.map-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+}
+
 .map-wrapper iframe {
   position: absolute;
   top: 0;
@@ -98,10 +105,12 @@
   left: 12px;
   right: 12px;
   margin: 0;
-  z-index: 2;
+  z-index: 3;
+  pointer-events: none;
 }
 
 .map-directions-link a {
+  pointer-events: auto;
   display: inline-block;
   padding: 0.45rem 0.75rem;
   border-radius: var(--radius-clay);
