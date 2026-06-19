@@ -106,6 +106,19 @@
     box-shadow: var(--clay-shadow);
 }
 
+.footer-map-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.footer-map-link:hover {
+    text-decoration: underline;
+}
+
 /* BOTTOM */
 .footer-bottom {
     background: var(--footer-bottom-bg);

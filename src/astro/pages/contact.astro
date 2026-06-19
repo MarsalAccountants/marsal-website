@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { MAP_EMBED_URL } from "../data/site-config";
+import { MAP_EMBED_URL, MAP_OPEN_URL } from "../data/site-config";
 import "../../styles/pages/contact.css";
 ---
 
@@ -61,6 +61,11 @@ import "../../styles/pages/contact.css";
                 referrerpolicy="no-referrer-when-downgrade"
                 title="Marsal Accountants office location, Paisley">
               </iframe>
+              <p class="map-directions-link">
+                <a href={MAP_OPEN_URL} target="_blank" rel="noopener noreferrer">
+                  Get directions on Google Maps
+                </a>
+              </p>
             </div>
           </div>
 

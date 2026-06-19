@@ -2,7 +2,7 @@
 import "../../styles/components/footer.css";
 import RegionSwitcher from "../../../shared/market-routing/RegionSwitcher.astro";
 import { US_ORIGIN } from "../../../shared/market-routing/config";
-import { MAP_EMBED_URL, SOCIAL_LINKS } from "../data/site-config";
+import { MAP_EMBED_URL, MAP_OPEN_URL, SOCIAL_LINKS } from "../data/site-config";
 ---
 
 <footer class="marsal-footer">
@@ -89,6 +89,9 @@ import { MAP_EMBED_URL, SOCIAL_LINKS } from "../data/site-config";
                             width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"
                             title="Marsal Accountants office location, Paisley"></iframe>
+                        <a href={MAP_OPEN_URL} class="footer-map-link" target="_blank" rel="noopener noreferrer">
+                            Get directions on Google Maps
+                        </a>
                     </div>
                 </div>
 
