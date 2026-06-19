@@ -3,6 +3,9 @@ import Layout from "../../layouts/BaseLayout.astro";
 import ContactUs from "../../components/ContactUs.astro";
 import "../../../styles/pages/articles/articles.css";
 import { getCollection } from "astro:content";
+import paisleyPages from "../../data/paisley-pages.json";
+
+const PAISLEY_HERO = "/images/Accounting-Services-paisley.jpg";
 
 // --------------------------------------------------------------
 // 1. Fetch all articles
@@ -27,7 +30,11 @@ const featured = sorted.find((post) => post.data?.featured === true) ?? null;
 const rawCategories = validArticles
   .map((a) => a.data?.category?.trim())
   .filter(Boolean);
-const categories = ["All", ...Array.from(new Set(rawCategories))];
+const hasPaisleyGuides = paisleyPages.length > 0;
+const categories = [
+  "All",
+  ...Array.from(new Set([...rawCategories, ...(hasPaisleyGuides ? ["Paisley"] : [])])),
+];
 
 // --------------------------------------------------------------
 // 4. Prepare data for client‑side filtering
@@ -43,15 +50,35 @@ const articlesForClient = sorted.map((post) => ({
   featured: post.data.featured === true,
 }));
 
+const paisleyForClient = paisleyPages.map(
+  (p: { slug: string; title: string; description: string }) => ({
+    slug: p.slug,
+    title: p.title,
+    description: p.description,
+    heroImage: PAISLEY_HERO,
+    category: "Paisley",
+    date: "",
+    readTime: "",
+    featured: false,
+    href: `/local/paisley/${p.slug}/`,
+  })
+);
+
+const allForClient = [...articlesForClient, ...paisleyForClient].sort((a, b) => {
+  const dateA = a.date ? new Date(a.date).getTime() : 0;
+  const dateB = b.date ? new Date(b.date).getTime() : 0;
+  return dateB - dateA;
+});
+
 const clientData = {
-  articles: articlesForClient,
+  articles: allForClient,
   featuredSlug: featured?.slug ?? null,
   categories,
   perPage: 10,
 };
 ---
 
-<Layout title="Accounting & Tax Articles | Marsal Accountants">
+<Layout title="Articles | Accountants in Paisley | Marsal Accountants" description="Guides and updates from Marsal Accountants — accountants in Paisley serving Renfrewshire, Glasgow and Central Scotland.">
   <main class="articles-page container">
 
     <!-- ==================== CATEGORY FILTER ==================== -->
@@ -235,45 +262,51 @@ const clientData = {
       let currentCategory = 'All';
       let currentPage = 1;
 
+      function articleHref(a) {
+        return a.href || `/articles/${a.slug}/`;
+      }
+
       // Helper: render functions
       function renderFeatured(a) {
+        const href = articleHref(a);
         return `
           ${a.heroImage ? `
-            <a href="/articles/${a.slug}/">
+            <a href="${href}">
               <img src="${a.heroImage}" alt="${a.title}" class="featured-img" loading="lazy">
             </a>
           ` : ''}
           <div class="featured-content">
             ${a.category ? `<span class="category-tag">${a.category}</span>` : ''}
-            <h2><a href="/articles/${a.slug}/">${a.title}</a></h2>
+            <h2><a href="${href}">${a.title}</a></h2>
             ${a.description ? `<p class="excerpt">${a.description}</p>` : ''}
             <div class="meta">
               <div class="author"><i class="fas fa-user"></i> Marsal Editorial Team</div>
               ${a.date ? `<div class="date"><i class="fas fa-calendar"></i> ${a.date}</div>` : ''}
               ${a.readTime ? `<div class="read-time"><i class="fas fa-clock"></i> ${a.readTime}</div>` : ''}
             </div>
-            <a href="/articles/${a.slug}/" class="btn-more">Read Article</a>
+            <a href="${href}" class="btn-more">Read Article</a>
           </div>
         `;
       }
 
       function renderPostCard(a) {
+        const href = articleHref(a);
         return `
           <article class="post-card" data-category="${a.category || ''}">
             ${a.heroImage ? `
-              <a href="/articles/${a.slug}/">
+              <a href="${href}">
                 <img src="${a.heroImage}" alt="${a.title}" class="post-img" loading="lazy">
               </a>
             ` : ''}
             <div class="post-content">
               ${a.category ? `<span class="category-tag">${a.category}</span>` : ''}
-              <h4 class="post-title"><a href="/articles/${a.slug}/">${a.title}</a></h4>
+              <h4 class="post-title"><a href="${href}">${a.title}</a></h4>
               ${a.description ? `<p class="post-excerpt">${a.description}</p>` : ''}
               <div class="post-meta">
                 ${a.date ? `<span>${a.date}</span>` : ''}
                 ${a.readTime ? `<span>${a.readTime}</span>` : ''}
               </div>
-              <a href="/articles/${a.slug}/" class="btn-more">Read Article</a>
+              <a href="${href}" class="btn-more">Read Article</a>
             </div>
           </article>
         `;

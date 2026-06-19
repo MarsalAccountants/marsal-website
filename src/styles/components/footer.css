@@ -73,6 +73,32 @@
 
 .footer-contact a:hover { color: var(--footer-link-hover); }
 
+/* SOCIAL */
+.footer-social {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--color-surface-lighter, rgba(255, 255, 255, 0.08));
+    color: var(--footer-link);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.footer-social a:hover {
+    color: var(--color-primary);
+    background: rgba(45, 143, 111, 0.15);
+}
+
 /* MAP */
 .footer-map iframe {
     border-radius: var(--radius-clay);

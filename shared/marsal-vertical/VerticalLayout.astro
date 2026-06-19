@@ -1,0 +1,65 @@
+---
+import './vertical.css';
+import MarsalLogoMark from './MarsalLogoMark.astro';
+import type { VerticalSiteConfig } from './types';
+
+const MARSAL_WORK_URL = 'https://marsal.work';
+
+export interface Props {
+  site: VerticalSiteConfig;
+  title?: string;
+}
+
+const { site, title: titleOverride } = Astro.props;
+const title = titleOverride ?? `Marsal ${site.genre}`;
+const canonical = new URL(Astro.url.pathname, site.siteUrl);
+---
+
+<!doctype html>
+<html lang="en-GB" style={`--vertical-accent: ${site.accent}`}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={site.description} />
+    <link rel="canonical" href={canonical.href} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={site.description} />
+    <meta property="og:url" content={canonical.href} />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <header class="mv-header">
+      <div class="mv-wrap mv-header__inner">
+        <a href="/" class="mv-logo" aria-label={`Marsal ${site.genre} — home`}>
+          <MarsalLogoMark />
+          <span class="mv-logo__word">
+            <span>Marsal</span>
+            <span class="mv-logo__genre">{site.genre}</span>
+          </span>
+        </a>
+        <nav class="mv-nav" aria-label="Primary">
+          <a href={MARSAL_WORK_URL}>Marsal ecosystem</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="mv-footer">
+      <div class="mv-wrap mv-footer__inner">
+        <p>&copy; {new Date().getFullYear()} Marsal {site.genre}</p>
+        <p>
+          Part of the <a href={MARSAL_WORK_URL}>Marsal</a> ecosystem
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

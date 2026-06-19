@@ -1,7 +1,9 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import MarketRoutingHead from "../../../../shared/market-routing/MarketRoutingHead.astro";
+import CookieBanner from "../components/CookieBanner.astro";
+import MarketRoutingHead from "../../../shared/market-routing/MarketRoutingHead.astro";
+import { SAME_AS_URLS } from "../data/site-config";
 import "../../styles/main.css";
 
 const SITE = import.meta.env.SITE || "https://www.marsalaccountants.co.uk";
@@ -45,7 +47,8 @@ const jsonLd = {
     { "@type": "Place", "name": "Glasgow" },
     { "@type": "Place", "name": "Central Scotland" }
   ],
-  "description": "Accountants in Paisley (PA3 2NB) serving Renfrewshire, Glasgow and Central Scotland. Accounts, tax returns, payroll, bookkeeping, VAT and business support."
+  "description": "Accountants in Paisley (PA3 2NB) serving Renfrewshire, Glasgow and Central Scotland. Accounts, tax returns, payroll, bookkeeping, VAT and business support.",
+  "sameAs": SAME_AS_URLS
 };
 ---
 
@@ -94,6 +97,8 @@ const jsonLd = {
     </main>
 
     <Footer />
+
+    <CookieBanner />
 
     <!-- Browser-only JS -->
     <script type="module" src="/src/js/main.js"></script>

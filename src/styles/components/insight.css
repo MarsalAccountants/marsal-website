@@ -9,7 +9,7 @@
 
 .insights-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2.5rem;
 }
 
@@ -68,6 +68,10 @@
 }
 
 .insight-image--tax-tables img {
+  object-position: center center;
+}
+
+.insight-image--paisley-local img {
   object-position: center center;
 }
 

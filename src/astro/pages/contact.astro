@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { MAP_EMBED_URL } from "../data/site-config";
 import "../../styles/pages/contact.css";
 ---
 
@@ -52,12 +53,13 @@ import "../../styles/pages/contact.css";
           <div class="col-sm-6 contact-map">
             <div class="map-wrapper">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2239.7253069429416!2d-4.4319203!3d55.8500814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4888494bd8005793%3A0xe8791a8ed3da3c0b!2sStorage%20Vault%20Self%20Storage%20-%20Paisley!5e0!3m2!1sen!2suk!4v1760492009402!5m2!1sen!2suk"
+                src={MAP_EMBED_URL}
                 height="450"
                 style="width:100%; border:0;"
                 allowfullscreen
                 loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Marsal Accountants office location, Paisley">
               </iframe>
             </div>
           </div>

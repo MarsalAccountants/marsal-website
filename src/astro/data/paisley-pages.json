@@ -1,5 +1,154 @@
 [
   {
+    "slug": "accountants-in-paisley",
+    "title": "Accountants in Paisley | Marsal Accountants",
+    "description": "Independent accountants on Macdowall Street, PA3 2NB. Accounts, tax, payroll and bookkeeping for Paisley, Renfrewshire, Glasgow and Central Scotland.",
+    "h1": "Accountants in Paisley",
+    "sections": [
+      {
+        "h2": "A local firm with full-service support",
+        "body": "Marsal Accountants combines a Paisley office with cloud-based workflows, so you get local access when you need it and efficient turnaround when you do not. We work with sole traders, landlords, employers and limited companies."
+      },
+      {
+        "h2": "What we help with",
+        "body": "Year-end accounts, Self Assessment, corporation tax, payroll and RTI, bookkeeping, management accounts, property income reporting, and VAT including Making Tax Digital. Fees are agreed upfront where possible, with unlimited advice on agreed day-to-day matters for eligible packages."
+      },
+      {
+        "h2": "Serving Renfrewshire and beyond",
+        "body": "Many clients are in Paisley and Johnstone; others are based in Glasgow or wider Central Scotland. The same team, systems and deadlines apply wherever you trade."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Where are Marsal Accountants based in Paisley?",
+        "answer": "Office 1.4, 1 Macdowall Street, Paisley PA3 2NB. Contact us to arrange a consultation or to discuss remote onboarding."
+      },
+      {
+        "question": "Do you only work with businesses in PA postcodes?",
+        "answer": "No. We support clients across Renfrewshire, Glasgow and Central Scotland. Local meetings are available when they add value; much of our work is handled efficiently online and by phone."
+      },
+      {
+        "question": "How do I switch to Marsal from another accountant?",
+        "answer": "We use a structured handover: you approve release of records from your previous adviser, we agree cut-over dates for filings and payroll where relevant, and we confirm what we need from you at each step."
+      }
+    ],
+    "internalLinks": [
+      {
+        "href": "/services/accounting/",
+        "label": "Accounting Services"
+      },
+      {
+        "href": "/services/self-assessment-tax-returns/",
+        "label": "Self Assessment"
+      },
+      {
+        "href": "/services/bookkeeping/",
+        "label": "Bookkeeping"
+      },
+      {
+        "href": "/services/payroll/",
+        "label": "Payroll Services"
+      },
+      {
+        "href": "/services/vat/",
+        "label": "VAT Services"
+      },
+      {
+        "href": "/contact/",
+        "label": "Contact Us"
+      }
+    ],
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@type": "AccountingService",
+        "name": "Accountants in Paisley | Marsal Accountants",
+        "description": "Independent accountants on Macdowall Street, PA3 2NB. Accounts, tax, payroll and bookkeeping for Paisley, Renfrewshire, Glasgow and Central Scotland.",
+        "url": "https://www.marsalaccountants.co.uk/local/paisley/accountants-in-paisley/",
+        "telephone": "+447468641272",
+        "email": "info@marsalaccountants.co.uk",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Office 1.4, 1 Macdowall Street",
+          "addressLocality": "Paisley",
+          "addressRegion": "Scotland",
+          "postalCode": "PA3 2NB",
+          "addressCountry": "GB"
+        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Paisley"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Renfrewshire"
+          },
+          {
+            "@type": "City",
+            "name": "Glasgow"
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Where are Marsal Accountants based in Paisley?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Office 1.4, 1 Macdowall Street, Paisley PA3 2NB. Contact us to arrange a consultation or to discuss remote onboarding."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you only work with businesses in PA postcodes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. We support clients across Renfrewshire, Glasgow and Central Scotland. Local meetings are available when they add value; much of our work is handled efficiently online and by phone."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I switch to Marsal from another accountant?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We use a structured handover: you approve release of records from your previous adviser, we agree cut-over dates for filings and payroll where relevant, and we confirm what we need from you at each step."
+            }
+          }
+        ],
+        "url": "https://www.marsalaccountants.co.uk/local/paisley/accountants-in-paisley/"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.marsalaccountants.co.uk/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Paisley",
+            "item": "https://www.marsalaccountants.co.uk/local/paisley/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Accountants in Paisley",
+            "item": "https://www.marsalaccountants.co.uk/local/paisley/accountants-in-paisley/"
+          }
+        ]
+      }
+    ],
+    "primaryServiceId": "accounting"
+  },
+  {
     "slug": "making-tax-digital-vat-paisley",
     "title": "Making Tax Digital VAT in Paisley | Marsal Accountants",
     "description": "Practical, HMRC-aligned guidance on making tax digital vat for businesses in Paisley. Professional support from Marsal Accountants.",
@@ -7,7 +156,7 @@
     "sections": [
       {
         "h2": "Support for businesses in Paisley",
-        "body": "We help sole traders, partnerships, and limited companies stay compliant while keeping decisions clear and proportionate. accountants near me in Paisley"
+        "body": "We help sole traders, partnerships, and limited companies stay compliant while keeping decisions clear and proportionate — as your accountants in Paisley and online."
       },
       {
         "h2": "What we can help with",
@@ -142,7 +291,7 @@
     "sections": [
       {
         "h2": "Support for businesses in Paisley",
-        "body": "We help sole traders, partnerships, and limited companies stay compliant while keeping decisions clear and proportionate. accountants near me in Paisley"
+        "body": "We help sole traders, partnerships, and limited companies stay compliant while keeping decisions clear and proportionate — as your accountants in Paisley and online."
       },
       {
         "h2": "What we can help with",
@@ -277,7 +426,7 @@
     "sections": [
       {
         "h2": "Support for businesses in Paisley",
-        "body": "We help sole traders, partnerships, and limited companies stay compliant while keeping decisions clear and proportionate. HMRC-aligned VAT advice in Paisley"
+        "body": "We help sole traders, partnerships, and limited companies stay compliant while keeping decisions clear and proportionate — including HMRC-aligned VAT advice for Paisley-based businesses."
       },
       {
         "h2": "What we can help with",

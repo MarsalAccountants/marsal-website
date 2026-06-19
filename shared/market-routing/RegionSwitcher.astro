@@ -1,0 +1,171 @@
+---
+import type { Market } from './config';
+import { buildMarketUrl } from './config';
+import FlagIcon from './FlagIcon.astro';
+
+export interface Props {
+  currentMarket: Market;
+  pathname?: string;
+  class?: string;
+  /** Where the menu opens relative to the flag button */
+  menuPlacement?: 'above' | 'below';
+}
+
+const {
+  currentMarket,
+  pathname = Astro.url.pathname,
+  class: className = '',
+  menuPlacement = 'above',
+} = Astro.props;
+
+const ukHref = buildMarketUrl('uk', pathname);
+const usHref = buildMarketUrl('us', pathname);
+
+const markets = [
+  { id: 'uk' as const, label: 'United Kingdom', href: ukHref },
+  { id: 'us' as const, label: 'United States', href: usHref },
+];
+
+const current = markets.find((m) => m.id === currentMarket)!;
+const alternatives = markets.filter((m) => m.id !== currentMarket);
+---
+
+<div
+  class:list={['marsal-region-switcher', className, `marsal-region-switcher--menu-${menuPlacement}`]}
+>
+  <div class="marsal-region-switcher__dropdown">
+    <button
+      type="button"
+      class="marsal-region-switcher__trigger"
+      aria-expanded="false"
+      aria-haspopup="true"
+      aria-label={`Current region: ${current.label}. Choose another region`}
+    >
+      <FlagIcon market={current.id} class="marsal-region-switcher__flag" />
+    </button>
+    {alternatives.length > 0 && (
+      <ul class="marsal-region-switcher__menu" hidden>
+        {alternatives.map((market) => (
+          <li>
+            <a
+              href={market.href}
+              data-marsal-market={market.id}
+              class="marsal-region-switcher__option"
+              aria-label={market.label}
+            >
+              <FlagIcon market={market.id} class="marsal-region-switcher__flag" />
+            </a>
+          </li>
+        ))}
+      </ul>
+    )}
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.marsal-region-switcher__dropdown').forEach((root) => {
+    const trigger = root.querySelector('.marsal-region-switcher__trigger');
+    const menu = root.querySelector('.marsal-region-switcher__menu');
+    if (!trigger || !menu) return;
+
+    const close = () => {
+      menu.hidden = true;
+      trigger.setAttribute('aria-expanded', 'false');
+      root.classList.remove('is-open');
+    };
+
+    const open = () => {
+      menu.hidden = false;
+      trigger.setAttribute('aria-expanded', 'true');
+      root.classList.add('is-open');
+    };
+
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (menu.hidden) open();
+      else close();
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!root.contains(e.target as Node)) close();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') close();
+    });
+  });
+</script>
+
+<style>
+  .marsal-region-switcher {
+    display: inline-block;
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+
+  .marsal-region-switcher__dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .marsal-region-switcher__trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.35rem 0.45rem;
+    border: 1px solid var(--footer-border, rgba(255, 255, 255, 0.2));
+    border-radius: 0.5rem;
+    background: var(--footer-bg, rgba(255, 255, 255, 0.06));
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+
+  .marsal-region-switcher__trigger:hover,
+  .marsal-region-switcher__dropdown.is-open .marsal-region-switcher__trigger {
+    background: var(--color-surface-hover, rgba(255, 255, 255, 0.12));
+    border-color: var(--footer-link-hover, rgba(255, 255, 255, 0.35));
+  }
+
+  .marsal-region-switcher__flag {
+    display: block;
+    width: 28px;
+    height: auto;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+  }
+
+  .marsal-region-switcher__menu {
+    position: absolute;
+    left: 0;
+    margin: 0;
+    padding: 0.25rem;
+    list-style: none;
+    border: 1px solid var(--footer-border, rgba(255, 255, 255, 0.2));
+    border-radius: 0.5rem;
+    background: var(--footer-bg, #0f1b18);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    z-index: 10;
+  }
+
+  .marsal-region-switcher--menu-above .marsal-region-switcher__menu {
+    bottom: calc(100% + 0.35rem);
+  }
+
+  .marsal-region-switcher--menu-below .marsal-region-switcher__menu {
+    top: calc(100% + 0.35rem);
+  }
+
+  .marsal-region-switcher__option {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.35rem 0.45rem;
+    border-radius: 0.35rem;
+    text-decoration: none;
+    transition: background 0.15s ease;
+  }
+
+  .marsal-region-switcher__option:hover {
+    background: var(--color-surface-hover, rgba(255, 255, 255, 0.1));
+  }
+</style>

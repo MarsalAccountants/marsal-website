@@ -1,7 +1,6 @@
 ---
 title: "Autumn Budget 2025 Explained by Accountants in Paisley | Marsal Accountants"
 date: "2025-10-22"
-featured: true
 category: "Tax"
 heroImage: "/images/autumn-budget.jpg"
 description: "Paisley-based accountants explain the Autumn Budget 2025 tax changes, ISA limits, property taxes, and business impacts for individuals and SMEs in Glasgow and Central Scotland."

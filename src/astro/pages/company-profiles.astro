@@ -2,58 +2,81 @@
 import "../../styles/pages/company-profiles.css";
 import Layout from "../layouts/BaseLayout.astro";
 import ContactUs from "../components/ContactUs.astro";
+import { US_ORIGIN, US_PRACTICE_PUBLIC_LABEL } from "../../../shared/market-routing/config";
+
+const team = [
+  {
+    name: "Shahzad Hussain",
+    role: "Practice Director",
+    image: "/images/marsal-accountants-director.PNG",
+    alt: "Shahzad Hussain, Practice Director at Marsal Accountants",
+    bio: "As a Director at Marsal Accountants, I am committed to high standards, transparent communication, and meaningful client partnerships. I guide our service quality, technical direction, and the strategic evolution of the firm.",
+  },
+  {
+    name: "Amna Talib",
+    role: "Client Accounts Manager",
+    image: "/images/amna-talib-client-accounts-manager.png",
+    alt: "Amna Talib, Client Accounts Manager at Marsal Accountants",
+    bio: "As a Client Accounts Manager at Marsal Accountants, I am committed to clear communication, timely responses, and dependable day-to-day support. I manage client enquiries, documentation, and deadlines, and serve as your consistent point of contact throughout the year.",
+  },
+];
 ---
 
-<Layout title="About Us | Marsal Accountants">
+<Layout title="About Us | Accountants in Paisley | Marsal Accountants" description="Marsal Accountants in Paisley — our philosophy, leadership, and team supporting businesses across Scotland.">
   <main class="about-page">
 
-
-    <!-- ========================= -->
-    <!-- SECTION 1: OUR PHILOSOPHY -->
-    <!-- ========================= -->
     <section class="about-section">
       <h1 class="about-heading">Our Philosophy</h1>
       <div class="about-divider"></div>
 
       <p class="about-lead">
-        At <span class="mg">Marsal Accountants</span>, our philosophy is simple: 
-        to give every client clarity, confidence, and genuine care in all areas of their accounts and tax affairs.
+        At <span class="mg">Marsal Accountants</span>, our philosophy is straightforward:
+        to provide every client with clarity, confidence, and attentive care across all accounting and tax matters.
       </p>
 
-      <div class="about-grid philosophy-grid">
-        <div class="about-image-wrapper">
-          <img 
-            src="/images/marsal-accountants-director.PNG" 
-            alt="Director of Marsal Accountants"
-            class="about-image"
-            loading="lazy"
-          />
-          <div class="about-caption"><span class="mg">Marsal Accountants</span> Director</div>
-        </div>
+      <div class="about-text philosophy-text director-vision">
+        <h2 class="about-subheading">Director&rsquo;s Vision</h2>
+        <p>
+          My vision for <span class="mg">Marsal</span> has always been to build a practice that combines modern capability
+          with personal accountability. Accounting should not feel distant or overly complex &mdash; it should feel like
+          a trusted partnership.
+        </p>
+        <p>
+          We work with business owners and individuals across Paisley, Glasgow, and Scotland who expect advisers that
+          understand their circumstances, communicate clearly, and deliver with precision.
+        </p>
+        <p>
+          Every return we submit and every set of accounts we prepare is guided by one principle:
+          <strong>your success is our responsibility.</strong>
+        </p>
+      </div>
 
-        <div class="about-text philosophy-text">
-          <h2 class="about-subheading">Director's Vision</h2>
-
-          <p>
-            My vision for <span class="mg">Marsal</span> has always been clear: to build an accounting firm that feels modern, 
-            precise, and genuinely supportive. Accounting should not feel distant or complicated — it should 
-            feel like a partnership built on trust.
-          </p>
-
-          <p>
-            We support hardworking business owners across Paisley, Glasgow, and Scotland. They deserve 
-            accountants who understand their challenges, speak their language, and guide them with honesty 
-            and accuracy.
-          </p>
-
-          <p>
-            Every return we file and every set of accounts we prepare is guided by one principle: 
-            <strong>your success is our responsibility.</strong>
-          </p>
+      <div class="team-section">
+        <h2 class="about-subheading team-heading">Our Team</h2>
+        <p class="team-intro">
+          A focused team combining strategic leadership with dedicated client support.
+        </p>
+        <div class="team-grid">
+          {team.map((member) => (
+            <article class="team-card">
+              <div class="team-card-photo">
+                <img
+                  src={member.image}
+                  alt={member.alt}
+                  class="team-card-image"
+                  loading="lazy"
+                />
+              </div>
+              <div class="team-card-body">
+                <h3 class="team-card-name">{member.name}</h3>
+                <p class="team-card-role">{member.role}</p>
+                <p class="team-card-bio">{member.bio}</p>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
 
-      <!-- VALUES GRID -->
       <div class="values-grid">
         <div class="value-card">
           <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
@@ -62,7 +85,6 @@ import ContactUs from "../components/ContactUs.astro";
             We explain your accounts and tax position in simple, direct language — so you always know where you stand.
           </p>
         </div>
-
         <div class="value-card">
           <div class="value-icon"><i class="fas fa-check-circle"></i></div>
           <h3 class="value-title">Precision You Can Trust</h3>
@@ -70,7 +92,6 @@ import ContactUs from "../components/ContactUs.astro";
             Every figure, return, and deadline is handled with accuracy, discipline, and professional care.
           </p>
         </div>
-
         <div class="value-card">
           <div class="value-icon"><i class="fas fa-gears"></i></div>
           <h3 class="value-title">Modern Systems, Human Support</h3>
@@ -81,49 +102,41 @@ import ContactUs from "../components/ContactUs.astro";
       </div>
     </section>
 
-        <!-- ========================= -->
-    <!-- SECTION 2: COMPANY PROFILE -->
-    <!-- ========================= -->
     <section class="about-section">
       <h1 class="about-heading">Company Profile</h1>
       <div class="about-divider"></div>
 
       <p class="about-lead">
-        With over eight years of experience and a modern, client‑first approach, 
-        <strong><span class="mg">Marsal Accountants</span></strong> provides tailored accounting and tax solutions 
+        With over eight years of experience and a modern, client‑first approach,
+        <strong><span class="mg">Marsal Accountants</span></strong> provides tailored accounting and tax solutions
         to businesses and individuals across the UK.
       </p>
 
       <div class="company-profile-content">
         <div class="profile-text-above">
           <p>
-            We specialise in Business Accounts, Tax Returns, VAT, Payroll, Bookkeeping, and advisory services 
+            We specialise in Business Accounts, Tax Returns, VAT, Payroll, Bookkeeping, and advisory services
             for Sole Traders, Partnerships, LLPs, Limited Companies, and PLCs.
           </p>
         </div>
-
         <div class="profile-image-center">
-          <img 
-            src="/images/marsal-accountants-about-us.png" 
+          <img
+            src="/images/marsal-accountants-about-us.png"
             alt="Marsal Accountants About Us"
             class="profile-center-image"
             loading="lazy"
           />
           <div class="about-caption">Supporting clients across Scotland</div>
         </div>
-
         <div class="profile-strength-clients">
           <div class="strength-clients-grid">
-            <!-- LEFT COLUMN: OUR STRENGTH -->
             <div class="strength-section">
               <h2 class="about-subheading">Our Strength</h2>
               <p>
-                Our strength lies in strategic insight, attention to detail, and meaningful client relationships. 
+                Our strength lies in strategic insight, attention to detail, and meaningful client relationships.
                 We help businesses stay compliant, understand their numbers, and plan with confidence.
               </p>
             </div>
-            
-            <!-- RIGHT COLUMN: WHO WE SERVE -->
             <div class="clients-section">
               <h2 class="about-subheading">Who We Serve</h2>
               <div class="clients-box">
@@ -161,21 +174,35 @@ import ContactUs from "../components/ContactUs.astro";
       </div>
     </section>
 
+    <section class="about-section" id="international-presence">
+      <h2 class="about-heading">International presence</h2>
+      <div class="about-divider"></div>
+      <div class="about-text">
+        <p>
+          <strong><span class="mg">Marsal Accountants Ltd</span></strong> (company number SC848515) is our United Kingdom practice,
+          based in Paisley, Scotland. We provide UK accounting, tax, payroll, and advisory services under UK law.
+        </p>
+        <p>
+          Our <strong>{US_PRACTICE_PUBLIC_LABEL}</strong> supports clients who need United States accounting and tax services.
+          UK and US operations are separate; each office handles work in its own jurisdiction. If you need support in both countries,
+          we will connect you with the appropriate team.
+        </p>
+        <p>
+          <a href={US_ORIGIN} rel="alternate">Visit our United States website →</a>
+        </p>
+      </div>
+    </section>
 
-    <!-- Contact Us Component -->
     <ContactUs />
-
   </main>
 
-  <!-- Scroll Reveal Animation -->
   <script is:inline>
     document.addEventListener("DOMContentLoaded", () => {
-      const cards = document.querySelectorAll(".value-card, .about-image-wrapper, .about-text, .profile-image-center, .profile-text-above, .profile-text-below");
+      const cards = document.querySelectorAll(".value-card, .team-card, .about-text, .profile-image-center, .profile-text-above, .profile-text-below, #international-presence .about-text");
       if (!("IntersectionObserver" in window)) {
         cards.forEach(card => card.classList.add("in-view"));
         return;
       }
-
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry, index) => {
@@ -189,7 +216,6 @@ import ContactUs from "../components/ContactUs.astro";
         },
         { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
       );
-
       cards.forEach(card => observer.observe(card));
     });
   </script>

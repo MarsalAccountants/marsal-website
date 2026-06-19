@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --marsal-green: #2e8b3e;
+  --marsal-green-hover: #236c30;
+  --charcoal: #0f0f0f;
+  --graphite: #1a1a1a;
+  --soft-grey: #f5f5f5;
+  --white: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.82);
+  --font-sans: 'Open Sans', Arial, sans-serif;
+  --max-width: 960px;
+  --vertical-accent: #2e8b3e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--charcoal);
+  background: var(--soft-grey);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--marsal-green);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--marsal-green-hover);
+}
+
+.mv-wrap {
+  width: min(100% - 2rem, var(--max-width));
+  margin-inline: auto;
+}
+
+.mv-header {
+  background: var(--graphite);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.mv-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.mv-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--marsal-green);
+}
+
+.mv-logo__mark {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+.mv-logo__word {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.mv-logo__genre {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--vertical-accent);
+}
+
+.mv-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.mv-nav a {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.mv-nav a:hover {
+  color: var(--white);
+}
+
+.mv-hero {
+  padding: 4.5rem 0 4rem;
+  background: var(--charcoal);
+  color: var(--white);
+}
+
+.mv-hero--dark-tile {
+  background: var(--graphite);
+}
+
+.mv-hero__eyebrow {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--vertical-accent);
+}
+
+.mv-hero h1 {
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.mv-hero__lead {
+  max-width: 40rem;
+  color: var(--text-muted);
+  font-size: 1.0625rem;
+}
+
+.mv-hero__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 1.25rem;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--vertical-accent) 18%, transparent);
+  color: var(--vertical-accent);
+  font-size: 1.25rem;
+}
+
+.mv-panel {
+  padding: 3rem 0 4rem;
+}
+
+.mv-panel__card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 24px rgba(15, 15, 15, 0.08);
+  border-top: 4px solid var(--vertical-accent);
+}
+
+.mv-panel__card h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.mv-panel__card p {
+  color: #444;
+}
+
+.mv-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.mv-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+
+.mv-btn--accent {
+  background: var(--vertical-accent);
+  color: var(--white);
+}
+
+.mv-btn--accent:hover {
+  filter: brightness(0.92);
+  color: var(--white);
+}
+
+.mv-btn--ghost {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: var(--white);
+}
+
+.mv-btn--ghost:hover {
+  border-color: var(--white);
+  color: var(--white);
+}
+
+.mv-footer {
+  padding: 2rem 0;
+  background: var(--graphite);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+}
+
+.mv-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.mv-footer a {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* Minimal coming-soon landing (vertical subdomains) */
+.mv-coming-soon {
+  min-height: 100dvh;
+  display: flex;
+  background: var(--charcoal);
+  color: var(--white);
+}
+
+.mv-coming-soon__main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1rem;
+  gap: 1.25rem;
+}
+
+.mv-coming-soon__logo {
+  color: var(--marsal-green);
+}
+
+.mv-coming-soon h1 {
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.mv-coming-soon__back {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.mv-coming-soon__back a {
+  color: var(--vertical-accent);
+  font-weight: 600;
+}
+
+.mv-coming-soon__back a:hover {
+  color: var(--white);
+}

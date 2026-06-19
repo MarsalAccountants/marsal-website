@@ -1,0 +1,43 @@
+---
+import './vertical.css';
+import MarsalLogoMark from './MarsalLogoMark.astro';
+import type { VerticalSiteConfig } from './types';
+
+const MARSAL_WORK_URL = 'https://marsal.work';
+
+export interface Props {
+  site: VerticalSiteConfig;
+}
+
+const { site } = Astro.props;
+const title = `Marsal ${site.genre} — Coming soon`;
+const canonical = new URL(Astro.url.pathname, site.siteUrl);
+---
+
+<!doctype html>
+<html lang="en-GB" style={`--vertical-accent: ${site.accent}`}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={`${site.genre} — coming soon from Marsal.`} />
+    <link rel="canonical" href={canonical.href} />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class="mv-coming-soon">
+    <main class="mv-coming-soon__main">
+      <a href="/" class="mv-logo mv-coming-soon__logo" aria-label={`Marsal ${site.genre} — home`}>
+        <MarsalLogoMark />
+        <span class="mv-logo__word">
+          <span>Marsal</span>
+          <span class="mv-logo__genre">{site.genre}</span>
+        </span>
+      </a>
+      <h1>Coming soon</h1>
+      <p class="mv-coming-soon__back">
+        <a href={MARSAL_WORK_URL}>marsal.work</a>
+      </p>
+    </main>
+  </body>
+</html>

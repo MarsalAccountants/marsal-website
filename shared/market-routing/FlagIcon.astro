@@ -1,0 +1,63 @@
+---
+import type { Market } from './config';
+
+export interface Props {
+  market: Market;
+  class?: string;
+}
+
+const { market, class: className = '' } = Astro.props;
+---
+
+{market === 'us' ? (
+  <svg
+    class={className}
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 60 40"
+    width="28"
+    height="19"
+    role="img"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <rect width="60" height="40" fill="#b22234" />
+    <rect y="3.08" width="60" height="3.08" fill="#fff" />
+    <rect y="9.23" width="60" height="3.08" fill="#fff" />
+    <rect y="15.38" width="60" height="3.08" fill="#fff" />
+    <rect y="21.54" width="60" height="3.08" fill="#fff" />
+    <rect y="27.69" width="60" height="3.08" fill="#fff" />
+    <rect y="33.85" width="60" height="3.08" fill="#fff" />
+    <rect width="24" height="21.54" fill="#3c3b6e" />
+    <g fill="#fff">
+      <circle cx="4" cy="3.5" r="1.1" />
+      <circle cx="10" cy="3.5" r="1.1" />
+      <circle cx="16" cy="3.5" r="1.1" />
+      <circle cx="7" cy="7.5" r="1.1" />
+      <circle cx="13" cy="7.5" r="1.1" />
+      <circle cx="19" cy="7.5" r="1.1" />
+      <circle cx="4" cy="11.5" r="1.1" />
+      <circle cx="10" cy="11.5" r="1.1" />
+      <circle cx="16" cy="11.5" r="1.1" />
+      <circle cx="7" cy="15.5" r="1.1" />
+      <circle cx="13" cy="15.5" r="1.1" />
+      <circle cx="19" cy="15.5" r="1.1" />
+    </g>
+  </svg>
+) : (
+  <svg
+    class={className}
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 60 40"
+    width="28"
+    height="19"
+    role="img"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <rect width="60" height="40" fill="#012169" />
+    <path fill="#fff" d="M0 0 60 40M60 0 0 40" stroke="#fff" stroke-width="8" />
+    <path fill="#c8102e" d="M0 0 60 40M60 0 0 40" stroke="#c8102e" stroke-width="4" />
+    <path fill="#fff" d="M30 0v40M0 20h60" stroke="#fff" stroke-width="12" />
+    <path fill="#c8102e" d="M30 0v40M0 20h60" stroke="#c8102e" stroke-width="6" />
+  </svg>
+)}

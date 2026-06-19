@@ -1,0 +1,34 @@
+---
+import type { Market } from './config';
+import {
+  MARKET_COOKIE,
+  MARKET_COOKIE_MAX_AGE,
+  UK_ORIGIN,
+  US_ORIGIN,
+} from './config';
+import headScript from './market-routing-head.js?raw';
+import switcherScript from './market-routing-switcher.js?raw';
+
+export interface Props {
+  currentMarket: Market;
+  /** Set true to test redirects on localhost (optional). */
+  forceOnLocalhost?: boolean;
+}
+
+const { currentMarket, forceOnLocalhost = false } = Astro.props;
+
+const boot = {
+  currentMarket,
+  cookieName: MARKET_COOKIE,
+  cookieMaxAge: MARKET_COOKIE_MAX_AGE,
+  ukOrigin: UK_ORIGIN,
+  usOrigin: US_ORIGIN,
+  forceOnLocalhost,
+};
+---
+
+<script is:inline define:vars={{ boot }}>
+  window.MARSAL_MARKET_BOOT = boot;
+</script>
+<script is:inline set:html={headScript} />
+<script is:inline set:html={switcherScript} />

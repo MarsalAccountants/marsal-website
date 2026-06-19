@@ -2,8 +2,11 @@
 // Marsal Global JavaScript
 // ===============================
 
+import { initCookieConsent } from "./cookie-consent.js";
+
 // Run only in the browser
 document.addEventListener("DOMContentLoaded", () => {
+  initCookieConsent();
 
   // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(link => {

@@ -1,5 +1,8 @@
 ---
 import "../../styles/components/footer.css";
+import RegionSwitcher from "../../../shared/market-routing/RegionSwitcher.astro";
+import { US_ORIGIN } from "../../../shared/market-routing/config";
+import { MAP_EMBED_URL, SOCIAL_LINKS } from "../data/site-config";
 ---
 
 <footer class="marsal-footer">
@@ -18,6 +21,7 @@ import "../../styles/components/footer.css";
                         <li><a href="/resources/our-fee/">Our Fees</a></li>
                         <li><a href="/resources/tax-tables/">Tax Tables</a></li>
                         <li><a href="/forms/">Forms</a></li>
+                        <li><a href="/articles/?category=Paisley">Accountants in Paisley</a></li>
                         <li><a href="/contact/">Contact Us</a></li>
                         <li><a href="/client-membership-terms-and-conditions/">Terms and Conditions</a></li>
                     </ul>
@@ -60,6 +64,18 @@ import "../../styles/components/footer.css";
                             <i class="fa fa-envelope"></i>
                             <a href="mailto:info@marsalaccountants.co.uk">info@marsalaccountants.co.uk</a>
                         </div>
+
+                        <div class="footer-social">
+                            <a href={SOCIAL_LINKS.googleBusiness} target="_blank" rel="noopener noreferrer" aria-label="Find us on Google">
+                                <i class="fab fa-google"></i>
+                            </a>
+                            <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href={SOCIAL_LINKS.twitter} target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -69,9 +85,10 @@ import "../../styles/components/footer.css";
                     <div class="footer-divider"></div>
                     <div class="footer-map">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2239.7253069429416!2d-4.4319203!3d55.8500814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4888494bd8005793%3A0xe8791a8ed3da3c0b!2sStorage%20Vault%20Self%20Storage%20-%20Paisley!5e0!3m2!1sen!2suk!4v1760492009402!5m2!1sen!2suk"
+                            src={MAP_EMBED_URL}
                             width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Marsal Accountants office location, Paisley"></iframe>
                     </div>
                 </div>
 
@@ -83,7 +100,14 @@ import "../../styles/components/footer.css";
         <div class="container">
             <div class="footer-bottom-grid">
                 <div class="footer-bottom-left">
+                    <RegionSwitcher currentMarket="uk" class="footer-region-switcher" menuPlacement="above" />
+                    <a href={US_ORIGIN} rel="alternate">United States website</a>
+                    <span class="footer-divider-vertical"></span>
+                    <a href="/privacy-policy/">Privacy Policy</a>
+                    <span class="footer-divider-vertical"></span>
                     <a href="/gdpr-compliances/">GDPR Compliance</a>
+                    <span class="footer-divider-vertical"></span>
+                    <a href="#" data-cookie-settings>Cookie settings</a>
                     <span class="footer-divider-vertical"></span>
                     <a href="/accountants-central-scotland/">Accountants – Central Scotland</a>
 
@@ -101,3 +125,10 @@ import "../../styles/components/footer.css";
         </div>
     </div>
 </footer>
+
+<style>
+  .footer-region-switcher {
+    display: block;
+    margin-bottom: 1rem;
+  }
+</style>
