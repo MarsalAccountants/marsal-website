@@ -258,10 +258,7 @@
 
 .profile-center-image {
     width: 100%;
-    aspect-ratio: 16 / 9;
-    max-height: 420px;
-    object-fit: cover;
-    object-position: center;
+    height: auto;
     display: block;
 }
 
