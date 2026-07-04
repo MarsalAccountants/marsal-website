@@ -3,16 +3,15 @@ title: "Delivery Driver Self Assessment Guide | Marsal Accountants Paisley"
 date: "2026-02-17"
 category: "Self Assessment"
 heroImage: "/images/marsal-accountants-delivery-driver-self-assessment.png"
-description: "Paisley accountants explain how delivery drivers can complete Self Assessment accurately and on time, including allowable expenses, mileage vs actual costs, and deadlines."
+description: "Self-employed delivery drivers must file Self Assessment each year, report platform income and expenses, and choose mileage or actual vehicle costs. Paisley accountants explain how."
 readTime: "5 min read"
 ---
 
 # Delivery Driver Self Assessment Guide by Marsal Accountants in Paisley
 
-Working as a self-employed delivery driver for platforms like **Uber Eats**, **Just Eat**, and **Deliveroo** offers flexibility—but it also comes with tax responsibilities.  
-At **Marsal Accountants**, based in **Paisley** and serving **Glasgow** and **Central Scotland**, we help delivery drivers prepare and submit their **Self Assessment tax returns** accurately and on time.
+Self-employed delivery drivers (including **Uber Eats**, **Just Eat**, and **Deliveroo**) must file a **Self Assessment** tax return each year, report platform income and expenses, and claim allowable costs such as mileage or actual vehicle expenses.
 
-This step-by-step guide explains what Self Assessment is, the records you need, and how professional support can save you time, money, and stress.
+At **Marsal Accountants**, based in **Paisley** and serving **Glasgow** and **Central Scotland**, we help drivers prepare accurate returns on time and keep the records HMRC expects.
 
 ---
 

@@ -3,26 +3,9 @@ import "../../styles/pages/company-profiles.css";
 import Layout from "../layouts/BaseLayout.astro";
 import ContactUs from "../components/ContactUs.astro";
 import { US_ORIGIN, US_PRACTICE_PUBLIC_LABEL } from "../../../shared/market-routing/config";
-
-const team = [
-  {
-    name: "Shahzad Hussain",
-    role: "Practice Director",
-    image: "/images/marsal-accountants-director.PNG",
-    alt: "Shahzad Hussain, Practice Director at Marsal Accountants",
-    bio: "As a Director at Marsal Accountants, I am committed to high standards, transparent communication, and meaningful client partnerships. I guide our service quality, technical direction, and the strategic evolution of the firm.",
-  },
-  {
-    name: "Amna Talib",
-    role: "Client Accounts Manager",
-    image: "/images/amna-talib-client-accounts-manager.png",
-    alt: "Amna Talib, Client Accounts Manager at Marsal Accountants",
-    bio: "As a Client Accounts Manager at Marsal Accountants, I am committed to clear communication, timely responses, and dependable day-to-day support. I manage client enquiries, documentation, and deadlines, and serve as your consistent point of contact throughout the year.",
-  },
-];
 ---
 
-<Layout title="About Us | Accountants in Paisley | Marsal Accountants" description="Marsal Accountants in Paisley — our philosophy, leadership, and team supporting businesses across Scotland.">
+<Layout title="About Us | Accountants in Paisley | Marsal Accountants" description="Marsal Accountants in Paisley — our philosophy, principal, and practice supporting businesses across Scotland.">
   <main class="about-page">
 
     <section class="about-section">
@@ -34,46 +17,36 @@ const team = [
         to provide every client with clarity, confidence, and attentive care across all accounting and tax matters.
       </p>
 
-      <div class="about-text philosophy-text director-vision">
-        <h2 class="about-subheading">Director&rsquo;s Vision</h2>
-        <p>
-          My vision for <span class="mg">Marsal</span> has always been to build a practice that combines modern capability
-          with personal accountability. Accounting should not feel distant or overly complex &mdash; it should feel like
-          a trusted partnership.
-        </p>
-        <p>
-          We work with business owners and individuals across Paisley, Glasgow, and Scotland who expect advisers that
-          understand their circumstances, communicate clearly, and deliver with precision.
-        </p>
-        <p>
-          Every return we submit and every set of accounts we prepare is guided by one principle:
-          <strong>your success is our responsibility.</strong>
-        </p>
-      </div>
+      <div class="about-grid philosophy-grid">
+        <div class="about-image-wrapper">
+          <img
+            src="/images/marsal-accountants-director.PNG"
+            alt="Hafiz Salman Talib, Practice Director at Marsal Accountants"
+            class="about-image"
+            width="480"
+            height="720"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="about-caption">Hafiz Salman Talib &mdash; Practice Director</div>
+        </div>
 
-      <div class="team-section">
-        <h2 class="about-subheading team-heading">Our Team</h2>
-        <p class="team-intro">
-          A focused team combining strategic leadership with dedicated client support.
-        </p>
-        <div class="team-grid">
-          {team.map((member) => (
-            <article class="team-card">
-              <div class="team-card-photo">
-                <img
-                  src={member.image}
-                  alt={member.alt}
-                  class="team-card-image"
-                  loading="lazy"
-                />
-              </div>
-              <div class="team-card-body">
-                <h3 class="team-card-name">{member.name}</h3>
-                <p class="team-card-role">{member.role}</p>
-                <p class="team-card-bio">{member.bio}</p>
-              </div>
-            </article>
-          ))}
+        <div class="about-text philosophy-text">
+          <h2 class="about-subheading">Director&rsquo;s Vision</h2>
+          <p>
+            My vision for <span class="mg">Marsal</span> has always been clear: to build an accounting firm that feels modern,
+            precise, and genuinely supportive. Accounting should not feel distant or complicated &mdash; it should
+            feel like a partnership built on trust.
+          </p>
+          <p>
+            I support hardworking business owners across Paisley, Glasgow, and Scotland. They deserve
+            accountants who understand their challenges, speak their language, and guide them with honesty
+            and accuracy.
+          </p>
+          <p>
+            Every return I file and every set of accounts I prepare is guided by one principle:
+            <strong>your success is my responsibility.</strong>
+          </p>
         </div>
       </div>
 
@@ -120,12 +93,18 @@ const team = [
           </p>
         </div>
         <div class="profile-image-center">
-          <img
-            src="/images/marsal-accountants-about-us.png"
-            alt="Marsal Accountants About Us"
-            class="profile-center-image"
-            loading="lazy"
-          />
+          <picture>
+            <source srcset="/images/marsal-accountants-about-us.avif" type="image/avif" />
+            <img
+              src="/images/marsal-accountants-about-us.png"
+              alt="Marsal Accountants About Us"
+              class="profile-center-image"
+              width="680"
+              height="250"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
           <div class="about-caption">Supporting clients across Scotland</div>
         </div>
         <div class="profile-strength-clients">
@@ -198,7 +177,7 @@ const team = [
 
   <script is:inline>
     document.addEventListener("DOMContentLoaded", () => {
-      const cards = document.querySelectorAll(".value-card, .team-card, .about-text, .profile-image-center, .profile-text-above, .profile-text-below, #international-presence .about-text");
+      const cards = document.querySelectorAll(".value-card, .about-image-wrapper, .about-text, .profile-image-center, .profile-text-above, .profile-text-below, #international-presence .about-text");
       if (!("IntersectionObserver" in window)) {
         cards.forEach(card => card.classList.add("in-view"));
         return;

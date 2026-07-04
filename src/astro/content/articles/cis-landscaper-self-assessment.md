@@ -3,17 +3,15 @@ title: "Landscaper & Gardener Self-Assessment Guide | Marsal Accountants"
 date: "2026-02-17"
 category: "Self Assessment"
 heroImage: "/images/marsal-accountants-cis-landscaper.png"
-description: "Paisley-based accountants explain how landscapers and gardeners can manage Self Assessment tax returns, claim expenses, and ensure correct filings for 2025/26."
+description: "Self-employed landscapers and gardeners must file Self Assessment each year, report seasonal income and expenses, and claim allowable costs. Paisley accountants explain how."
 readTime: "4 min read"
 ---
 
 # Self-Assessment Tax Guide for Landscapers & Gardeners by Marsal Accountants
 
-Building beautiful outdoor spaces is your passion. Managing spreadsheets and tax calculations? Probably not.  
-As a self-employed landscaper or gardener in **Paisley**, **Glasgow**, or across **Central Scotland**, you have a unique set of expenses and income patterns.  
-**Marsal Accountants** understands the seasonal nature of your work and helps you file an accurate Self Assessment, ensuring you claim for everything from plants to petrol.  
+Self-employed landscapers and gardeners must file a **Self Assessment** tax return each year, report seasonal income and expenses, and claim allowable costs (from plants and materials to petrol and equipment).
 
-This guide is designed to help you cultivate a clear understanding of your tax responsibilities.
+**Marsal Accountants** in **Paisley** supports landscapers and gardeners across **Glasgow** and **Central Scotland** with accurate returns and claims that match how outdoor trades actually work.
 
 ---
 

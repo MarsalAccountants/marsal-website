@@ -1,6 +1,6 @@
 ---
 title: "Corporation Tax for Small Companies | Paisley & Glasgow | Marsal Accountants"
-description: "Paisley accountants explain corporation tax deadlines, allowable expenses, and year-end planning for small limited companies in Glasgow and Central Scotland."
+description: "UK limited companies pay corporation tax on taxable profits; the CT600 is due 12 months after the accounting period ends, with tax usually due earlier. Paisley accountants explain the basics."
 date: "2026-06-07"
 category: "Tax"
 heroImage: "/images/corporation-tax-paisley.jpg"
@@ -11,9 +11,9 @@ primaryService: "corporation-tax-return-services"
 
 # Corporation Tax for Small Limited Companies in Paisley, Glasgow & Central Scotland
 
-If you run a **limited company**, corporation tax is one of your core compliance obligations — alongside statutory accounts, Companies House filings, and often **PAYE** if you employ staff or pay yourself a salary.
+UK-resident **limited companies** pay **corporation tax** on taxable profits; the CT600 return is due 12 months after the accounting period ends, and tax is generally due 9 months and 1 day after period end.
 
-**Marsal Accountants** is based in **Paisley** and supports owner-managed companies across **Glasgow** and **Central Scotland** with year-end accounts, corporation tax returns, and practical tax planning.
+**Marsal Accountants** is based in **Paisley** and supports owner-managed companies across **Glasgow** and **Central Scotland** with year-end accounts, corporation tax returns, and practical tax planning — alongside statutory accounts, Companies House filings, and **PAYE** where you pay salaries.
 
 ---
 

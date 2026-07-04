@@ -3,18 +3,15 @@ title: "Mobile Mechanic Self-Assessment Guide | Marsal Accountants"
 date: "2026-02-17"
 category: "Self Assessment"
 heroImage: "/images/marsal-accountants-mobile-mechanic.png"
-description: "Paisley-based accountants explain how self-employed mobile mechanics can manage Self Assessment tax returns, claim expenses, and ensure accurate filings for 2025/26."
+description: "Self-employed mobile mechanics must file Self Assessment each year, report income and expenses, and claim allowable costs. Paisley accountants explain records and deadlines."
 readTime: "4 min read"
 ---
 
 # Self-Assessment Tax Guide for Mobile Mechanics by Marsal Accountants
 
-Running your own mobile mechanic business brings freedom, but also the responsibility of managing your taxes.  
-Keeping on top of income, expenses, and your Self Assessment can feel like a full-time job on its own.  
-At **Marsal Accountants** in **Paisley**, serving **Glasgow** and **Central Scotland**, we specialise in helping tradespeople.  
-We ensure you claim every allowable expense, file accurately, and keep more of your hard-earned money.
+Self-employed mobile mechanics must file a **Self Assessment** tax return each year, report business income and expenses, and claim allowable costs to calculate tax and National Insurance.
 
-This guide walks you through the key records you need, common claims for mechanics, and how to stay compliant with HMRC.
+At **Marsal Accountants** in **Paisley**, serving **Glasgow** and **Central Scotland**, we help tradespeople claim what they are entitled to, file accurately, and stay compliant with HMRC.
 
 ---
 

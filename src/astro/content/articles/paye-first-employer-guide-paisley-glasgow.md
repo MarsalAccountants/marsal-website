@@ -1,6 +1,6 @@
 ---
 title: "PAYE & RTI for First-Time Employers | Paisley & Glasgow | Marsal Accountants"
-description: "Paisley accountants explain PAYE registration, Real Time Information (RTI) deadlines, and payroll setup for first-time employers in Glasgow and Central Scotland."
+description: "First-time employers must register for PAYE and report each pay run to HMRC via RTI on or before payday. Paisley accountants explain setup for Glasgow and Central Scotland."
 date: "2026-06-18"
 category: "Payroll"
 heroImage: "/images/marsal-accountants-scottish-paye-calculator.jpg"
@@ -11,7 +11,7 @@ primaryService: "payroll"
 
 # PAYE & RTI for First-Time Employers in Paisley, Glasgow & Central Scotland
 
-Taking on your first employee is a milestone — and it brings **PAYE** obligations. From the day someone starts, HMRC expects you to operate **Real Time Information (RTI)**: calculate tax and National Insurance correctly, report each pay run on time, and keep records that stand up to review.
+If you take on your first employee, you must register for **PAYE** and report each pay run to HMRC through **Real Time Information (RTI)** on or before payday — calculating tax and National Insurance correctly and keeping records that stand up to review.
 
 **Marsal Accountants** is based in **Paisley** and supports employers across **Glasgow** and **Central Scotland** with payroll setup, RTI filings, and year-round advice.
 

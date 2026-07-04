@@ -3,19 +3,15 @@ title: "Window Cleaner Self-Assessment Guide | Marsal Accountants"
 date: "2026-02-17"
 category: "Self Assessment"
 heroImage: "/images/marsal-accountants-window-cleaner.png"
-description: "Paisley-based accountants explain how self-employed window cleaners can manage Self Assessment tax returns, claim expenses, and stay compliant with HMRC for 2025/26."
+description: "Self-employed window cleaners must file Self Assessment each year, report income and expenses, and claim allowable costs such as equipment and travel. Paisley accountants explain how."
 readTime: "4 min read"
 ---
 
 # Self-Assessment Tax Guide for Mobile Window Cleaners by Marsal Accountants
 
-Running your own window cleaning business gives you flexibility and steady income — but it also means keeping on top of your taxes.  
-Tracking jobs, equipment, fuel, and payments can feel overwhelming when you’re busy working outdoors all day.  
+Self-employed window cleaners must file a **Self Assessment** tax return each year, report income and expenses, and claim allowable costs (equipment, fuel, insurance, and similar) to calculate tax and National Insurance.
 
-At **Marsal Accountants** in **Paisley**, serving **Glasgow** and **Central Scotland**, we specialise in supporting self‑employed tradespeople like you.  
-We make sure you claim every allowable expense, stay compliant with HMRC, and keep more of your earnings.
-
-This guide explains the key records you need, the expenses window cleaners can claim, and how to complete your Self Assessment smoothly.
+At **Marsal Accountants** in **Paisley**, serving **Glasgow** and **Central Scotland**, we help tradespeople keep records straight, claim what they are entitled to, and stay compliant with HMRC.
 
 ---
 

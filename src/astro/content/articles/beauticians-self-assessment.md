@@ -3,16 +3,15 @@ title: "Beauticians (Chair & Room Renters) Self-Assessment Guide | Marsal Accoun
 date: "2026-04-11"
 category: "Self Assessment"
 heroImage: "/images/marsal-accountants-beautician.png"
-description: "Paisley-based accountants explain how self-employed beauticians and beauty therapists who rent a chair or room can manage Self Assessment tax returns, claim expenses, and stay compliant for 2025/26."
+description: "Self-employed beauticians who rent a chair or room must file Self Assessment each year, report income and expenses, and claim allowable costs. Paisley accountants explain how."
 readTime: "4 min read"
 ---
 
 # Beauticians (Chair & Room Renters) Self-Assessment Guide by Marsal Accountants
 
-As a self-employed beautician or beauty therapist renting a chair or treatment room, you have control over your schedule and clients — but also the responsibility of managing your taxes.  
-At **Marsal Accountants**, based in **Paisley** and serving **Glasgow** and **Central Scotland**, we help beauty professionals prepare and submit accurate **Self Assessment tax returns**, claim all allowable expenses, and maximise any refund due.
+Self-employed beauticians and beauty therapists who rent a chair or treatment room must file a **Self Assessment** tax return each year, report all income and business costs, and claim allowable expenses to calculate tax and National Insurance.
 
-This guide explains what records to keep, what expenses you can claim, and how to file correctly.
+At **Marsal Accountants**, based in **Paisley** and serving **Glasgow** and **Central Scotland**, we help beauty professionals prepare accurate returns, claim what they are entitled to, and stay compliant.
 
 ---
 

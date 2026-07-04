@@ -3,16 +3,15 @@ title: "Takeaway & Restaurant Owner Self-Assessment Guide | Marsal Accountants"
 date: "2026-02-17"
 category: "Self Assessment"
 heroImage: "/images/marsal-accountants-takeaway-restaurant-self-assessment.png"
-description: "Paisley-based accountants explain how takeaway and restaurant owners can handle Self Assessment tax returns accurately and on time. Clear guidance for 2025/26."
+description: "Sole-trader takeaway and restaurant owners must report business income and expenses on Self Assessment each year. Paisley accountants explain records, claims, and deadlines."
 readTime: "4 min read"
 ---
 
 # Takeaway & Restaurant Owner Self-Assessment Guide by Marsal Accountants in Paisley
 
-Running a takeaway, fast food shop, diner, or restaurant is rewarding—but it also comes with tax responsibilities.  
-At **Marsal Accountants**, based in **Paisley** and serving **Glasgow** and **Central Scotland**, we help restaurant and takeaway owners prepare and submit their **Self Assessment tax returns** accurately and on time.
+Sole-trader takeaway and restaurant owners must report all business income and allowable expenses on a **Self Assessment** tax return each year to pay the correct tax and National Insurance.
 
-This guide explains what records to keep, how to file your return, and how to avoid common mistakes that could cost you money or time.
+At **Marsal Accountants**, based in **Paisley** and serving **Glasgow** and **Central Scotland**, we help owners prepare accurate returns on time and avoid common record-keeping mistakes.
 
 ---
 

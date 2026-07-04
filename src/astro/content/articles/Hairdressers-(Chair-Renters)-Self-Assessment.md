@@ -3,16 +3,15 @@ title: "Hairdressers (Chair Renters) Self-Assessment Guide | Marsal Accountants"
 date: "2026-02-17"
 category: "Self Assessment"
 heroImage: "/images/marsal-accountants-hairdressers.png"
-description: "Paisley-based accountants explain how self-employed hairdressers who rent chairs can manage Self Assessment tax returns, claim expenses, and stay compliant for 2025/26."
+description: "Self-employed hairdressers who rent a chair must file Self Assessment each year, report income and expenses, and claim allowable costs. Paisley accountants explain how."
 readTime: "4 min read"
 ---
 
 # Hairdressers (Chair Renters) Self-Assessment Guide by Marsal Accountants
 
-As a self-employed hairdresser renting a chair, you have control over your schedule and clients — but also the responsibility of managing your taxes.  
-At **Marsal Accountants**, based in **Paisley** and serving **Glasgow** and **Central Scotland**, we help chair renters prepare and submit accurate **Self Assessment tax returns**, claim all allowable expenses, and maximise any refund due.
+Self-employed hairdressers who rent a chair must file a **Self Assessment** tax return each year, report all income and business costs, and claim allowable expenses to calculate tax and National Insurance.
 
-This guide explains what records to keep, what expenses you can claim, and how to file correctly.
+At **Marsal Accountants**, based in **Paisley** and serving **Glasgow** and **Central Scotland**, we help chair renters prepare accurate returns, claim what they are entitled to, and stay compliant.
 
 ---
 

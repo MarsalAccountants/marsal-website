@@ -3,18 +3,16 @@ title: "Landlord Self Assessment & Rental Income | Paisley & Glasgow"
 date: "2026-05-01"
 category: "Self Assessment"
 heroImage: "/images/property-accounts-paisley.jpg"
-description: "Paisley accountants explain rental income, allowable expenses, mortgage finance relief, and Self Assessment for landlords in Glasgow and Central Scotland."
+description: "Landlords usually report UK rental profits on Self Assessment, claim allowable expenses, and apply basic-rate finance cost relief on residential mortgages. Paisley accountants explain how."
 readTime: "7 min read"
 primaryService: "property-accounts"
 ---
 
 # Landlord Self Assessment & Rental Income in Paisley, Glasgow & Central Scotland
 
-Letting a flat or house can feel straightforward until tax rules, overlapping tenancies, and repair bills land in the same spreadsheet.
+Most landlords must report UK rental profits on a **Self Assessment** tax return (UK property pages), claim allowable expenses, and apply **basic-rate finance cost relief** on residential mortgage interest rather than full interest deduction.
 
-At **Marsal Accountants**, based in **Paisley** and serving landlords across **Glasgow** and **Central Scotland**, we help you report rental profits accurately, claim reliefs you are entitled to, and meet Self Assessment deadlines without last-minute panic.
-
-This guide covers how rental income fits into Self Assessment, what expenses are commonly allowable, and where mistakes creep in.
+At **Marsal Accountants**, based in **Paisley** and serving landlords across **Glasgow** and **Central Scotland**, we help you report accurately, claim reliefs you are entitled to, and meet filing deadlines without last-minute panic.
 
 ---
 

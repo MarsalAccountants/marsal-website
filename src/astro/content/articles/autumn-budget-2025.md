@@ -3,17 +3,15 @@ title: "Autumn Budget 2025 Explained by Accountants in Paisley | Marsal Accounta
 date: "2025-10-22"
 category: "Tax"
 heroImage: "/images/autumn-budget.jpg"
-description: "Paisley-based accountants explain the Autumn Budget 2025 tax changes, ISA limits, property taxes, and business impacts for individuals and SMEs in Glasgow and Central Scotland."
+description: "TL;DR: Autumn Budget 2025 freezes income tax and NI thresholds to 2031, cuts ISA limits from 2027 for under-65s, and adds property and business measures. Paisley accountants summarise the impact."
 readTime: "4 min read"
 ---
 
 # Autumn Budget 2025 Explained by Accountants in Paisley
 
-The Chancellor’s **Autumn Budget 2025** introduces major tax and policy reforms affecting individuals, landlords, and businesses across the UK.
+**TL;DR:** The **Autumn Budget 2025** freezes income tax and National Insurance thresholds until **2031**, reduces ISA allowances for under-65s from **April 2027**, and introduces further property, pension, and business measures that affect individuals, landlords, and SMEs across the UK.
 
-At **Marsal Accountants**, your trusted accountants in Paisley, we explain what these changes mean for clients in Paisley, Glasgow, and across Central Scotland — and how you can prepare.
-
-If you are self-employed, a company director, landlord, or small business owner, this guide will help you understand how the new rules may affect your finances.
+At **Marsal Accountants** in **Paisley**, we summarise what matters for clients in **Glasgow** and **Central Scotland** — and how to plan ahead. Always check current HMRC and GOV.UK guidance for the latest detail.
 
 ---
 

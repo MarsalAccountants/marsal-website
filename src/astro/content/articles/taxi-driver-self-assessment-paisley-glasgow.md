@@ -3,17 +3,15 @@ title: "Taxi Driver Self Assessment Guide in Paisley & Glasgow | Marsal Accounta
 date: "2026-02-17"
 category: "Self Assessment"
 heroImage: "/images/marsal-accountants-taxi-driver-self-assessment.jpg"
-description: "Paisley-based accountants explain how taxi drivers in Glasgow and Central Scotland can file Self Assessment tax returns correctly, claim expenses, and avoid HMRC penalties."
+description: "Self-employed taxi drivers must file Self Assessment each year, declaring fares, tips, and allowable expenses. Paisley accountants explain records, claims, and deadlines."
 readTime: "5 min read"
 ---
 
 # Taxi Driver Self Assessment Guide in Paisley & Glasgow
 
-Being self-employed as a taxi driver offers flexibility, but it also comes with important tax responsibilities.
+Self-employed taxi drivers must file a **Self Assessment** tax return each year, declaring driving income, tips, and allowable business expenses so HMRC can calculate the correct tax and National Insurance.
 
-At **Marsal Accountants**, based in Paisley and serving Glasgow and Central Scotland, we help taxi drivers prepare and submit accurate Self Assessment tax returns on time and without stress.
-
-This practical guide explains what Self Assessment is, what records you need to keep, and how professional support can simplify the process.
+At **Marsal Accountants**, based in **Paisley** and serving **Glasgow** and **Central Scotland**, we help taxi drivers prepare accurate returns on time and claim the costs they are entitled to.
 
 ---
 

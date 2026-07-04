@@ -1,6 +1,6 @@
 ---
 title: "Making Tax Digital & Self Assessment Records | Paisley & Glasgow | Marsal Accountants"
-description: "Paisley accountants explain Making Tax Digital for Self Assessment, digital records, and what landlords and sole traders in Glasgow and Central Scotland should prepare for 2025/26."
+description: "Making Tax Digital for Income Tax means many sole traders and landlords must keep digital records and use compatible software. Paisley accountants explain what to prepare."
 date: "2026-06-04"
 category: "Tax"
 heroImage: "/images/Accounting-Services-paisley.jpg"
@@ -11,9 +11,9 @@ primaryService: "bookkeeping"
 
 # Making Tax Digital & Self Assessment Records in Paisley, Glasgow & Central Scotland
 
-HMRC is expanding **Making Tax Digital (MTD)** for income tax. If you file **Self Assessment** as a sole trader or landlord, keeping reliable digital records is no longer optional planning — it is part of staying compliant.
+**Making Tax Digital (MTD)** for Income Tax requires many sole traders and landlords above HMRC thresholds to keep **digital records** and submit updates through compatible software — not just file once a year on paper or spreadsheets alone.
 
-**Marsal Accountants** is based in **Paisley** and supports clients across **Glasgow** and **Central Scotland** with bookkeeping, Self Assessment, and year-round advice.
+**Marsal Accountants** is based in **Paisley** and supports clients across **Glasgow** and **Central Scotland** with bookkeeping, Self Assessment, and year-round advice. Check current thresholds on [GOV.UK](https://www.gov.uk/guidance/find-out-when-you-need-to-use-making-tax-digital-for-income-tax-self-assessment-mtd-itsa).
 
 ---
 

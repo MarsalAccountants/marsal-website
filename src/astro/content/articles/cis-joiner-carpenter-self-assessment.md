@@ -3,16 +3,15 @@ title: "Joiner / Carpenter (CIS) Self-Assessment Guide | Marsal Accountants"
 date: "2026-02-17"
 category: "Self Assessment"
 heroImage: "/images/marsal-accountants-cis-joiner-carpenter-self-assessment.png"
-description: "Paisley-based accountants explain how CIS joiners and carpenters can manage Self Assessment tax returns, claim expenses, and ensure correct filings for 2025/26."
+description: "CIS joiners and carpenters must still file Self Assessment each year even when tax is deducted at source. Paisley accountants explain records, expenses, and refunds."
 readTime: "4 min read"
 ---
 
 # Joiners / Carpenters (CIS) Self-Assessment Guide by Marsal Accountants in Paisley
 
-Working as a self-employed joiner or carpenter under the Construction Industry Scheme (CIS) often means tax is deducted before you're paid.  
-At **Marsal Accountants**, based in **Paisley** and serving **Glasgow** and **Central Scotland**, we help CIS joiners and carpenters prepare and submit their **Self Assessment tax returns** accurately, claim all allowable expenses, and recover any refund due.
+CIS joiners and carpenters must still file a **Self Assessment** tax return each year — even when tax is deducted from payments — so HMRC can reconcile income, expenses, and any refund due.
 
-This guide explains how CIS filing works, what records you need, and how to complete your return correctly.
+At **Marsal Accountants**, based in **Paisley** and serving **Glasgow** and **Central Scotland**, we help CIS joiners and carpenters prepare accurate returns, claim allowable expenses, and recover refunds where due.
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Self Assessment Payments on Account | Paisley & Glasgow | Marsal Accountants"
-description: "Paisley accountants explain Self Assessment payments on account, the 31 July deadline, and how sole traders and landlords in Glasgow and Central Scotland can plan ahead."
+description: "Payments on account are advance instalments toward next year's Self Assessment bill, usually due 31 January and 31 July. Paisley accountants explain who pays and how to plan."
 date: "2026-06-23"
 category: "Self Assessment"
 heroImage: "/images/Accounting-Services-paisley.jpg"
@@ -11,9 +11,9 @@ primaryService: "self-assessment-tax-returns"
 
 # Self Assessment Payments on Account in Paisley, Glasgow & Central Scotland
 
-If HMRC has asked you to make **payments on account** toward next year's **Self Assessment** bill, the next key date is usually **31 July**. Missing it triggers interest — even when your final liability turns out lower after you file.
+**Payments on account** are advance instalments toward next year's **Self Assessment** bill, usually due **31 January** and **31 July**, based on your previous year's liability. Missing either date triggers interest — even if your final bill turns out lower after you file.
 
-**Marsal Accountants** is based in **Paisley** and helps sole traders, landlords, and mixed-income clients across **Glasgow** and **Central Scotland** plan Self Assessment payments and stay on top of deadlines.
+**Marsal Accountants** is based in **Paisley** and helps sole traders, landlords, and mixed-income clients across **Glasgow** and **Central Scotland** plan these payments and stay on top of deadlines.
 
 ---
 

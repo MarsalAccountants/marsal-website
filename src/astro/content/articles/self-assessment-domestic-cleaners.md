@@ -3,21 +3,15 @@ title: "Self-Employed Cleaner Self-Assessment Guide | Marsal Accountants"
 date: "2026-02-17"
 category: "Self Assessment"
 heroImage: "/images/marsal-accountants-cleaners.png"
-description: "Paisley-based accountants explain how self-employed domestic and commercial cleaners can manage Self Assessment tax returns, claim expenses, and stay compliant with HMRC for 2025/26."
+description: "Self-employed domestic and commercial cleaners must file Self Assessment each year, report income and expenses, and claim allowable costs. Paisley accountants explain how."
 readTime: "4 min read"
 ---
 
 # Self‑Assessment Tax Guide for Self‑Employed Domestic & Commercial Cleaners by Marsal Accountants
 
-Running your own cleaning business — whether you clean homes, offices, holiday lets, or commercial spaces — gives you flexibility and steady work.  
-But it also means keeping track of your income, supplies, travel, and equipment.  
+Self-employed domestic and commercial cleaners must file a **Self Assessment** tax return each year, report income and expenses, and claim allowable costs (supplies, travel, equipment, and similar) to calculate tax and National Insurance.
 
-When you’re busy moving from property to property, it’s easy for receipts and records to pile up.  
-
-At **Marsal Accountants** in **Paisley**, serving **Glasgow** and **Central Scotland**, we specialise in supporting self‑employed cleaners.  
-We help you stay compliant with HMRC, claim every allowable expense, and keep more of what you earn.
-
-This guide explains the key records you need, the expenses cleaners can claim, and how to complete your Self Assessment smoothly.
+At **Marsal Accountants** in **Paisley**, serving **Glasgow** and **Central Scotland**, we help cleaners stay compliant with HMRC, claim what they are entitled to, and keep records manageable between jobs.
 
 ---
 
