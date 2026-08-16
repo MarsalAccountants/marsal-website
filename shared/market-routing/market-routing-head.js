@@ -1,6 +1,8 @@
 /**
  * Inlined in <head> on UK and US marketing sites (Phase 2).
- * Cookie + ?market= redirects run synchronously; geo uses /cdn-cgi/trace when available.
+ * Cookie + ?market= (footer) always win. Soft geo only suggests on first visit
+ * for clear US↔UK mismatches — never forces rest-of-world off either site.
+ * Marsal Cloud access is separate (credentials / jurisdiction), not this script.
  */
 (function marketRoutingHead() {
   var CFG = window.MARSAL_MARKET_BOOT;
@@ -92,7 +94,17 @@
   var forced = params.get('market');
   if (forced === 'us' || forced === 'uk') {
     setCookie(forced);
-    redirect(forced);
+    var forcedDest = targetUrl(forced, location.pathname);
+    var forcedClean = location.href.split('?')[0];
+    if (forcedDest !== forcedClean) {
+      location.replace(forcedDest);
+    } else if (location.search) {
+      try {
+        history.replaceState(null, '', forcedDest);
+      } catch (err) {
+        location.replace(forcedDest);
+      }
+    }
     return;
   }
 
@@ -115,15 +127,13 @@
     return country === 'GB' || country === 'GG' || country === 'JE' || country === 'IM';
   }
 
+  /** Soft geo: only clear home-market mismatches. PK and other countries stay put. */
   function applyGeo(country) {
     if (!country) return;
     if (countryImpliesUs(country) && CURRENT === 'uk') {
       setCookie('us');
       redirect('us');
     } else if (countryImpliesUk(country) && CURRENT === 'us') {
-      setCookie('uk');
-      redirect('uk');
-    } else if (!countryImpliesUs(country) && CURRENT === 'us') {
       setCookie('uk');
       redirect('uk');
     }
